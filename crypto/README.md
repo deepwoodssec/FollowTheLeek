@@ -35,6 +35,56 @@ that sold a large amount having bought nothing.**
 A wallet cannot sell 10.7M tokens it never bought unless it was handed them
 at creation. That is the dump.
 
+## Pay-to-vote polls: manufactured demand, paid in $CYBERLEEK
+
+The operation also ran on-site "polls" that charge the audience to take part.
+The site's own rules state the mechanism:
+
+> "Send only $CYBERLEEK to the wallet of the choice you want to vote for.
+> Each dedicated wallet is checked for the configured token mint... The
+> percentage is each option wallet's detected balance divided by the poll
+> total."
+
+So a "vote" is a transfer of $CYBERLEEK to an operator-controlled wallet, and
+the poll decides which leak video drops next, which is what pulls the next wave
+of buyers into the token. The polls are a second on-chain intake and a
+demand-manufacturing device at once.
+
+![Poll: prologue with Lucia](../assets/crypto-poll-lucia.png)
+
+*"Do you really want to see the prologue with Lucia?", shown at 99.7 percent
+Yes. Voters send $CYBERLEEK to `Cpj7...` (Yes) or `3wFK...` (No). Archived:
+https://archive.ph/A4zKG*
+
+![Poll: next GTA 6 video](../assets/crypto-poll-nextvideo.png)
+
+*A second live poll, "Next GTA 6 Video?", on the same widget with the same
+wallets carrying new option labels.*
+
+**The option wallets are recycled across polls, so the displayed totals are not
+independent vote counts.** The same two wallets carry different, unrelated
+options in the two polls above:
+
+| Option wallet | In the "Lucia" poll | In the "Next video" poll |
+| --- | --- | --- |
+| `Cpj7QARnmVR39NBGe4NWppUF7WUrWMamen4WsJNmbHQy` | "Yes Please" (262,141 shown) | "Beach" (11,706 shown) |
+| `3wFKU8bzomz8eSn179JFzR4oimC3esEXxhbaWtKgJ3K3` | "Fuck No" (904 shown) | "Nudist Town" (56,502 shown) |
+| `78BkUe4bywGhK6SJDHj5uwfyFJZ9NDG3iQ5U7rxo7QWA` | not used | "Strip Club 2" (11,351 shown) |
+
+A wallet that is "Yes Please" in one poll and "Beach" in another is not a
+dedicated ballot box. On-chain these wallets are short-lived: active only in a
+brief window, their token accounts closed to reclaim rent, then abandoned
+(current balances zero), and one inbound token load to an option wallet was
+authorized by the same Relay solver (`F7p3...`, shared bridge infrastructure)
+that appears in the money trail above. The percentages are presentation, not a
+tally of independent voters.
+
+Verifiable here: the pay-to-vote mechanism, the option-wallet addresses, their
+reuse across polls, and their short-lived operator-side on-chain footprint.
+What the polls produce for the operator is engagement paid in $CYBERLEEK and a
+pretext for the next drop.
+
+
 ## The cash-out, traced on-chain to the bridge
 
 The dump proceeds converge through a relay and cross into Hyperliquid via
@@ -104,6 +154,9 @@ Unit and Hyperliquid.
 | Relay / layering wallet | `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` |
 | Unit bridge hot wallet (shared infra) | `9SLPTL41SPsYkgdsMzdfJsxymEANKr5bYoBsQzJyKpKS` |
 | Bridge / destination venue | Unit ("Hyperunit") -> Hyperliquid |
+| Poll option wallet (pay-to-vote) | `Cpj7QARnmVR39NBGe4NWppUF7WUrWMamen4WsJNmbHQy` |
+| Poll option wallet (pay-to-vote) | `3wFKU8bzomz8eSn179JFzR4oimC3esEXxhbaWtKgJ3K3` |
+| Poll option wallet (pay-to-vote) | `78BkUe4bywGhK6SJDHj5uwfyFJZ9NDG3iQ5U7rxo7QWA` |
 
 ## Reproduce it
 
