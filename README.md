@@ -20,16 +20,16 @@ Maintained by [Deep Woods Security](https://deepwoodssec.com).
 Read the sections in order and they tell one story. The operator stands up a
 website on rented US servers and pushes traffic to it with Google Ads and
 stolen GTA VI leak clips ([`infrastructure/`](infrastructure/)). Those clips
-funnel victims into a cryptocurrency token he created for free: he hypes it,
-lets real buyers pour their money into the trading pool, then sells his own
-free tokens on top of them and bridges the proceeds off Solana toward a
-trading platform ([`crypto/`](crypto/)). He tried to stay anonymous, but he
-left fingerprints. His own screenshots expose the computer he works on and the
-Google account he is signed into ([`browser/`](browser/)); the times he posts
-reveal his daily rhythm and rule out whole continents
-([`posting-pattern/`](posting-pattern/)); the way he writes points to the
-language he grew up speaking ([`writing-style/`](writing-style/)); and even his
-profile picture is AI-generated, so the persona itself is fabricated
+funnel victims into a cryptocurrency token they created for free: they hype it,
+let real buyers pour their money into the trading pool, then sell their own
+free tokens on top of them and bridge the proceeds off Solana toward a trading
+platform ([`crypto/`](crypto/)). They tried to stay anonymous, but they left
+fingerprints. Their own screenshots expose the computer they work on and the
+Google account they are signed into ([`browser/`](browser/)); the times they
+post reveal their daily rhythm and rule out whole continents
+([`posting-pattern/`](posting-pattern/)); the way they write points to the
+language they grew up speaking ([`writing-style/`](writing-style/)); and even
+their profile picture is AI-generated, so the persona itself is fabricated
 ([`pfp-metadata/`](pfp-metadata/)).
 
 ## Sections
