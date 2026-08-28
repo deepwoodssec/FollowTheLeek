@@ -163,6 +163,47 @@ operator anywhere in this repo.
 
 ## How the operation is wired (and where it breaks)
 
+The stack at a glance. Red is the operator's own, seizable infrastructure
+(every box keeps billing or account records); blue is shared decentralized
+infrastructure that is not his; green is where the money begins.
+
+```mermaid
+flowchart TD
+    ADS["Google Ads<br/>tag AW-18404896621"] --> VIC(["victims"])
+    TG["Telegram<br/>@cyberleeksreal"] --> VIC
+    XX["X / Twitter<br/>@cyberleeksreal"] --> VIC
+
+    VIC --> DOM["cyber-leek.com"]
+
+    subgraph SEIZE["Operator infrastructure (seizable; keeps billing/account records)"]
+      direction TB
+      DOM --> CF["Cloudflare DNS<br/>A record unproxied<br/>(origin exposed)"]
+      CF --> ORIG["Origin server<br/>162.35.101.236<br/>InterServer, Los Angeles (AS26666)"]
+      DOM --> MED["media.cyber-leek.com<br/>69.10.50.177 (InterServer, LA)<br/>hardened: drops direct requests"]
+      FUN["cyberleeks.fun<br/>backup domain (no A record)"]
+    end
+
+    ORIG --> TOK["CyberLeek token on Solana<br/>see crypto/ for the money trail"]
+
+    subgraph NEU["Decentralized (NOT operator infrastructure)"]
+      direction TB
+      GW["cyberleek.ar.io /<br/>turbo-gateway.com<br/>shared AR.IO gateways (e.g. Hetzner, Germany)"] --> ARW["Arweave<br/>permanent leak-video copy"]
+    end
+
+    MED -. "QR burned into videos points here" .-> GW
+    ARW -. "paid upload via ArDrive/Turbo:<br/>paying wallet + receipt on record" .-> LEAD["subpoena lead"]
+
+    classDef seize fill:#7f1d1d,stroke:#ef4444,color:#ffffff;
+    classDef neutral fill:#1e3a8a,stroke:#60a5fa,color:#ffffff;
+    classDef money fill:#166534,stroke:#22c55e,color:#ffffff;
+    classDef src fill:#374151,stroke:#9ca3af,color:#ffffff;
+    class ORIG,MED,CF,DOM,FUN seize;
+    class GW,ARW neutral;
+    class TOK money;
+    class ADS,TG,XX,VIC,LEAD src;
+```
+
+
 The operation is deliberately layered so that no single public lookup
 exposes the operator. That same layering is its weakness: every layer is
 run by a real company that keeps billing and account records.
