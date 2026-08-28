@@ -4,6 +4,10 @@
 
 *The operator's own Chrome window on cyberleeks.fun - the olive-yellow Citron theme across the toolbar and the Ask Gemini button, top right.*
 
+![Zoom: the operator's browser chrome](browser-chrome-zoom.png)
+
+*Zoomed in on the browser chrome from the same capture: the olive-yellow Citron toolbar, the `cyberleeks.fun` address bar, the signed-in account avatar, and the Ask Gemini button.*
+
 The operator posted screen captures taken on the operation's own
 machine while viewing its own site. Those captures leak a consistent environment
 fingerprint. Any one attribute is common; taken together, and
@@ -34,6 +38,10 @@ dark mode (toolbar color sampled at approximately `#2e2b18`). This is a
 built-in preset chosen under Settings > Appearance, not a custom theme
 or a Chrome Web Store install - which means it is a deliberate,
 reproducible setting on the signed-in profile rather than a one-off.
+
+![Reference: Chrome Appearance panel with the Citron preset](browser-appearance-reference.png)
+
+*Reference: Chrome's built-in Appearance panel (Settings > Appearance), Dark mode with the Citron color preset selected. The operator's sampled toolbar color (about `#2e2b18`) matches this built-in preset, not a custom or Web Store theme. This is how the theme was identified.*
 
 ## Signed-in Google account
 
