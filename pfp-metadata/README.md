@@ -106,6 +106,12 @@ manifest whose hashes all match the published bytes.
   the operator did not strip metadata before posting, which is itself a
   small operational-hygiene tell.
 
+## The avatar in use
+
+![CyberLeek verified X account @cyberleeksreal](../assets/x-account.png)
+
+*The same Grok-generated leek character is the avatar and banner on the operation's verified X account, `@cyberleeksreal` ("The Only Real Cyberleek"), which links `cyberleeks.fun` and the Telegram channel `t.me/cyberleeksreal`. Listed location "Vice City, CA, US" is a Grand Theft Auto reference, not a geolocation claim.*
+
 ## What this is and is not
 
 - This identifies **how the image was made**, not **who made it**. A Grok

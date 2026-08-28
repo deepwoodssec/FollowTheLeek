@@ -92,9 +92,6 @@ The operator's own, seizable host is the InterServer origin in Los
 Angeles (`162.35.101.236`). Gateway IPs are not attributed to the
 operator anywhere in this repo.
 
-![CyberLeek official X account @cyberleeksreal](../assets/x-account.png)
-
-*The operation's verified X account, `@cyberleeksreal` ("The Only Real Cyberleek"), linking `cyberleeks.fun` and the Telegram channel `t.me/cyberleeksreal`. Listed location: "Vice City, CA, US".*
 
 ## How the operation is wired (and where it breaks)
 

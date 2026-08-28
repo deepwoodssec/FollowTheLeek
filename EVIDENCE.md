@@ -20,6 +20,9 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 | --- | --- | --- | --- |
 | Profile picture (AI / Grok, C2PA intact) | `pfp-metadata/pfp.jpg` | `30997f019d5b943a81517c63425892766f6b8adbbe0495d26bb2c3228f6bf66f` | ipfs://bafkreibqtf7qdhk3sq5icul4mnbfretwn5vyvw56ask5e25symri627wn4 |
 | Browser fingerprint screenshot | `browser/browser.png` | `9911ae29557b338305251105a03ffff4b0161e6ff2d0faed43353775d95ea4d8` | Telegram post /24, archive.ph/I0X9X |
+| CyberLeek homepage | `assets/cyber-leek-home.png` | `4a83ca85bc459fabcc8bbd6428100e4bb8e0dc273e652b8521a9301274a5a83c` | cyber-leek.com, archive.ph/cpbHi |
+| X account @cyberleeksreal | `assets/x-account.png` | `43848aacf98e125a11d968fcbb071e607efdcaaebe3683ec858c95fde2aff818` | x.com/cyberleeksreal |
+| CYBERLEEKS token mint (Solscan) | `assets/crypto-token-solscan.png` | `935eed1acbd29d59919a0b502062e9ce8cf24d0bbcf489b5a160c88ea6b87934` | solscan.io/token/2hRg6...bKpump |
 
 ## Infrastructure recon
 
