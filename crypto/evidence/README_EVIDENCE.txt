@@ -20,8 +20,8 @@ INTEGRITY
   file separately (email it to yourself) to timestamp the package.
 
 ADDRESSES OF RECORD
-  Solana collection wallet/token: 2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump
+  Solana token mint:             2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump
   Ethereum cash-out wallets:      0xbb22f5c5e6e3086c248d80929b03b157a90381a8 0x8bEe4D7bDaa37fb57aAC98cA9B50fF52117123A0
-  Note: funds were converted to USDC and bridged to the Base network,
-  where they entered shared custodial payment infrastructure and are no
-  longer individually attributable from public data.
+  Note: on Ethereum the funds were consolidated and swapped via CoW
+  Protocol (a DEX aggregator). The individual trail is not followable
+  past that swap from public data.

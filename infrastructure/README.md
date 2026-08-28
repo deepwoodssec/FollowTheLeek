@@ -56,8 +56,8 @@ money trace in [`crypto/`](../crypto/) references `2hRg6...`.
 
 Raw lookups:
 
-- [`recon/dns-cert-recon.txt`](recon/dns-cert-recon.txt) - first collection, 2026-08-27.
-- [`recon/infra-recon-2026-08-28.txt`](recon/infra-recon-2026-08-28.txt) - passive re-verification, 2026-08-28T04:32Z. SHA256 `818797eacad3da336e06112bf1cf23e4343ba084d65bc4e2bf5c4f9a99ee5ce7` (the collector's own host IP was redacted from line 3; all target data is intact). This pull is what surfaced the Cloudflare-DNS change and `cyberleeks.fun` going dark.
+- [`recon/dns-cert-recon.txt`](recon/dns-cert-recon.txt) - first collection (2026-08-27); carries the Certificate Transparency cert data.
+- [`recon/infra-recon-2026-08-28.txt`](recon/infra-recon-2026-08-28.txt) - passive re-verification (2026-08-28), SHA256 `818797eacad3da336e06112bf1cf23e4343ba084d65bc4e2bf5c4f9a99ee5ce7`; this pull surfaced the Cloudflare DNS change and `cyberleeks.fun` going dark.
 
 ### Media delivery and anti-recon
 
@@ -106,7 +106,7 @@ run by a real company that keeps billing and account records.
 3. **Origin host.** InterServer (US) runs that server and holds the hosting account and payment method behind it.
 4. **Content distribution.** The leak videos are served from a second InterServer host (`media.cyber-leek.com`, `69.10.50.177`) that refuses direct requests, and are mirrored on Arweave (`cyberleek.ar.io`, `turbo-gateway` fallback) via ArDrive / Turbo - the Arweave uploads are paid for, with the paying wallet and receipt on record.
 5. **The token.** Launched on pump.fun (Solana), traded on Raydium / Jupiter, tracked on DexScreener.
-6. **The money.** Collected on Solana, peeled through intermediate wallets, swapped to ETH (order `03772c77`), bridged to Base, into shared custodial payment infrastructure. See [`crypto/`](../crypto/).
+6. **The money.** Collected on Solana, peeled through intermediate wallets, swapped to ETH (order `03772c77`), then consolidated and swapped again via CoW Protocol on Ethereum, after which the individual trail goes cold from public data. See [`crypto/`](../crypto/).
 
 **Why it's hard to track from the outside:**
 

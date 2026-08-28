@@ -49,17 +49,23 @@ The cash-out signal that is impossible to fake is the account nonce
 (`eth_getTransactionCount`): when it increments, the wallet has sent a
 transaction. Watching the nonce is how the live cash-out was caught.
 
-**5. USDC and the bridge to Base.**
-On Ethereum the proceeds are converted to USDC and bridged to the Base
-network (Ethereum L2).
+**5. Convert and swap on Ethereum (USDC via CoW Protocol).**
+On Ethereum the proceeds are consolidated into `0xbb22f5c5...` and moved
+between ETH and USDC. On **2026-08-27T06:36Z** the wallet routed
+**1,051.59 USDC** into **CoW Protocol**, a DEX aggregator (settlement
+contract `0x9008D19f58AAbD9eD0D60971565AA8510560ab41`), swapping it
+on-chain. A DEX batch-auction swap breaks the direct input-to-output link
+by design, so what comes out, and whether it stays on Ethereum or is
+routed onward, is not determinable from the deposit alone.
 
 **6. The wall.**
-On Base the funds enter shared custodial payment infrastructure
-(automated x402 / Coinbase-style payment rails). At that point they mix
-with large volumes of unrelated traffic and can no longer be followed
-individually from public data. This is the honest limit of an outside
-trace. Note it, do not fake past it. The identity is now inside a
-custodian's private records, not on the ledger.
+After the DEX swap the individual trail goes cold from public data. At
+collection, `0xbb22f5c5...` still held 0.877 ETH and `0x8bEe4D7b...` was
+drained (nonce 18). What comes out of a batch-auction DEX swap is not
+linkable to the input from the ledger alone, and whatever exchange or
+custodian the operator ultimately cashes out to holds the identity in its
+private records. This is the honest limit of an outside trace. Note it,
+do not fake past it.
 
 ## Flow diagram
 
@@ -67,9 +73,8 @@ custodian's private records, not on the ledger.
 flowchart TD
     A["CYBERLEEKS token (Solana)<br/>2hRg6E...Kpump"] -->|peel chain| B["intermediate wallets"]
     B -->|"swap order 03772c77<br/>SOL to ETH"| C["ETH cash-out wallets<br/>0xbb22f5c5... / 0x8bEe4D7b..."]
-    C -->|convert to USDC| D["USDC on Ethereum"]
-    D -->|bridge| E["Base network"]
-    E --> F["shared custodial payment infrastructure<br/>trace ends: private records"]
+    C -->|"convert ETH / USDC"| D["USDC + ETH consolidated<br/>0xbb22f5c5..."]
+    D -->|"CoW Protocol DEX swap<br/>2026-08-27 · 1,051 USDC"| E["trail goes cold<br/>output not linkable · identity in custodian records"]
 ```
 
 ## Indicators
@@ -80,8 +85,9 @@ flowchart TD
 | Token deployer wallet | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` |
 | ETH cash-out wallet | `0xbb22f5c5e6e3086c248d80929b03b157a90381a8` |
 | ETH cash-out wallet | `0x8bEe4D7bDaa37fb57aAC98cA9B50fF52117123A0` |
-| Swap service order reference | `03772c77` |
-| Bridge target | Base (Ethereum L2) |
+| Swap service order reference (SOL to ETH) | `03772c77` |
+| USDC contract | `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48` |
+| DEX swap venue (USDC out) | CoW Protocol `0x9008D19f58AAbD9eD0D60971565AA8510560ab41` |
 
 ## Reproduce it
 
@@ -100,9 +106,8 @@ Ethereum cash-out signal (nonce) and balance:
 The custodians in the path keep records that tie these deposits to an
 account, which is where the money connects to a person:
 
-- the swap service behind order `03772c77`
-- the bridge used to move funds to Base
-- the Base payment / custodial services that received the USDC
+- the swap service behind order `03772c77` (the SOL to ETH conversion)
+- the exchange or custodian where the ETH / USDC is ultimately cashed to fiat
 
 These are the useful subpoena targets. They are not public and are not
 listed here.
@@ -110,7 +115,7 @@ listed here.
 ## Confidence and limits
 
 The Ethereum-side facts are directly verifiable on-chain: the funding
-between the two cash-out wallets, the move into USDC, and the
+between the two cash-out wallets, the USDC consolidation and the CoW Protocol swap, and the
 nonce/balance state are all anchored below with transaction hashes.
 
 The Solana-to-Ethereum hop is different. A swap service breaks the public
@@ -131,7 +136,7 @@ Raw on-chain pulls and a SHA256 manifest are in [`evidence/`](evidence/):
 - `SHA256SUMS.txt` - SHA256 of every file (chain of custody)
 
 Collected (UTC): 2026-08-27T19:38Z
-Manifest SHA256: `9b76bbc6f8d8133795b966db00f210d012bc9a8339ea5188bffc64451666da6a`
+Manifest SHA256: `ededd5d2b51d39c046a36beaba8609b943947897269b821a6df9c08356c97250`
 
 Verify:
 
@@ -140,5 +145,5 @@ Verify:
 ### Sample anchors (full list in evidence/)
 
 - `0x8bEe4D7b...` funded `0xbb22f5c5...` with 0.197850 ETH on 2026-08-24T10:43:47Z (tx `0x9f5f6805f8a34b216503559b3ef9abc355469c2eee9f87751eb93b36bc2c6e99`), then 0.056004 and 0.230840 ETH over the next two days
-- `0xbb22f5c5...` moved into USDC (`0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`) on 2026-08-27T06:35:47Z (tx `0x7ed88c7dc9d8b98887f06d8078d6d45b336aa23b5e91c6ae9d9fa9f3e5ca8b56`)
+- `0xbb22f5c5...` routed **1,051.59 USDC** into CoW Protocol (`0x9008D19f...`) on 2026-08-27T06:36:11Z (tx `0xd973960f3001f73f9375b1d4c2126f31d9c74a4ef4334f210277664319735944`); it had received 1,057.59 USDC from `0x8bEe4D7b...` on 2026-08-24
 - point-in-time at collection: `0xbb22f5c5...` nonce 3 / 0.877 ETH; `0x8bEe4D7b...` nonce 18 / ~0 ETH (drained)

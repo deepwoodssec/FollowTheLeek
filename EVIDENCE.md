@@ -9,7 +9,7 @@ link prove existence and integrity without redistribution.
 
 | Artifact | SHA256 | Collected (UTC) |
 | --- | --- | --- |
-| `crypto/evidence/` package (SHA256SUMS.txt) | `9b76bbc6f8d8133795b966db00f210d012bc9a8339ea5188bffc64451666da6a` | 2026-08-27T19:38Z |
+| `crypto/evidence/` package (SHA256SUMS.txt) | `ededd5d2b51d39c046a36beaba8609b943947897269b821a6df9c08356c97250` | 2026-08-27T19:38Z |
 
 Solana and Ethereum data is public and re-pullable. The package holds the
 raw pulls plus a per-file SHA256 manifest; regenerate any time.
@@ -22,7 +22,7 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 | Browser fingerprint screenshot | `browser/browser.png` | `9911ae29557b338305251105a03ffff4b0161e6ff2d0faed43353775d95ea4d8` | Telegram post /24, archive.ph/I0X9X |
 | CyberLeek homepage | `assets/cyber-leek-home.png` | `4a83ca85bc459fabcc8bbd6428100e4bb8e0dc273e652b8521a9301274a5a83c` | cyber-leek.com, archive.ph/cpbHi |
 | X account @cyberleeksreal | `assets/x-account.png` | `43848aacf98e125a11d968fcbb071e607efdcaaebe3683ec858c95fde2aff818` | x.com/cyberleeksreal |
-| CYBERLEEKS token mint (Solscan) | `assets/crypto-token-solscan.png` | `935eed1acbd29d59919a0b502062e9ce8cf24d0bbcf489b5a160c88ea6b87934` | solscan.io/token/2hRg6...bKpump |
+| CYBERLEEKS token mint (Solscan) | `assets/crypto-token-solscan.png` | `e0951a06bde449cd0c5ed2a547ca93a5af734014e0a56bbd5185146d45f28280` | solscan.io/token/2hRg6...bKpump |
 
 ## Infrastructure recon
 
