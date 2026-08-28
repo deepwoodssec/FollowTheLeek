@@ -68,6 +68,39 @@ The leak videos are served from a separate host, hardened against direct access:
 
 Net: the main origin IP is exposed, but the media path is deliberately defended - a separate host that drops direct connections, plus a permaweb copy with gateway failover.
 
+### How the leak video is distributed (Arweave, gateways, and the QR)
+
+The leak video is delivered two ways at once: from the operator's own
+server, and from a permanent, decentralized copy on Arweave. The second
+path is built to survive takedowns, so it is worth stating plainly.
+
+- **Content-addressing, not location.** A normal web link points at a
+  place (a server, a folder, a file); take the server down and the link
+  dies. Arweave addresses a file by its content instead. An upload gets a
+  permanent ID derived from the file itself, and the data is replicated
+  across a decentralized network of storage nodes paid once to keep it
+  permanently. This is the "permaweb": there is no single host to seize.
+- **Gateways are interchangeable doors.** A browser speaks HTTP, not
+  Arweave, so a gateway sits in the middle: it takes an ordinary HTTPS
+  request, fetches the content from Arweave, and returns it as a normal
+  web response. Any gateway returns the identical file, because the file
+  is addressed by its content. A gateway is a read path, not the file.
+  `cyberleek.ar.io` and `cyberleek.turbo-gateway.com` are two different
+  gateways pointing at the same underlying Arweave content.
+- **The QR ties it together.** The circulated leak video has a QR burned
+  into the frames, so it travels with every re-upload instead of living
+  in a caption that can be stripped. The QR points at the Arweave copy,
+  not the operator's own host, and the video prints a fallback gateway
+  with "if blocked, change gateway." Because the content is permanent and
+  gateways are swappable, blocking or removing one gateway does not remove
+  the video; the viewer just routes through another door to the same file.
+- **Why it still points back at him.** The resilience protects the
+  content, not the operator. Permanent storage on Arweave is paid for at
+  upload, through a wallet, leaving a receipt (paying wallet plus upload
+  transaction, on record via ArDrive / Turbo). The one durable thing built
+  to be un-takedownable, the permanent upload the QR points at, is exactly
+  the thing that was paid for, and that payment is traceable.
+
 ### A note on the Arweave gateway IPs (not the operator's host)
 
 `cyberleek.ar.io` resolves to servers on the public AR.IO gateway network
