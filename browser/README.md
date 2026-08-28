@@ -16,11 +16,17 @@ narrow the operator profile.
 
 ## In plain terms
 
-Those screenshots accidentally reveal his setup: which operating system and
-web browser he uses, his browser color theme, and that he is signed in to a
-Google account. Any one of these is common on its own. Taken together they
-form a profile, and the signed-in Google account is the strongest thread,
-because Google keeps records tied to it.
+Your computer's core software is its **operating system** (Windows, macOS, or
+Linux). The program you use to open websites is a **web browser** (Chrome,
+Safari, Firefox). The operator posted screenshots of his own screen, and those
+pictures give away several of these settings at once: he is on **Windows**,
+using **Google Chrome**, with a specific built-in color **theme**, and he is
+**signed in to a Google account** (a Google AI feature called Gemini is
+switched on in his browser, which only happens when you are logged in). None of
+these is unusual on its own. Together they form a distinctive profile, and the
+Google sign-in is the strongest lead: while you are signed in, Chrome quietly
+**syncs** your settings, browsing history, and saved logins up to that Google
+account, so Google holds records that tie all of it back to one person.
 
 ## What the capture shows
 

@@ -12,14 +12,39 @@ on-chain table below), a "BUY NOW AND GET 50% FREE" marquee, and a paid
 
 ## In plain terms
 
-Every website, even a scam, runs on real computers rented from real
-companies, and it uses real services to find victims. This section maps
-CyberLeek's plumbing end to end: the server the website runs on and who
-rents it, the separate machine that serves the leak videos, the backup
-copies kept on a decentralized network, and the ads that drive traffic in.
-The takeaway for a non-technical reader: the operator tried to stay hidden,
-but every layer is run by an identifiable company that keeps billing and
-account records. He hid from the public, not from a subpoena.
+A website is not a magic cloud thing. It is a set of files sitting on a
+computer that stays switched on and connected to the internet around the
+clock. That always-on computer is called a **server**. Almost nobody buys a
+whole physical machine to do this; they rent one. The common, cheap way to
+rent is a **VPS (Virtual Private Server)**: one powerful physical computer in
+a data center is divided into many independent virtual ones, and you rent a
+slice by the month and control it remotely over the internet. Think of
+renting one apartment in a large building instead of buying the whole
+building. CyberLeek's website runs on rented servers at a hosting company
+called **InterServer**, in Los Angeles.
+
+Every server has an **IP address**, a string of numbers like `162.35.101.236`
+that is its location on the internet, the way a street address locates a
+house. People do not type numbers, so we use names like `cyber-leek.com`
+instead. The service that translates the name into the number is **DNS (the
+Domain Name System)**, the internet's phone book.
+
+Here is why any of this matters. A careful operator hides his server's real
+IP address behind a shield service (a well-known one is **Cloudflare**), which
+sits in front of the real machine like a receptionist, so outsiders only ever
+see the shield and never the computer behind it. CyberLeek uses Cloudflare for
+the phone-book (DNS) part but never switched the shield on, so the real server
+address is exposed. That is a serious mistake: it points anyone, law
+enforcement included, straight at the actual rented computer. The leak videos
+are served from a second rented server and also copied onto **Arweave** (a
+decentralized "permanent" storage network that is hard to take down), and the
+whole operation is advertised through **Google Ads**.
+
+The bottom line for a non-technical reader: the operator tried hard to stay
+hidden, but every layer here, the servers, the domain name, the ad account,
+the video storage, is rented or bought from a real company that keeps a
+billing record tied to whoever paid for it. He hid from the public, not from a
+subpoena.
 
 ## Infrastructure indicators
 

@@ -7,12 +7,17 @@ identification.
 
 ## In plain terms
 
-The way a person writes is a fingerprint. The operator repeats the same
-small habits and mistakes across his website and his posts: certain spellings,
-spacing, punctuation, and word choices. This section simply collects those
-quirks, with a direct quote for each. They do not name him, but they tie all
-of his accounts to a single author and hint at the language he grew up
-speaking.
+The way a person writes is almost as individual as a fingerprint, and the
+practice of studying it to identify or link authors even has a name:
+**stylometry**. People repeat the same small, mostly unconscious habits,
+particular spellings, spacing, punctuation, and word choices, without ever
+noticing they do it. This section simply collects the operator's quirks from
+across his website and his posts, with a direct quote for every one. Two things
+fall out. First, the same quirks appear on the website and on Telegram, which
+ties those separate accounts to a **single author**. Second, some of the habits
+are the traces of a person's native language showing through their English,
+which hints at the language he grew up speaking. It is a set of observations,
+not a name.
 
 ## Sources
 

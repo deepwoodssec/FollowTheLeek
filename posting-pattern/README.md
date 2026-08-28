@@ -9,12 +9,19 @@ measure; the pattern they form is the finding.
 
 ## In plain terms
 
-People are creatures of habit, and a scammer is no exception. By recording
-exactly when the operator posts and acts online, all converted to one neutral
-world clock (UTC), a daily rhythm appears: the hours he is active and the
-hours he goes quiet. That rhythm is a behavioral fingerprint. It does not name
-him, but it is consistent, it links his different accounts to one routine, and
-it hints at where in the world he is.
+People run on habits, and scammers are no exception. If you write down the
+exact time of everything the operator does in public, both his Telegram posts
+and his own blockchain transactions, a daily rhythm appears: the hours he is
+awake and working, and the hours he goes dark. One catch has to be handled
+first: apps show each viewer the time in their own local zone, so to compare
+honestly we convert every timestamp to one shared world clock called **UTC
+(Coordinated Universal Time)**, the global reference that does not shift with
+location or daylight saving. Lined up in UTC, his active window and his quiet
+window are consistent from day to day. That repeatable rhythm is what
+investigators call a **pattern of life**. It does not name him, but it links
+his separate accounts to one routine and, because morning and night fall at
+different UTC hours around the world, it hints at what part of the globe he
+sits in.
 
 ## Sources
 

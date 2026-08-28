@@ -1,9 +1,23 @@
 # Metadata: profile picture provenance
 
-The operator's profile picture is not digital art someone drew. It is
-AI-generated, and it was published with its content credentials left
-intact, so the image itself records exactly what tool made it and how.
-This section reads those credentials back out and verifies them.
+## In plain terms
+
+The profile picture is not a photo, and not something an artist drew by hand.
+It was produced by an **AI image generator** (software that invents a picture
+from a text prompt). The important part is that the file was saved with its
+**content credentials** still attached. Content credentials (an industry
+standard called **C2PA**) are a tamper-evident label baked into the image that
+records what created it and when, a little like the hidden data a camera writes
+into a photo, but digitally signed so it is hard to fake. Reading that label
+back out is how we can state the avatar is AI-made instead of guessing from how
+it looks.
+
+The image is also stored on **IPFS**, a decentralized file network where a
+file's address is a **hash**: a unique fingerprint calculated from the file's
+exact bytes. Because the address is derived from the contents, anyone can
+re-calculate it from the downloaded file and prove they are looking at the very
+same image the operator published, with nothing swapped or altered along the
+way. This section walks through both checks.
 
 ![Operator profile picture](pfp.jpg)
 
