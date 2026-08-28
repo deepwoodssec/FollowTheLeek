@@ -41,7 +41,7 @@ money trace in [`crypto/`](../crypto/) references `2hRg6...`.
 | Indicator | Value | Notes |
 | --- | --- | --- |
 | Token mint - CYBERLEEKS | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | Token-2022; "Cyber Leeks Real" / CYBERLEEKS; 1,000,000,000 supply; 6 decimals; authority renounced (verified on Solscan) |
-| Token mint - site CA | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | the contract address displayed on cyber-leek.com (see homepage screenshot); supply/decimals verifiable on Solscan |
+| Token mint - site CA | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | classic SPL Token; ~729.95M supply; 9 decimals; the CA displayed on cyber-leek.com; verified on Solscan (re-pull 2026-08-28) |
 | Trading venues referenced | pump.fun, Raydium, Jupiter, DexScreener | linked from the site |
 | Token deployer wallet | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` | fee payer on the CYBERLEEKS mint-creation tx (2026-08-25T06:33:48Z) |
 | Deployer funding path | Relay solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` | bridge-in that seeded the deployer; shared infra, not the operator |
