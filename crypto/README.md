@@ -13,7 +13,7 @@ points buyers at.
 
 | Token | Address | What it is |
 | --- | --- | --- |
-| **CYBERLEEK (live)** | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | classic SPL; ~729.95M supply; 9 decimals; the CA displayed on cyber-leek.com. Trades on Raydium: ~$681K liquidity, ~$7.5M volume, 47,800+ transactions, 61,000+ holders, ~$3.1M market cap (Solscan / DexScreener, 2026-08-28). |
+| **CYBERLEEK (live)** | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | classic SPL; \~729.95M supply; 9 decimals; the CA displayed on cyber-leek.com. Trades on Raydium: \~$681K liquidity, \~$7.5M volume, 47,800+ transactions, 61,000+ holders, \~$3.1M market cap (Solscan / DexScreener, 2026-08-28). |
 | CYBERLEEKS (earlier run) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | Token-2022; 1B supply; 6 decimals; deployer `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` (created 2026-08-25T06:33:48Z), itself funded via the Relay bridge. Low activity. |
 
 The advertised "$17M market cap" on the site is nominal (supply x price).
@@ -26,9 +26,9 @@ allocation) and sells it into the pool that real buyers are filling. The
 on-chain signature is unmistakable on the token's top traders: **wallets
 that sold a large amount having bought nothing.**
 
-- `7sgG1Dsk84fgia5ewkhd8RfFymk64ETBVxs72Pzc2zDW` - **sold ~$174K** (10.7M
+- `7sgG1Dsk84fgia5ewkhd8RfFymk64ETBVxs72Pzc2zDW` - **sold \~$174K** (10.7M
   tokens over 62 sells), **bought $0**.
-- `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` - sold ~$93.6K, bought $0.
+- `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` - sold \~$93.6K, bought $0.
 - A cluster of further "sold, never bought" wallets appears in the token's
   top-trader list and as connected groups on a holder bubble map,
   consistent with a coordinated bundle rather than organic sellers.
@@ -46,20 +46,20 @@ on Solscan:
 dump wallets                 relay                 Unit bridge          Hyperliquid
 7sg      3,008 SOL ┐
 Hc8yCCo4   951 SOL ┼──► 5kSRXuv... ──3,282 SOL──► 9SLPTL41... ─────────► operator's
-7dU2nE     481 SOL ┘    (holds ~$0.48,            ("Hyperunit:            HL account
+7dU2nE     481 SOL ┘    (holds \~$0.48,            ("Hyperunit:            HL account
                          pure pass-through)         Hot Wallet")
 ```
 
 - **Relay:** `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` - 16
-  transactions total, holds ~$0.48. Every amount in is forwarded out
+  transactions total, holds \~$0.48. Every amount in is forwarded out
   near-instantly (e.g. in 289.68 -> out 289.67). A pass-through layering
   wallet, not a store of value.
 - **Bridge:** `9SLPTL41SPsYkgdsMzdfJsxymEANKr5bYoBsQzJyKpKS` - Solscan
-  labels it **"Hyperunit: Hot Wallet"**; it holds ~348,043 SOL (~$36.5M)
+  labels it **"Hyperunit: Hot Wallet"**; it holds \~348,043 SOL (\~$36.5M)
   across 1,000+ transactions. This is the **Unit bridge's shared custody
   hot wallet**, the deposit endpoint that moves native SOL onto Hyperliquid.
 
-**~3,282 SOL (~$344K)** moved through this single path. The relay was fed
+**\~3,282 SOL (\~$344K)** moved through this single path. The relay was fed
 by the `7sg` dump wallet, a second wallet (`Hc8yCCo4...`), and the paymaster
 that funded the dump wallet (`7dU2nE...`).
 
@@ -68,12 +68,12 @@ that funded the dump wallet (`7dU2nE...`).
 Be precise about the boundary, because it is where an outside trace has to
 stop honestly:
 
-- **`9SLPTL41` is not the operator.** Its ~$36.5M balance is the Unit
+- **`9SLPTL41` is not the operator.** Its \~$36.5M balance is the Unit
   bridge's pooled custody for all its users, exactly like a shared exchange
   hot wallet. We do not attribute it to anyone.
 - **The deposit credits the operator's Hyperliquid account.** Unit records
   which account a given Solana deposit is bridged to, and Hyperliquid
-  records what that account then does. Those two records tie the ~$344K to
+  records what that account then does. Those two records tie the \~$344K to
   a specific Hyperliquid account.
 - **Subpoena targets:** the **Unit bridge** (deposit-to-account mapping) and
   **Hyperliquid** (account activity and any onward withdrawal to a fiat
@@ -116,7 +116,7 @@ token's Raydium market on DexScreener / Solscan.
 
 - **Verified on-chain / on public explorers:** the two tokens and their
   parameters; the dump-wallet signature (large sells, zero buys); the
-  relay; the bridge destination and its label; and the ~3,282 SOL amount.
+  relay; the bridge destination and its label; and the \~3,282 SOL amount.
 - **Established but off the public Solana ledger:** the identity of the
   operator's Hyperliquid account and any onward cash-out to fiat. These
   live in Unit's and Hyperliquid's records, which is exactly why they are
