@@ -11,7 +11,7 @@ The scam token, CYBERLEEKS, is minted at:
 
     2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump
 
-A Token-2022 mint named "Cyber Leeks Real" — 1,000,000,000 supply, 6
+A Token-2022 mint named "Cyber Leeks Real" - 1,000,000,000 supply, 6
 decimals, launched via pump.fun. It is the top of the funnel: the branded
 GTA-leak lures push people to buy it.
 
@@ -28,8 +28,8 @@ creation transaction:
     HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB
 
 This is the operator's on-ramp wallet. It was itself **funded through the
-Relay cross-chain bridge** — Relay solver
-`F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` sent it its initial SOL —
+Relay cross-chain bridge** - Relay solver
+`F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` sent it its initial SOL -
 which means the operator moved value onto Solana through a bridge to seed
 the launch. (The Relay solver is shared infrastructure used by many
 people; it is **not** the operator, and its balance is not the operator's
@@ -47,7 +47,7 @@ The "$17M market cap" advertised on the site is **nominal** (token supply
 × price), not extracted money. The on-chain SOL actually moving through
 the operator's own wallets is small.
 
-## 4. Where the trail goes cold — stated honestly
+## 4. Where the trail goes cold - stated honestly
 
 We do **not** have a verified on-chain path for the proceeds leaving
 Solana, and we do not assert one.
@@ -60,8 +60,8 @@ guess, and those records are not public. So this section stops at the edge
 of what the chain proves.
 
 That edge is the honest limit of an outside trace. The parties that could
-close it — the bridge/swap service, and whatever exchange the operator
-ultimately cashes to — are exactly the ones holding the private records
+close it - the bridge/swap service, and whatever exchange the operator
+ultimately cashes to - are exactly the ones holding the private records
 the public ledger does not. Those are the subpoena targets.
 
 ## Flow diagram
