@@ -5,11 +5,5 @@
 [2026-08-27T19:38:28Z] All data below is from PUBLIC blockchain sources at the time shown.
 [2026-08-27T19:38:28Z] SOLANA 2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump : fetching up to 1000 signatures
 [2026-08-27T19:38:29Z] SOLANA 2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump : pulling full tx detail for 58 recent signatures
-[2026-08-27T19:39:50Z] ETHEREUM 0xbb22f5c5e6e3086c248d80929b03b157a90381a8 : nonce + balance + transactions + token transfers
-[2026-08-27T19:39:51Z]   addresses/0xbb22f5c5e6e3086c248d80929b03b157a90381a8/transactions : 1 page(s) saved
-[2026-08-27T19:39:51Z]   addresses/0xbb22f5c5e6e3086c248d80929b03b157a90381a8/token-transfers : 1 page(s) saved
-[2026-08-27T19:39:51Z] ETHEREUM 0x8bEe4D7bDaa37fb57aAC98cA9B50fF52117123A0 : nonce + balance + transactions + token transfers
-[2026-08-27T19:39:52Z]   addresses/0x8bEe4D7bDaa37fb57aAC98cA9B50fF52117123A0/transactions : 1 page(s) saved
-[2026-08-27T19:39:53Z]   addresses/0x8bEe4D7bDaa37fb57aAC98cA9B50fF52117123A0/token-transfers : 1 page(s) saved
 [2026-08-27T19:39:53Z] Hashing all evidence files (SHA256) for integrity manifest
 [2026-08-27T19:39:53Z] === DONE. Package: evidence_20260827_193828Z/ ===

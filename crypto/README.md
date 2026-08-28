@@ -103,3 +103,17 @@ Token supply and largest accounts:
 - **Not established:** the path of the proceeds off Solana, and any
   specific cash-out wallet on another chain. A cross-chain swap breaks the
   public link, and this repo does not claim to follow the money across it.
+
+## Evidence files (hashed)
+
+Raw Solana pulls and a SHA256 manifest are in [`evidence/`](evidence/):
+
+- `summary_sol_*.txt` - token-mint signatures with UTC block times
+- `raw/sol_*.json` - the unedited RPC responses behind them
+- `SHA256SUMS.txt` - SHA256 of every file (chain of custody)
+
+Manifest SHA256: `e172d5a14ee45cb0c6b68f757f3915b51fe3baedf8c5e3f2ae421e39a8b89322`
+
+Verify:
+
+    cd evidence && sha256sum -c SHA256SUMS.txt
