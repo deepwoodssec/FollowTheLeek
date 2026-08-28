@@ -20,11 +20,22 @@ identification.
 **"Last" where standard English uses "latest":**
 > "Access GTA 6 LAST BUILD"
 
-**Space before question marks:**
+**Space before question and exclamation marks:**
 > "REALLY ? YOU WILL MISS IT ?"
+> "the official Rocstar Gta6 BUILD ! ALL FILES !" (cyber-leek.com/contact, archived: https://archive.ph/MXR1L)
+
+(A space before `!` and `?` is standard French/European typography; recorded as a punctuation habit, not a language claim.)
 
 **Missing apostrophe:**
 > "DONT MISS THE SECOND RUN"
+
+**Dropped final "s" in "access":**
+> "GTA6 TRIAL PLAY ACCES" (cyber-leek.com/contact, archived: https://archive.ph/MXR1L)
+
+(`acces` matches the French `accès`; recorded as a spelling fact, not a language claim.)
+
+**Dropped "k" in "Rockstar":**
+> "the official Rocstar Gta6 BUILD"
 
 **Crypto / market vernacular (fluent):**
 > "50MC GOAL IS SOOOO EASY FOR US ... All you guys will be RICH!"
@@ -111,4 +122,8 @@ and consistent non-native grammar (dropped articles, "gave" for "give",
 broken passive). Combined with the dotless-`ı` hashtag signature, this is
 a consistent authorial style across channels. These are observations
 about the writing; they do not identify a location, a native language,
-or whether one or more people produced the copy.
+or whether one or more people produced the copy. Several markers (the
+post-fixed currency symbol, the space before punctuation, `acces` for
+`access`) align with French/European writing conventions, while the dotless
+`ı` is a Turkish/Azerbaijani character; these associations are noted as
+observations and are not used here to claim a native language or origin.
