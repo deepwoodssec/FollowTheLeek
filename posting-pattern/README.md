@@ -22,7 +22,7 @@ session count are shown below. See [`analyze_times.py`](analyze_times.py).
 
 ## Data
 
-22 Telegram posts + 23 on-chain deployer actions. All timestamps UTC.
+23 Telegram posts + 23 on-chain deployer actions. All timestamps UTC.
 
 ![Operator activity by hour, UTC - Telegram and on-chain deployer activity](activity-by-hour.png)
 
@@ -30,7 +30,7 @@ session count are shown below. See [`analyze_times.py`](analyze_times.py).
 hour          TG (raw/sessions)   on-chain (raw/sessions)
 03:00              1 / 1                1 / 1
 05:00              1 / 1                4 / 1
-06:00              0 / 0                9 / 2
+06:00              1 / 1                9 / 2
 07:00              3 / 1                3 / 3
 08:00              1 / 1                0 / 0
 09:00              2 / 2                0 / 0
@@ -42,7 +42,7 @@ hour          TG (raw/sessions)   on-chain (raw/sessions)
 16:00              1 / 1                0 / 0
 17:00-02:00        0 / 0                0 / 0   (both zero)
 
-raw events: TG 22, on-chain 23   |   sessions: TG 13, on-chain 8
+raw events: TG 23, on-chain 23   |   sessions: TG 14, on-chain 8
 ```
 
 ## Finding
@@ -85,5 +85,5 @@ toward one, but a single greeting does not establish it. The pattern does
 **not** indicate whether one person or several are behind the operation. A quiet
 window is not proof of sleep - scheduled posting, automation, shift work,
 or multiple operators in different places would all produce the same
-shape. Both samples also cluster around 2026-08-25 to 08-26, a short
+shape. The samples span 2026-08-25 through 08-28, still a short
 window.

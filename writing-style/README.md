@@ -107,6 +107,7 @@ The same tense substitution appears twice.
 ### Punctuation habit: two-dot ellipsis
 
 > "They want us to stop..   They thought I'd take their money. Fools..   They're scared of us.."
+> "Good morning guys.. More leaks coming today.." (t.me/cyberleeksreal/33, archived: https://archive.ph/zkVZh)
 
 Consistent `..` (two dots) rather than `...`.
 
