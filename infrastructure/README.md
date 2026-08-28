@@ -105,7 +105,7 @@ run by a real company that keeps billing and account records.
 3. **Origin host.** InterServer (US) runs that server and holds the hosting account and payment method behind it.
 4. **Content distribution.** The leak videos are served from a second InterServer host (`media.cyber-leek.com`, `69.10.50.177`) that refuses direct requests, and are mirrored on Arweave (`cyberleek.ar.io`, `turbo-gateway` fallback) via ArDrive / Turbo - the Arweave uploads are paid for, with the paying wallet and receipt on record.
 5. **The token.** Launched on pump.fun (Solana), traded on Raydium / Jupiter, tracked on DexScreener.
-6. **The money.** The token launched on pump.fun; victim SOL flows into the bonding curve. The proceeds' path off Solana is not established from public data - a cross-chain swap breaks the on-chain link, and this repo does not name a cash-out wallet. See [`crypto/`](../crypto/).
+6. **The money.** The operator dumps free token allocation for SOL (wallets that sold large amounts having bought nothing), consolidates it through a relay wallet, and bridges it into Hyperliquid via the Unit ("Hyperunit") bridge. ~$344K is traced this way. The Solana trail ends at the shared bridge hot wallet; the deposit credits the operator's Hyperliquid account, which Unit and Hyperliquid record. See [`crypto/`](../crypto/).
 
 **Why it's hard to track from the outside:**
 
@@ -121,7 +121,7 @@ Every layer is operated by an identifiable company that keeps records tying it t
 - **InterServer** (origin host, `162.35.101.236`, AS26666) - the server account and payment method
 - **ArDrive / Turbo** - the wallet and receipt that paid for the Arweave uploads
 - **pump.fun** and the **exchanges** the money touched
-- Any **cross-chain swap / bridge service** used to move proceeds off Solana, and any **exchange** the operator ultimately cashes to - these hold the KYC records the public ledger does not
+- The **Unit bridge** (which maps the Solana deposit to a Hyperliquid account) and **Hyperliquid** (account activity and any onward withdrawal to a fiat exchange) - the records that tie the bridged proceeds to a person
 
 None of these are reachable by a researcher from the outside. All of them
 are reachable by law enforcement with a records request. The public

@@ -1,119 +1,123 @@
-# Crypto: what the chain proves, and where it stops
+# Crypto: tracing the money
 
-Passive on-chain analysis of the CyberLeek scam token on Solana. Every
-address here is verifiable on a block explorer. This section is
-deliberate about where the trail ends: when the money leaves Solana the
-public link breaks, and we say so plainly instead of guessing past it.
+Passive on-chain analysis of the CyberLeek scam tokens on Solana, traced
+from the token dump to where the proceeds leave Solana. Every address and
+amount here is verifiable on a block explorer. Where the trail crosses a
+bridge off Solana, this section says so and names the record-holder rather
+than guessing past it.
 
-## 1. The token (Solana)
+## The tokens
 
-The scam token, CYBERLEEKS, is minted at:
+Two CyberLeek tokens exist. The one with real money is the one the site
+points buyers at.
 
-    2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump
+| Token | Address | What it is |
+| --- | --- | --- |
+| **CYBERLEEK (live)** | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | classic SPL; ~729.95M supply; 9 decimals; the CA displayed on cyber-leek.com. Trades on Raydium: ~$681K liquidity, ~$7.5M volume, 47,800+ transactions, 61,000+ holders, ~$3.1M market cap (Solscan / DexScreener, 2026-08-28). |
+| CYBERLEEKS (earlier run) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | Token-2022; 1B supply; 6 decimals; deployer `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` (created 2026-08-25T06:33:48Z), itself funded via the Relay bridge. Low activity. |
 
-A Token-2022 mint named "Cyber Leeks Real" - 1,000,000,000 supply, 6
-decimals, launched via pump.fun. It is the top of the funnel: the branded
-GTA-leak lures push people to buy it.
+The advertised "$17M market cap" on the site is nominal (supply x price).
+The real, tradeable money is the Raydium liquidity behind the live token.
 
-![CYBERLEEKS token mint on Solscan](../assets/crypto-token-solscan.png)
+## The mechanism: free allocation, dumped
 
-*The CYBERLEEKS mint on Solscan: Token-2022, 1B supply, 6 decimals,
-Creator `HhFaWE...5P2GSB` (the deployer below), launched via pump.fun.*
+The operator holds token supply at cost basis zero (creator / team
+allocation) and sells it into the pool that real buyers are filling. The
+on-chain signature is unmistakable on the token's top traders: **wallets
+that sold a large amount having bought nothing.**
 
-## 2. The deployer
+- `7sgG1Dsk84fgia5ewkhd8RfFymk64ETBVxs72Pzc2zDW` - **sold ~$174K** (10.7M
+  tokens over 62 sells), **bought $0**.
+- `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` - sold ~$93.6K, bought $0.
+- A cluster of further "sold, never bought" wallets appears in the token's
+  top-trader list and as connected groups on a holder bubble map,
+  consistent with a coordinated bundle rather than organic sellers.
 
-The mint was created **2026-08-25T06:33:48Z** by the fee payer on the
-creation transaction:
+A wallet cannot sell 10.7M tokens it never bought unless it was handed them
+at creation. That is the dump.
 
-    HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB
+## The cash-out, traced on-chain to the bridge
 
-This is the operator's on-ramp wallet. It was itself **funded through the
-Relay cross-chain bridge** - Relay solver
-`F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` sent it its initial SOL -
-which means the operator moved value onto Solana through a bridge to seed
-the launch. (The Relay solver is shared infrastructure used by many
-people; it is **not** the operator, and its balance is not the operator's
-money. It is noted only as the funding path.)
+The dump proceeds converge through a relay and cross into Hyperliquid via
+the Unit ("Hyperunit") bridge. Every hop is a plain SOL transfer, labelled
+on Solscan:
 
-## 3. Where the money actually sits
-
-Victim SOL flows into the pump.fun **bonding curve**, not into the
-deployer wallet. The deployer wallet itself moved well under 1 SOL total
-and currently holds dust; its one non-trivial outflow, 0.361 SOL, landed
-in `GZ9Po2CCtjc99vvRSeAQ2zzBDYA8HqYxYTDZdHhHURLc` (which holds ~0.74 SOL).
-The deployer is the **creator** wallet, not a revenue vault.
-
-The "$17M market cap" advertised on the site is **nominal** (token supply
-× price), not extracted money. The on-chain SOL actually moving through
-the operator's own wallets is small.
-
-## 4. Where the trail goes cold - stated honestly
-
-We do **not** have a verified on-chain path for the proceeds leaving
-Solana, and we do not assert one.
-
-A cross-chain swap or bridge breaks the public on-chain link **by
-design**: value goes into a service on one chain and unrelated value comes
-out on another, with no ledger connection between them. Any Ethereum-side
-"cash-out wallet" named without the swap service's own records would be a
-guess, and those records are not public. So this section stops at the edge
-of what the chain proves.
-
-That edge is the honest limit of an outside trace. The parties that could
-close it - the bridge/swap service, and whatever exchange the operator
-ultimately cashes to - are exactly the ones holding the private records
-the public ledger does not. Those are the subpoena targets.
-
-## Flow diagram
-
-```mermaid
-flowchart TD
-    A["Victims"] -->|buy $CYBERLEEK| B["pump.fun bonding curve<br/>2hRg6E...Kpump"]
-    C["Relay bridge<br/>(funds in)"] -->|seed SOL| D["deployer HhFaWEV...<br/>creator wallet"]
-    D -->|0.361 SOL| E["GZ9Po2...<br/>~0.74 SOL"]
-    B -.->|proceeds leave Solana via a<br/>cross-chain swap: link breaks| F["trail goes cold<br/>no verified cash-out wallet"]
 ```
+dump wallets                 relay                 Unit bridge          Hyperliquid
+7sg      3,008 SOL ┐
+Hc8yCCo4   951 SOL ┼──► 5kSRXuv... ──3,282 SOL──► 9SLPTL41... ─────────► operator's
+7dU2nE     481 SOL ┘    (holds ~$0.48,            ("Hyperunit:            HL account
+                         pure pass-through)         Hot Wallet")
+```
+
+- **Relay:** `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` - 16
+  transactions total, holds ~$0.48. Every amount in is forwarded out
+  near-instantly (e.g. in 289.68 -> out 289.67). A pass-through layering
+  wallet, not a store of value.
+- **Bridge:** `9SLPTL41SPsYkgdsMzdfJsxymEANKr5bYoBsQzJyKpKS` - Solscan
+  labels it **"Hyperunit: Hot Wallet"**; it holds ~348,043 SOL (~$36.5M)
+  across 1,000+ transactions. This is the **Unit bridge's shared custody
+  hot wallet**, the deposit endpoint that moves native SOL onto Hyperliquid.
+
+**~3,282 SOL (~$344K)** moved through this single path. The relay was fed
+by the `7sg` dump wallet, a second wallet (`Hc8yCCo4...`), and the paymaster
+that funded the dump wallet (`7dU2nE...`).
+
+## Where the Solana trail ends, and the real subpoena targets
+
+Be precise about the boundary, because it is where an outside trace has to
+stop honestly:
+
+- **`9SLPTL41` is not the operator.** Its ~$36.5M balance is the Unit
+  bridge's pooled custody for all its users, exactly like a shared exchange
+  hot wallet. We do not attribute it to anyone.
+- **The deposit credits the operator's Hyperliquid account.** Unit records
+  which account a given Solana deposit is bridged to, and Hyperliquid
+  records what that account then does. Those two records tie the ~$344K to
+  a specific Hyperliquid account.
+- **Subpoena targets:** the **Unit bridge** (deposit-to-account mapping) and
+  **Hyperliquid** (account activity and any onward withdrawal to a fiat
+  exchange). Both are concrete and both are off the public Solana ledger.
+
+The money did not vanish and it did not go to a fabricated wallet. It
+bridged into Hyperliquid, and the record of whose account it is sits with
+Unit and Hyperliquid.
 
 ## Indicators
 
 | Type | Value |
-|------|-------|
-| Solana token mint (CYBERLEEKS) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` |
-| Token deployer wallet | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` |
-| Deployer funding path (bridge-in) | Relay solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` (shared infra, not the operator) |
-| Deployer's largest outflow target | `GZ9Po2CCtjc99vvRSeAQ2zzBDYA8HqYxYTDZdHhHURLc` |
+| --- | --- |
+| Live token (CYBERLEEK, SPL) | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` |
+| Earlier token (Token-2022) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` |
+| Token-2022 deployer | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` |
+| Dump wallet (sold big, bought $0) | `7sgG1Dsk84fgia5ewkhd8RfFymk64ETBVxs72Pzc2zDW` |
+| Dump wallet (sold big, bought $0) | `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` |
+| Relay / layering wallet | `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` |
+| Unit bridge hot wallet (shared infra) | `9SLPTL41SPsYkgdsMzdfJsxymEANKr5bYoBsQzJyKpKS` |
+| Bridge / destination venue | Unit ("Hyperunit") -> Hyperliquid |
 
 ## Reproduce it
 
-Deployer signatures and flows:
+Token facts (supply, decimals, program owner):
 
     curl -s https://api.mainnet-beta.solana.com -X POST -H 'content-type: application/json' \
-      -d '{"jsonrpc":"2.0","id":1,"method":"getSignaturesForAddress","params":["HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB",{"limit":50}]}'
+      -d '{"jsonrpc":"2.0","id":1,"method":"getTokenSupply","params":["ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg"]}'
 
-Token supply and largest accounts:
+Follow a dump wallet's SOL to the relay and the bridge (parse `transfer`
+instructions from each `getTransaction`):
 
     curl -s https://api.mainnet-beta.solana.com -X POST -H 'content-type: application/json' \
-      -d '{"jsonrpc":"2.0","id":1,"method":"getTokenLargestAccounts","params":["2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump"]}'
+      -d '{"jsonrpc":"2.0","id":1,"method":"getSignaturesForAddress","params":["5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA",{"limit":30}]}'
+
+Top traders (the "sold big, bought nothing" signature) are read from the
+token's Raydium market on DexScreener / Solscan.
 
 ## Confidence and limits
 
-- **Proven on-chain:** the token, the deployer identity and creation time,
-  the deployer's funding via the Relay bridge, and the deployer's SOL
-  movements. All reproducible from the calls above.
-- **Not established:** the path of the proceeds off Solana, and any
-  specific cash-out wallet on another chain. A cross-chain swap breaks the
-  public link, and this repo does not claim to follow the money across it.
-
-## Evidence files (hashed)
-
-Raw Solana pulls and a SHA256 manifest are in [`evidence/`](evidence/):
-
-- `summary_sol_*.txt` - token-mint signatures with UTC block times
-- `raw/sol_*.json` - the unedited RPC responses behind them
-- `SHA256SUMS.txt` - SHA256 of every file (chain of custody)
-
-Manifest SHA256: `e172d5a14ee45cb0c6b68f757f3915b51fe3baedf8c5e3f2ae421e39a8b89322`
-
-Verify:
-
-    cd evidence && sha256sum -c SHA256SUMS.txt
+- **Verified on-chain / on public explorers:** the two tokens and their
+  parameters; the dump-wallet signature (large sells, zero buys); the
+  relay; the bridge destination and its label; and the ~3,282 SOL amount.
+- **Established but off the public Solana ledger:** the identity of the
+  operator's Hyperliquid account and any onward cash-out to fiat. These
+  live in Unit's and Hyperliquid's records, which is exactly why they are
+  named as subpoena targets rather than asserted here.
