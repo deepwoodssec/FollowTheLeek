@@ -5,6 +5,22 @@ from the token dump to where the proceeds leave Solana. Every address and
 amount here is verifiable on a block explorer. Where the trail crosses a
 bridge off Solana, this section says so and names the record-holder.
 
+## How the rug pull works, in plain terms
+
+Before the addresses and amounts, the mechanism in five steps:
+
+1. The operator creates the token and keeps a large share for himself at zero cost (he minted it).
+2. He drives real buyers in with hype: the GTA VI leak brand, a "50% free" offer, a headline market cap.
+3. Buyers pay real SOL into the token's Raydium liquidity pool to get tokens. That pool fills with their money.
+4. The operator sells his own free tokens into that same pool, which pulls the buyers' SOL back out into his wallets.
+5. He put in nothing and walks away with real SOL. The buyers are left holding a token that craters as he sells.
+
+That is the rug pull. The on-chain tell is a wallet that **sold a large amount
+having bought nothing**: it could only have been handed those tokens at
+creation. The rest of this section identifies those dump wallets and traces
+where the SOL went after he pulled it out.
+
+
 ## The tokens
 
 Two CyberLeek tokens exist. The one with real money is the one the site
