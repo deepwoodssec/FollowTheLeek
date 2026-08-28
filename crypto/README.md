@@ -29,10 +29,17 @@ points buyers at.
 | Token | Address | What it is |
 | --- | --- | --- |
 | **CYBERLEEK (live)** | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | classic SPL; \~729.95M supply; 9 decimals; the CA displayed on cyber-leek.com. Trades on Raydium: \~$681K liquidity, \~$7.5M volume, 47,800+ transactions, 61,000+ holders, \~$3.1M market cap (Solscan / DexScreener, 2026-08-28). |
-| CYBERLEEKS (earlier run) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | Token-2022; 1B supply; 6 decimals; deployer `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` (created 2026-08-25T06:33:48Z), itself funded via the Relay bridge. Low activity. |
+| CYBERLEEKS (earlier run) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | Token-2022 (program verified on-chain), launched on pump.fun (the `pump` suffix and its pump.fun listing); 1B supply; 6 decimals; deployer `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` (created 2026-08-25T06:33:48Z), itself funded via the Relay bridge. Stalled on the bonding curve; low activity. |
 
 The advertised "$17M market cap" on the site is nominal (supply x price).
 The real, tradeable money is the Raydium liquidity behind the live token.
+
+The two tokens mark a progression. The earlier one was launched on **pump.fun**,
+a Solana memecoin launchpad where a token starts on an automated bonding curve
+and only migrates to a full exchange if it gains enough traction. It stalled
+there. The operator then relaunched as the classic-SPL live token above and
+advertised it as the "second run", and that is the one that caught real money on
+Raydium (pump.fun/coin/2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump).
 
 ![Live CYBERLEEK/SOL market on Raydium (DexScreener)](../assets/crypto-token-dexscreener.png)
 
