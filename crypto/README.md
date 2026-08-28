@@ -34,6 +34,10 @@ points buyers at.
 The advertised "$17M market cap" on the site is nominal (supply x price).
 The real, tradeable money is the Raydium liquidity behind the live token.
 
+![Live CYBERLEEK/SOL market on Raydium (DexScreener)](../assets/crypto-token-dexscreener.png)
+
+*The live CYBERLEEK/SOL market on Raydium (DexScreener, 2026-08-28 around 20:00 UTC, later than the table above). A real, high-volume market and a token selling off: market cap sliding from about $7.6M at peak to about $1.9M (24h -53.78%), with sells (13,202) outnumbering buys (11,478) and sellers (5,308) outnumbering buyers (2,777). Liquidity about $527K, 24h volume about $3.2M, 58,940 holders. This is the pool the dump wallets sold into.*
+
 ## The mechanism: free allocation, dumped
 
 The operator holds token supply at cost basis zero (creator / team

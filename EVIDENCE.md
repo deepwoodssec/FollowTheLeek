@@ -25,6 +25,7 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 | CyberLeek homepage | `assets/cyber-leek-home.png` | `4a83ca85bc459fabcc8bbd6428100e4bb8e0dc273e652b8521a9301274a5a83c` | cyber-leek.com, archive.ph/cpbHi |
 | X account @cyberleeksreal | `assets/x-account.png` | `43848aacf98e125a11d968fcbb071e607efdcaaebe3683ec858c95fde2aff818` | x.com/cyberleeksreal |
 | CYBERLEEKS token mint (Solscan) | `assets/crypto-token-solscan.png` | `e0951a06bde449cd0c5ed2a547ca93a5af734014e0a56bbd5185146d45f28280` | solscan.io/token/2hRg6...bKpump |
+| CYBERLEEK live market (DexScreener) | `assets/crypto-token-dexscreener.png` | `94982d580ca7cd44c4b332a218a092cfe35031a6fe8889bd2c9869bb10546466` | dexscreener.com/solana/ApZux..., 2026-08-28 |
 | Poll: prologue with Lucia | `assets/crypto-poll-lucia.png` | `0c46f0012d2470750fb01104c2c3aee355e5b7d5ca87878a14c93c85fd26ab11` | cyber-leek.com poll, archive.ph/A4zKG |
 | Poll: next GTA 6 video | `assets/crypto-poll-nextvideo.png` | `0f5bbf4d35ecc85570e4c59de44fcdea61d13675ebbf4125471640b78042a005` | cyber-leek.com poll (full homepage capture), archive.ph/cpbHi |
 | Telegram "good morning" post /33 | `posting-pattern/tg-good-morning.png` | `0fca459dbe5b9a4e319b4c8312d2caa9befab3b9470b78071dd7cc60f57a896b` | t.me/cyberleeksreal/33, archive.ph/zkVZh |
