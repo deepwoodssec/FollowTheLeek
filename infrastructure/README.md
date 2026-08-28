@@ -43,9 +43,8 @@ money trace in [`crypto/`](../crypto/) references `2hRg6...`.
 | Token mint - CYBERLEEKS | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | Token-2022; "Cyber Leeks Real" / CYBERLEEKS; 6 decimals; mint+freeze authority renounced; metadata `ipfs://bafkreicdk2et...`; last activity 2026-08-26 |
 | Token mint - site CA | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | classic SPL Token; 9 decimals; ~730M supply; authorities renounced; last activity 2026-08-27; the CA currently shown on cyber-leek.com |
 | Trading venues referenced | pump.fun, Raydium, Jupiter, DexScreener | linked from the site |
-| ETH cash-out wallets | `0xbb22f5c5e6e3086c248d80929b03b157a90381a8`, `0x8bEe4D7bDaa37fb57aAC98cA9B50fF52117123A0` | see crypto/ |
 | Token deployer wallet | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` | fee payer on the CYBERLEEKS mint-creation tx (2026-08-25T06:33:48Z) |
-| Swap service order ref | `03772c77` | SOL to ETH |
+| Deployer funding path | Relay solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` | bridge-in that seeded the deployer; shared infra, not the operator |
 
 ### DNS and certificates
 
@@ -106,12 +105,12 @@ run by a real company that keeps billing and account records.
 3. **Origin host.** InterServer (US) runs that server and holds the hosting account and payment method behind it.
 4. **Content distribution.** The leak videos are served from a second InterServer host (`media.cyber-leek.com`, `69.10.50.177`) that refuses direct requests, and are mirrored on Arweave (`cyberleek.ar.io`, `turbo-gateway` fallback) via ArDrive / Turbo - the Arweave uploads are paid for, with the paying wallet and receipt on record.
 5. **The token.** Launched on pump.fun (Solana), traded on Raydium / Jupiter, tracked on DexScreener.
-6. **The money.** Collected on Solana, peeled through intermediate wallets, swapped to ETH (order `03772c77`), then consolidated and swapped again via CoW Protocol on Ethereum, after which the individual trail goes cold from public data. See [`crypto/`](../crypto/).
+6. **The money.** The token launched on pump.fun; victim SOL flows into the bonding curve. The proceeds' path off Solana is not established from public data - a cross-chain swap breaks the on-chain link, and this repo does not name a cash-out wallet. See [`crypto/`](../crypto/).
 
 **Why it's hard to track from the outside:**
 
 - Arweave is decentralized and permanent - no host to lean on, no simple owner lookup.
-- The crypto uses a peel chain, a cross-chain swap, and a bridge into shared payment rails, so the funds blend with unrelated traffic and the public trail goes cold.
+- Once the proceeds leave Solana through a cross-chain swap, the public on-chain link breaks by design, so the trail cannot be followed from public data alone.
 
 **Why it's still reachable - the companies in the middle:**
 
@@ -122,7 +121,7 @@ Every layer is operated by an identifiable company that keeps records tying it t
 - **InterServer** (origin host, `162.35.101.236`, AS26666) - the server account and payment method
 - **ArDrive / Turbo** - the wallet and receipt that paid for the Arweave uploads
 - **pump.fun** and the **exchanges** the money touched
-- The **swap service** (order `03772c77`), the **bridge**, and the **Base / Coinbase custodians** - KYC on the cash-out
+- Any **cross-chain swap / bridge service** used to move proceeds off Solana, and any **exchange** the operator ultimately cashes to - these hold the KYC records the public ledger does not
 
 None of these are reachable by a researcher from the outside. All of them
 are reachable by law enforcement with a records request. The public
