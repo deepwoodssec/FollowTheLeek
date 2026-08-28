@@ -59,7 +59,7 @@ https://archive.ph/A4zKG*
 ![Poll: next GTA 6 video](../assets/crypto-poll-nextvideo.png)
 
 *A second live poll, "Next GTA 6 Video?", on the same widget with the same
-wallets carrying new option labels.*
+wallets carrying new option labels. Captured in the full homepage archive: https://archive.ph/cpbHi*
 
 **The option wallets are recycled across polls, so the displayed totals are not
 independent vote counts.** The same two wallets carry different, unrelated
