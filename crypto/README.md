@@ -110,10 +110,10 @@ on Solscan:
 ```mermaid
 flowchart TD
     RB["Relay bridge (value in)"] -.->|seed SOL| DU["7dU2nE / feeder wallets"]
-    A7["7sg dump wallet"] -->|"3,008 SOL (dump proceeds)"| RELAY
-    HC["Hc8yCCo4..."] -->|"951 SOL"| RELAY
-    DU -->|"481 SOL"| RELAY
-    RELAY["5kSRXuv relay (pass-through, ~$0.48)"] -->|"3,282 SOL (~$344K)"| UNIT
+    A7["7sg dump wallet"] -->|"1,849.73 SOL"| RELAY
+    HC["Hc8yCCo4..."] -->|"950.77 SOL"| RELAY
+    DU -->|"481.39 SOL"| RELAY
+    RELAY["5kSRXuv relay (pass-through, ~$0.48)"] -->|"3,281.88 SOL (~$344K)"| UNIT
     UNIT["9SLPTL41 : Unit / Hyperunit bridge (shared custody)"] -->|bridge| HL["operator's Hyperliquid account (subpoena target)"]
 ```
 
@@ -127,8 +127,9 @@ flowchart TD
   hot wallet**, the deposit endpoint that moves native SOL onto Hyperliquid.
 
 **\~3,282 SOL (\~$344K)** moved through this single path to the Unit bridge.
-The relay was fed by the `7sg` dump wallet (\~3,008 SOL of dump proceeds),
-`Hc8yCCo4...` (951 SOL), and `7dU2nE...` (481 SOL).
+The relay's inbound reconciles with its outbound to the lamport: `7sg` sent
+1,849.73 SOL, `Hc8yCCo4...` 950.77 SOL, and `7dU2nE...` 481.39 SOL (3,281.89
+SOL in), and the relay forwarded 3,281.88 SOL to the Unit bridge.
 
 The inbound side runs a second bridge. The wallets were seeded through
 **Relay**: its solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` funded
