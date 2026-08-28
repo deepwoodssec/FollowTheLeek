@@ -7,23 +7,39 @@ fraudulent token, then launders the proceeds through a cross-chain trail
 and hides behind AI-generated branding.
 
 This is an open, evidence-backed investigation that follows the operation
-two ways: the **money**, traced on-chain from the token across a swap
-and a bridge, and the **digital forensics** left in
+two ways: the **money**, traced on-chain from the token dump through a relay
+and across a bridge, and the **digital forensics** left in
 the operation's own media and browser. Every indicator here is public, verifiable, and
 cryptographically hashed - so researchers, defenders, exchanges, and
 platforms can identify the operation, disrupt it, and protect victims.
 
 Maintained by [Deep Woods Security](https://deepwoodssec.com).
 
+## The operation, start to finish
+
+Read the sections in order and they tell one story. The operator stands up a
+website on rented US servers and pushes traffic to it with Google Ads and
+stolen GTA VI leak clips ([`infrastructure/`](infrastructure/)). Those clips
+funnel victims into a cryptocurrency token he created for free: he hypes it,
+lets real buyers pour their money into the trading pool, then sells his own
+free tokens on top of them and bridges the proceeds off Solana toward a
+trading platform ([`crypto/`](crypto/)). He tried to stay anonymous, but he
+left fingerprints. His own screenshots expose the computer he works on and the
+Google account he is signed into ([`browser/`](browser/)); the times he posts
+reveal his daily rhythm and rule out whole continents
+([`posting-pattern/`](posting-pattern/)); the way he writes points to the
+language he grew up speaking ([`writing-style/`](writing-style/)); and even his
+profile picture is AI-generated, so the persona itself is fabricated
+([`pfp-metadata/`](pfp-metadata/)).
+
 ## Sections
 
-- [`crypto/`](crypto/) - the on-chain money trail, traced end to end
-- [`pfp-metadata/`](pfp-metadata/) - the IPFS profile picture and its
-  C2PA / Grok content-credential provenance
-- [`browser/`](browser/) - the operator's browser fingerprint
 - [`infrastructure/`](infrastructure/) - hosting, DNS, media delivery, and how the operation is wired
+- [`crypto/`](crypto/) - the on-chain money trail, traced end to end
+- [`browser/`](browser/) - the operator's browser fingerprint
 - [`posting-pattern/`](posting-pattern/) - activity times across official channels
 - [`writing-style/`](writing-style/) - language and writing-style markers
+- [`pfp-metadata/`](pfp-metadata/) - the IPFS profile picture and its C2PA / Grok content-credential provenance
 
 ## Evidence integrity (chain of custody)
 
