@@ -42,12 +42,14 @@ The dump proceeds converge through a relay and cross into Hyperliquid via
 the Unit ("Hyperunit") bridge. Every hop is a plain SOL transfer, labelled
 on Solscan:
 
-```
-dump wallets                 relay                 Unit bridge          Hyperliquid
-7sg      3,008 SOL ┐
-Hc8yCCo4   951 SOL ┼──► 5kSRXuv... ──3,282 SOL──► 9SLPTL41... ─────────► operator's
-7dU2nE     481 SOL ┘    (holds \~$0.48,            ("Hyperunit:            HL account
-                         pure pass-through)         Hot Wallet")
+```mermaid
+flowchart TD
+    RB["Relay bridge (value in)"] -.->|seed SOL| DU["7dU2nE / feeder wallets"]
+    A7["7sg dump wallet"] -->|"3,008 SOL (dump proceeds)"| RELAY
+    HC["Hc8yCCo4..."] -->|"951 SOL"| RELAY
+    DU -->|"481 SOL"| RELAY
+    RELAY["5kSRXuv relay (pass-through, ~$0.48)"] -->|"3,282 SOL (~$344K)"| UNIT
+    UNIT["9SLPTL41 : Unit / Hyperunit bridge (shared custody)"] -->|bridge| HL["operator's Hyperliquid account (subpoena target)"]
 ```
 
 - **Relay:** `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` - 16
@@ -59,9 +61,19 @@ Hc8yCCo4   951 SOL ┼──► 5kSRXuv... ──3,282 SOL──► 9SLPTL41... 
   across 1,000+ transactions. This is the **Unit bridge's shared custody
   hot wallet**, the deposit endpoint that moves native SOL onto Hyperliquid.
 
-**\~3,282 SOL (\~$344K)** moved through this single path. The relay was fed
-by the `7sg` dump wallet, a second wallet (`Hc8yCCo4...`), and the paymaster
-that funded the dump wallet (`7dU2nE...`).
+**\~3,282 SOL (\~$344K)** moved through this single path to the Unit bridge.
+The relay was fed by the `7sg` dump wallet (\~3,008 SOL of dump proceeds),
+`Hc8yCCo4...` (951 SOL), and `7dU2nE...` (481 SOL).
+
+The inbound side runs a second bridge. The wallets were seeded through
+**Relay**: its solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` funded
+`7dU2nE`, the second dump wallet `EfVhmasW...`, and the token deployer. So the
+operation runs value **in through Relay** and **out through Unit** into
+Hyperliquid.
+
+`EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` is a second dump wallet (sold
+\~$93.6K, bought $0) funded the same way. Its full sell-proceeds outflow was
+not traced and is not asserted here.
 
 ## Where the Solana trail ends, and the real subpoena targets
 
