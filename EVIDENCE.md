@@ -11,7 +11,7 @@ link prove existence and integrity without redistribution.
 | --- | --- | --- |
 | `crypto/evidence/` package (SHA256SUMS.txt) | `e172d5a14ee45cb0c6b68f757f3915b51fe3baedf8c5e3f2ae421e39a8b89322` | 2026-08-27T19:38Z |
 
-Solana and Ethereum data is public and re-pullable. The package holds the
+Solana data is public and re-pullable. The package holds the
 raw pulls plus a per-file SHA256 manifest; regenerate any time.
 
 ## Media artifacts
