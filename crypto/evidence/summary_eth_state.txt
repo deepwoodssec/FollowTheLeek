@@ -1,0 +1,8 @@
+Ethereum wallet point-in-time state (collected 2026-08-27T19:39:50Z)
+----------------------------------------------------------------
+0xbb22f5c5e6e3086c248d80929b03b157a90381a8
+   nonce (tx sent): 3
+   balance ETH    : 0.8773170688927368
+0x8bEe4D7bDaa37fb57aAC98cA9B50fF52117123A0
+   nonce (tx sent): 18
+   balance ETH    : 1.7104706745e-06
