@@ -52,14 +52,37 @@ Both sources are active in the **03:00-16:00 UTC** band and drop to
 period that appears independently in the Telegram posts and the on-chain
 deployer activity.
 
+## A "good morning" greeting
+
+On 2026-08-28 the channel posted a "good morning" greeting
+(`t.me/cyberleeksreal/33`, archived: https://archive.ph/zkVZh):
+
+![Telegram: "Good morning guys.. More leaks coming today"](tg-good-morning.png)
+
+*Post /33: "Good morning guys.. More leaks coming today." The clock a Telegram
+client shows is the viewer's own local time; the collector records the post's
+UTC timestamp, which lands at the early edge of the active window.*
+
+A "good morning" greeting is different from a bare timestamp: it is a semantic
+self-report of local time of day. Taken at face value it aligns the operator's
+local morning with the start of the active band (about 05:00-06:00 UTC), which
+would point to roughly **UTC+1 to UTC+3** (Europe, West or East Africa, or the
+Middle East) and is inconsistent with the Americas (that hour is the middle of
+the night there) or East Asia (the afternoon). Treat this as a lead, not a
+conclusion: a single greeting is weak, and could be performative, scheduled, or
+written by one of several operators.
+
+
 ## What this is, and what it is not
 
 This is a behavioral fingerprint: a repeatable active/quiet cycle that
 shows up in two independent sources and can be used to correlate activity
 between them.
 
-It establishes **no** timezone and **no** location, and it does **not**
-indicate whether one person or several are behind the operation. A quiet
+On its own, the active/quiet cycle fixes **no** timezone and **no** location;
+the "good morning" greeting above is the first semantic signal that points
+toward one, but a single greeting does not establish it. The pattern does
+**not** indicate whether one person or several are behind the operation. A quiet
 window is not proof of sleep - scheduled posting, automation, shift work,
 or multiple operators in different places would all produce the same
 shape. Both samples also cluster around 2026-08-25 to 08-26, a short
