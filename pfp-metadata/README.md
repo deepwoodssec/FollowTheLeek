@@ -7,15 +7,6 @@ This section reads those credentials back out and verifies them.
 
 ![Operator profile picture](pfp.jpg)
 
-## In plain terms
-
-The operator's profile picture is not a real photo of a real person. It was
-made by an AI image tool, and the picture still carries hidden "content
-credentials," a kind of digital label that records what created it. This
-section shows how we read that hidden label back out, confirmed the image was
-AI-generated, and verified we were looking at the exact same picture he
-published, not a copy someone altered.
-
 ## Source
 
 The profile picture is stored on IPFS:
