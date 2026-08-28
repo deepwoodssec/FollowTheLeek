@@ -10,6 +10,17 @@ wired end to end.
 on-chain table below), a "BUY NOW AND GET 50% FREE" marquee, and a paid
 "GTA6 TEST PLAY ... ONLY 499$" offer. Archived: https://archive.ph/cpbHi*
 
+## In plain terms
+
+Every website, even a scam, runs on real computers rented from real
+companies, and it uses real services to find victims. This section maps
+CyberLeek's plumbing end to end: the server the website runs on and who
+rents it, the separate machine that serves the leak videos, the backup
+copies kept on a decentralized network, and the ads that drive traffic in.
+The takeaway for a non-technical reader: the operator tried to stay hidden,
+but every layer is run by an identifiable company that keeps billing and
+account records. He hid from the public, not from a subpoena.
+
 ## Infrastructure indicators
 
 ### Web and delivery

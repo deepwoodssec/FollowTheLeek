@@ -5,6 +5,15 @@ a direct quote from captured copy; the notes are limited to what is
 observable in the text. This is a language observation, not an
 identification.
 
+## In plain terms
+
+The way a person writes is a fingerprint. The operator repeats the same
+small habits and mistakes across his website and his posts: certain spellings,
+spacing, punctuation, and word choices. This section simply collects those
+quirks, with a direct quote for each. They do not name him, but they tie all
+of his accounts to a single author and hint at the language he grew up
+speaking.
+
 ## Sources
 
 - `cyber-leek.com` / `cyberleeks.fun` site copy

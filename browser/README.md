@@ -14,6 +14,15 @@ fingerprint. Any one attribute is common; taken together, and
 cross-referenced against the Google account that accessed the site, they
 narrow the operator profile.
 
+## In plain terms
+
+The operator posted screenshots taken on his own computer while looking
+at his own site. Those pictures accidentally show his setup: which operating
+system and web browser he uses, the color theme on his browser, and that he
+is signed in to a Google account. Any one of these is common on its own.
+Taken together they form a profile, and the signed-in Google account is the
+strongest thread, because Google keeps records tied to it.
+
 ## What the capture shows
 
 - **Operating system:** Microsoft Windows

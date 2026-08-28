@@ -7,6 +7,15 @@ measure; the pattern they form is the finding.
 
 ![Daily activity window, UTC - Telegram and on-chain deployer sessions](activity-window.png)
 
+## In plain terms
+
+People are creatures of habit, and a scammer is no exception. By recording
+exactly when the operator posts and acts online, all converted to one neutral
+world clock (UTC), a daily rhythm appears: the hours he is active and the
+hours he goes quiet. That rhythm is a behavioral fingerprint. It does not name
+him, but it is consistent, it links his different accounts to one routine, and
+it hints at where in the world he is.
+
 ## Sources
 
 - **Telegram** - `t.me/cyberleeksreal` post datetimes (scraped from the public `t.me/s/` view). Raw: [`telegram-post-times.txt`](telegram-post-times.txt).
