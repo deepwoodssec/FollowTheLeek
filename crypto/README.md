@@ -121,3 +121,22 @@ token's Raydium market on DexScreener / Solscan.
   operator's Hyperliquid account and any onward cash-out to fiat. These
   live in Unit's and Hyperliquid's records, which is exactly why they are
   named as subpoena targets rather than asserted here.
+
+## Evidence files (hashed)
+
+Raw Solana pulls for every address in this section, plus a SHA256 manifest,
+are in [`evidence/`](evidence/):
+
+- `raw/token_*.json` - supply and account info for both tokens
+- `raw/dump_*.json`, `raw/relay_*.json`, `raw/paymaster_*.json`,
+  `raw/feeder_*.json`, `raw/funder_*.json`, `raw/deployer_*.json`,
+  `raw/bridge_*.json` - balance, signatures, and raw transactions for each
+  hop in the trail
+- `collection_log.txt` - timestamped log of every fetch
+- `SHA256SUMS.txt` - SHA256 of every file (chain of custody)
+
+Manifest SHA256: `929aefad99c295134d12fb03f6fa77bdc306b03901bcb0db3cc977810cecb789`
+
+Verify:
+
+    cd evidence && sha256sum -c SHA256SUMS.txt

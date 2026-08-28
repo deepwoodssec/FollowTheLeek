@@ -1,21 +1,14 @@
-CyberLeek cryptocurrency evidence package
-Collected (UTC): 2026-08-27T19:39:53Z
-Collector host : [redacted]
+CyberLeek crypto evidence package (corrected trail)
+Collected (UTC): 2026-08-28T15:04:05Z
+Source: public Solana JSON-RPC (api.mainnet-beta.solana.com)
 
 CONTENTS
-  raw/                 Unedited JSON responses from public blockchain APIs
-  summary_*.txt        Human-readable timestamp / hash / amount extracts
-  collection_log.txt   Timestamped log of every fetch performed
-  SHA256SUMS.txt       SHA256 of every file (integrity / chain of custody)
+  raw/                 unedited getBalance / getSignaturesForAddress / getTransaction responses
+  collection_log.txt   timestamped log of every fetch
+  SHA256SUMS.txt       SHA256 of every file (chain of custody)
 
-SOURCES
-  Solana JSON-RPC (getSignaturesForAddress, getTransaction)
-
-INTEGRITY
-  To verify nothing changed after collection:
-      cd evidence_20260827_193828Z && sha256sum -c SHA256SUMS.txt
-  Note: SHA256SUMS.txt hashes every OTHER file. Store a copy of that
-  file separately (email it to yourself) to timestamp the package.
-
-ADDRESSES OF RECORD
-  Solana token mint:             2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump
+TRAIL
+  ApZux token (live) -> dump wallets (7sg,EfV: sold big, bought 0)
+  -> relay 5kSRXuv -> Unit bridge 9SLPTL41 ("Hyperunit") -> Hyperliquid
+  9SLPTL41 is shared bridge custody, not the operator. The deposit credits
+  the operator's Hyperliquid account (Unit + Hyperliquid hold that record).

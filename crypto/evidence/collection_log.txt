@@ -1,9 +1,15 @@
-[2026-08-27T19:38:28Z] === CyberLeek crypto evidence collection START ===
-[2026-08-27T19:38:28Z] Collector host: [redacted]
-[2026-08-27T19:38:28Z] curl: curl 8.18.0 (x86_64-pc-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 brotli/1.2.0 zstd/1.5.7 libidn2/2.3.8 libpsl/0.21.2 libssh2/1.11.1 nghttp2/1.68.0 librtmp/2.3 mit-krb5/1.22.1 OpenLDAP/2.6.10
-[2026-08-27T19:38:28Z] python3: Python 3.14.4
-[2026-08-27T19:38:28Z] All data below is from PUBLIC blockchain sources at the time shown.
-[2026-08-27T19:38:28Z] SOLANA 2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump : fetching up to 1000 signatures
-[2026-08-27T19:38:29Z] SOLANA 2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump : pulling full tx detail for 58 recent signatures
-[2026-08-27T19:39:53Z] Hashing all evidence files (SHA256) for integrity manifest
-[2026-08-27T19:39:53Z] === DONE. Package: evidence_20260827_193828Z/ ===
+CyberLeek crypto evidence collection  2026-08-28T15:00:33Z
+source: public Solana JSON-RPC; all data re-pullable
+
+TOKEN ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg -> supply 729953247.77847762 decimals 9
+TOKEN 2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump -> supply 1000000000 decimals 6
+
+WALLET dump_7sg  7sgG1Dsk84fgia5ewkhd8RfFymk64ETBVxs72Pzc2zDW  balance=0.003007639 SOL  sigs=179
+WALLET dump_EfV  EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE  balance=7.484603519 SOL  sigs=469
+WALLET relay_5kSRXuv  5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA  balance=0.0044744 SOL  sigs=16
+WALLET paymaster_2p8o  2p8oSST3XGoAs7YCgn3LkRPenVcq3vZNkepcLiTEK1D5  balance=1.904439497 SOL  sigs=241
+WALLET deployer_HhFa  HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB  balance=0.000978626 SOL  sigs=23
+WALLET feeder_Hc8y  Hc8yCCo4zKgeWtcud1MWfnUjtQUhzRV4WZV999sBACY9  balance=7.504442447 SOL  sigs=595
+WALLET funder_7dU2nE  7dU2nE7TEh9Fw2GmNFg7BXzhqGQGMWzqvwYcnT9jA5jJ  balance=0.043283898 SOL  sigs=5
+
+BRIDGE 9SLPTL41 (Unit / 'Hyperunit' Hot Wallet): balance=349081.548277239 SOL  sigs(last1000)=1000  [SHARED bridge infra, not the operator]
