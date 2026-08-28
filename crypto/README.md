@@ -3,8 +3,7 @@
 Passive on-chain analysis of the CyberLeek scam tokens on Solana, traced
 from the token dump to where the proceeds leave Solana. Every address and
 amount here is verifiable on a block explorer. Where the trail crosses a
-bridge off Solana, this section says so and names the record-holder rather
-than guessing past it.
+bridge off Solana, this section says so and names the record-holder.
 
 ## The tokens
 
@@ -72,8 +71,7 @@ operation runs value **in through Relay** and **out through Unit** into
 Hyperliquid.
 
 `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` is a second dump wallet (sold
-\~$93.6K, bought $0) funded the same way. Its full sell-proceeds outflow was
-not traced and is not asserted here.
+\~$93.6K, bought $0) funded the same way. Its full outflow is not traced here.
 
 ## Where the Solana trail ends, and the real subpoena targets
 
@@ -91,8 +89,7 @@ stop honestly:
   **Hyperliquid** (account activity and any onward withdrawal to a fiat
   exchange). Both are concrete and both are off the public Solana ledger.
 
-The money did not vanish and it did not go to a fabricated wallet. It
-bridged into Hyperliquid, and the record of whose account it is sits with
+The money bridged into Hyperliquid, and the record of whose account it is sits with
 Unit and Hyperliquid.
 
 ## Indicators
@@ -131,8 +128,8 @@ token's Raydium market on DexScreener / Solscan.
   relay; the bridge destination and its label; and the \~3,282 SOL amount.
 - **Established but off the public Solana ledger:** the identity of the
   operator's Hyperliquid account and any onward cash-out to fiat. These
-  live in Unit's and Hyperliquid's records, which is exactly why they are
-  named as subpoena targets rather than asserted here.
+  live in Unit's and Hyperliquid's records, which is why they are
+  named as subpoena targets.
 
 ## Evidence files (hashed)
 
