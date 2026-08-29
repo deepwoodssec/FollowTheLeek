@@ -18,7 +18,8 @@ Reproduced independently here; raw transactions in
 | Front | `cyber-leek.com` + Arweave leak distribution | `@cyberleeksreal` (X / Telegram), `cyberleeks.fun` |
 | Funded by | one wallet (`3YLN…`) traced back to **KuCoin** | the shared Relay bridge |
 | Status | locked liquidity, earning trading fees | stalled on the bonding curve |
-| On-chain link between the two | **none found** | |
+
+**On-chain link between the two: none found.**
 
 The rest of this section is the operation. The copycat token, and the social
 persona around it, are a separate track (documented in the persona sections of
