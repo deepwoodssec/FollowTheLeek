@@ -37,7 +37,7 @@ Locked means they cannot pull it back out and dump it, but they still collect th
 trading fee on every buy and every sell. So the operator earns from **volume**, not
 from selling the token.
 
-Per Vice Cit's fee analysis on the public Raydium data: roughly $29,000 went into
+Per [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077)'s fee analysis on the public Raydium data: roughly $29,000 went into
 setting this up; the coin did about $15M in volume on day one (about $30,000 in
 fees); total fees so far are on the order of $40,000 to $60,000, roughly $4,400 a
 day at about $2.1M daily volume, for as long as interest holds. Those are estimates
@@ -177,7 +177,7 @@ KuCoin chain):
 - **Verified on-chain, reproduced from our own pull:** the funding wallet paying
   the ArNS name, the Arweave key, and the token creation; the six-hop chain from
   KuCoin to the funding wallet; the creator wallet; the 270,000,000 burn.
-- **From public market data (Vice Cit's fee analysis / DexScreener):** the ~$29k
+- **From public market data ([Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077)'s fee analysis / DexScreener):** the ~$29k
   setup, the ~$40k to $60k in fees, the daily volume and fee rate. Estimates from
   public Raydium data, not exact figures.
 - **Established but off the public ledger:** the identity behind the KuCoin account
