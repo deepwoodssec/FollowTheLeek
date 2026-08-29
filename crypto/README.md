@@ -55,9 +55,12 @@ that sold a large amount having bought nothing.**
 - `7sgG1Dsk84fgia5ewkhd8RfFymk64ETBVxs72Pzc2zDW` - **sold \~$174K** (10.7M
   tokens over 62 sells), **bought $0**.
 - `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` - sold \~$93.6K, bought $0.
-- A cluster of further "sold, never bought" wallets appears in the token's
-  top-trader list and as connected groups on a holder bubble map,
-  consistent with a coordinated bundle rather than organic sellers.
+- We also examined 16 further "sold, never bought" wallets from the token's
+  top-trader list. None routed SOL to the relay, the bridge, or any operator
+  wallet; several bought and sold the token (round-trip trading) or sit on
+  large balances and trade continuously, which is market-maker or bot
+  behavior, not a one-shot dump. They are not attributed to the operator.
+  The confirmed operator dump wallets are 7sg and EfV.
 
 A wallet cannot sell 10.7M tokens it never bought unless it was handed them
 at creation. That is the dump.
@@ -122,9 +125,9 @@ on Solscan:
 flowchart TD
     RB["Relay bridge (value in)"] -.->|seed SOL| DU["7dU2nE / feeder wallets"]
     A7["7sg dump wallet"] -->|"1,849.73 SOL"| RELAY
-    HC["Hc8yCCo4..."] -->|"950.77 SOL"| RELAY
+    HC["Hc8yCCo4..."] -->|"1,854.86 SOL"| RELAY
     DU -->|"481.39 SOL"| RELAY
-    RELAY["5kSRXuv relay (pass-through, ~$0.48)"] -->|"3,281.88 SOL (~$344K)"| UNIT
+    RELAY["5kSRXuv relay (pass-through, ~$0.48)"] -->|"4,185.98 SOL (~$439K)"| UNIT
     UNIT["9SLPTL41 : Unit / Hyperunit bridge (shared custody)"] -->|bridge| HL["operator's Hyperliquid account (subpoena target)"]
 ```
 
@@ -137,10 +140,12 @@ flowchart TD
   across 1,000+ transactions. This is the **Unit bridge's shared custody
   hot wallet**, the deposit endpoint that moves native SOL onto Hyperliquid.
 
-**\~3,282 SOL (\~$344K)** moved through this single path to the Unit bridge.
-The relay's inbound reconciles with its outbound to the lamport: `7sg` sent
-1,849.73 SOL, `Hc8yCCo4...` 950.77 SOL, and `7dU2nE...` 481.39 SOL (3,281.89
-SOL in), and the relay forwarded 3,281.88 SOL to the Unit bridge.
+**\~4,186 SOL (\~$439K)** moved through this single path to the Unit bridge.
+The relay's inbound reconciles with its outbound to the lamport across six
+paired transfers: `7sg` sent 1,849.73 SOL (three transfers), `Hc8yCCo4...`
+1,854.86 SOL (two transfers), and `7dU2nE...` 481.39 SOL, for 4,185.98 SOL in,
+and the relay forwarded the same 4,185.98 SOL straight on to the Unit bridge.
+Each of the six deposits is matched by an equal payment out to the bridge.
 
 The inbound side runs a second bridge. The wallets were seeded through
 **Relay**: its solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` funded
@@ -161,7 +166,7 @@ stop honestly:
   hot wallet. We do not attribute it to anyone.
 - **The deposit credits the operator's Hyperliquid account.** Unit records
   which account a given Solana deposit is bridged to, and Hyperliquid
-  records what that account then does. Those two records tie the \~$344K to
+  records what that account then does. Those two records tie the \~$439K to
   a specific Hyperliquid account.
 - **Subpoena targets:** the **Unit bridge** (deposit-to-account mapping) and
   **Hyperliquid** (account activity and any onward withdrawal to a fiat
@@ -206,7 +211,7 @@ token's Raydium market on DexScreener / Solscan.
 
 - **Verified on-chain / on public explorers:** the two tokens and their
   parameters; the dump-wallet signature (large sells, zero buys); the
-  relay; the bridge destination and its label; and the \~3,282 SOL amount.
+  relay; the bridge destination and its label; and the \~4,186 SOL amount.
 - **Established but off the public Solana ledger:** the identity of the
   operator's Hyperliquid account and any onward cash-out to fiat. These
   live in Unit's and Hyperliquid's records, which is why they are
@@ -225,7 +230,7 @@ are in [`evidence/`](evidence/):
 - `collection_log.txt` - timestamped log of every fetch
 - `SHA256SUMS.txt` - SHA256 of every file (chain of custody)
 
-Manifest SHA256: `929aefad99c295134d12fb03f6fa77bdc306b03901bcb0db3cc977810cecb789`
+Manifest SHA256: `8c8c3959bd54185885bf399f3406534631b48aebbdf5c7e03f95eef17ff254ed`
 
 Verify:
 

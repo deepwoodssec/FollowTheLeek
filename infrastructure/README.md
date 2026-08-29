@@ -215,7 +215,7 @@ run by a real company that keeps billing and account records.
 3. **Origin host.** InterServer (US) runs that server and holds the hosting account and payment method behind it.
 4. **Content distribution.** The leak videos are served from a second InterServer host (`media.cyber-leek.com`, `69.10.50.177`) that refuses direct requests, and are mirrored on Arweave (`cyberleek.ar.io`, `turbo-gateway` fallback) via ArDrive / Turbo - the Arweave uploads are paid for, with the paying wallet and receipt on record.
 5. **The token.** Launched on pump.fun (Solana), traded on Raydium / Jupiter, tracked on DexScreener.
-6. **The money.** The operator dumps free token allocation for SOL (wallets that sold large amounts having bought nothing), consolidates it through a relay wallet, and bridges it into Hyperliquid via the Unit ("Hyperunit") bridge. \~$344K is traced this way. The Solana trail ends at the shared bridge hot wallet; the deposit credits the operator's Hyperliquid account, which Unit and Hyperliquid record. See [`crypto/`](../crypto/).
+6. **The money.** The operator dumps free token allocation for SOL (wallets that sold large amounts having bought nothing), consolidates it through a relay wallet, and bridges it into Hyperliquid via the Unit ("Hyperunit") bridge. \~$439K is traced this way. The Solana trail ends at the shared bridge hot wallet; the deposit credits the operator's Hyperliquid account, which Unit and Hyperliquid record. See [`crypto/`](../crypto/).
 
 **Why it's hard to track from the outside:**
 

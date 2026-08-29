@@ -13,3 +13,17 @@ WALLET feeder_Hc8y  Hc8yCCo4zKgeWtcud1MWfnUjtQUhzRV4WZV999sBACY9  balance=7.5044
 WALLET funder_7dU2nE  7dU2nE7TEh9Fw2GmNFg7BXzhqGQGMWzqvwYcnT9jA5jJ  balance=0.043283898 SOL  sigs=5
 
 BRIDGE 9SLPTL41 (Unit / 'Hyperunit' Hot Wallet): balance=349081.548277239 SOL  sigs(last1000)=1000  [SHARED bridge infra, not the operator]
+
+=== COMPLETE RE-PULL + CORRECTED RECONCILIATION (2026-08-29) ===
+Full transaction histories re-collected for every operator wallet, correcting an
+earlier subset that undercounted the feeder wallet Hc8y.
+Cash-out reconciliation, verified to the lamport across 6 paired transfers:
+  7sg     1,849.73 SOL (3 transfers)
+  Hc8y    1,854.86 SOL (2 transfers)
+  7dU2nE    481.39 SOL (1 transfer)
+  = 4,185.98 SOL into relay 5kSRXuv; relay forwarded 4,185.98 SOL to Unit bridge 9SLPTL41.
+Canonical raw getTransaction proof: raw/reconcile_*.json (12 files).
+Signature list: reconciliation_signatures.txt.
+complete_history/ holds full parsed history (Helius Enhanced API) for every wallet,
+including 16 top-trader "bundle" wallets examined and EXCLUDED: none routed SOL to the
+operator cluster; several are market-maker/bot wallets holding large balances.
