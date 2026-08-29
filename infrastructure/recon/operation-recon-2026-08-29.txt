@@ -1,0 +1,84 @@
+CyberLeek OPERATION recon (the real cyber-leek.com) - passive
+Collected (UTC): 2026-08-29T19:21:21Z
+======================================================
+
+== DOMAIN REGISTRAR (RDAP: cyber-leek.com) ==
+  registrar: Cloudflare, Inc.
+  registrar IANA id: 1910
+  registration: 2026-08-22T06:36:48Z
+  expiration: 2027-08-22T06:36:48Z
+  last changed: 2026-08-22T06:36:48Z
+  status: client transfer prohibited
+
+== DOMAIN REGISTRAR (whois fallback) ==
+  created:      1985-01-01
+     Updated Date: 2026-08-22T06:36:48Z
+     Creation Date: 2026-08-22T06:36:48Z
+     Registry Expiry Date: 2027-08-22T06:36:48Z
+     Registrar: Cloudflare, Inc.
+     Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+     Name Server: CRYSTAL.NS.CLOUDFLARE.COM
+     Name Server: NASH.NS.CLOUDFLARE.COM
+  Updated Date: 2026-08-22T06:36:52Z
+  Creation Date: 2026-08-22T06:36:48Z
+  Registrar: Cloudflare, Inc.
+  Domain Status: clienttransferprohibited https://icann.org/epp#clienttransferprohibited
+  Domain Status: addperiod https://icann.org/epp#addperiod
+  Name Server: crystal.ns.cloudflare.com
+  Name Server: nash.ns.cloudflare.com
+
+== DNS A RECORDS ==
+  cyber-leek.com -> 162.35.101.236 
+  media.cyber-leek.com -> 69.10.50.177 
+
+== NAMESERVERS ==
+  cyber-leek.com -> nash.ns.cloudflare.com. crystal.ns.cloudflare.com. 
+  media.cyber-leek.com -> 
+
+== IP OWNERSHIP + REVERSE DNS ==
+  cyber-leek.com (162.35.101.236):
+{
+  "ip": "162.35.101.236",
+  "hostname": "vps3572431.trouble-free.net",
+  "city": "Los Angeles",
+  "region": "California",
+  "country": "US",
+  "loc": "34.0522,-118.2437",
+  "org": "AS26666 Interserver, Inc",
+  "postal": "90013",
+  "timezone": "America/Los_Angeles",
+  "readme": "https://ipinfo.io/missingauth"
+}  rDNS: vps3572431.trouble-free.net. 
+  media.cyber-leek.com (69.10.50.177):
+{
+  "ip": "69.10.50.177",
+  "hostname": "vps3577375.trouble-free.net",
+  "city": "Los Angeles",
+  "region": "California",
+  "country": "US",
+  "loc": "34.0522,-118.2437",
+  "org": "AS26666 Interserver, Inc",
+  "postal": "90013",
+  "timezone": "America/Los_Angeles",
+  "readme": "https://ipinfo.io/missingauth"
+}  rDNS: vps3577375.trouble-free.net. 
+
+== HTTP STATUS ==
+  https://cyber-leek.com -> HTTP 000 (no response / down)
+  https://media.cyber-leek.com -> HTTP 000 (no response / down)
+
+== TLS CERT ==
+  -- cyber-leek.com --
+  -- media.cyber-leek.com --
+
+== CERTIFICATE TRANSPARENCY (crt.sh cyber-leek.com) ==
+
+== SITE HISTORY: WHEN IT WAS UP / DROPPING (independent archives) ==
+  -- Wayback Machine (web.archive.org), earliest + latest capture --
+    (no Wayback captures, or archive.org unreachable)
+  -- archive.today / archive.ph timemap (manual snapshots) --
+      snapshot: Mon, 24 Aug 2026 14:20:39 GMT
+      snapshot: Tue, 25 Aug 2026 00:01:56 GMT
+
+== GOOGLE ADS TAG (AW-18404896621) ==
+  cyber-leek.com : AW-18404896621 not found (changed, blocked, or site down)

@@ -36,8 +36,8 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 
 | Artifact | File | SHA256 | Collected (UTC) |
 | --- | --- | --- | --- |
-| Operation recon (real cyber-leek.com) | `infrastructure/recon/operation-recon-<date>.txt` | run `recon/recon-operation.sh`; hash recorded on commit | pending |
-| Copycat recon (cyberleeks.fun) | `infrastructure/recon/copycat-recon-<date>.txt` | run `recon/recon-copycat.sh`; hash recorded on commit | pending |
+| Operation recon (real cyber-leek.com; registrar Cloudflare, reg 2026-08-22) | `infrastructure/recon/operation-recon-2026-08-29.txt` | `eabab98964abbf9ee64ebd034e96b37b0f3646f29086914e9a2bc0b84eb59d86` | 2026-08-29 |
+| Copycat recon (cyberleeks.fun; registrar Hostinger, reg 2026-08-25) | `infrastructure/recon/copycat-recon-2026-08-29.txt` | `b0510aaf22c6a90a2076eaedd1cc29f33e5d8a4b5d7f34de95efaaf87df0b031` | 2026-08-29 |
 
 ## Archived pages (archive.ph)
 

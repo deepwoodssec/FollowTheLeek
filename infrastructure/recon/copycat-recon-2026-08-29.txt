@@ -1,0 +1,35 @@
+CyberLeek COPYCAT recon (cyberleeks.fun, the persona) - passive
+Collected (UTC): 2026-08-29T19:26:40Z
+======================================================
+
+== DOMAIN REGISTRAR (RDAP: cyberleeks.fun) ==
+  (RDAP unavailable)
+
+== DOMAIN REGISTRAR (whois fallback) ==
+  created:      2016-11-30
+  Updated Date: 2026-08-25T12:48:07.961Z
+  Creation Date: 2026-08-25T12:11:02.413Z
+  Registry Expiry Date: 2027-08-25T12:11:02.413Z
+  Registrar: HOSTINGER operations, UAB
+  Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+  Domain Status: addPeriod https://icann.org/epp#addPeriod
+  Name Server: dns1.p03.nsone.net
+  Name Server: dns2.p03.nsone.net
+  Name Server: dns3.p03.nsone.net
+  Name Server: dns4.p03.nsone.net
+
+== DNS A RECORD ==
+  cyberleeks.fun -> 
+
+== NAMESERVERS ==
+  cyberleeks.fun -> dns1.p03.nsone.net. dns2.p03.nsone.net. dns3.p03.nsone.net. dns4.p03.nsone.net. 
+
+== IP OWNERSHIP + REVERSE DNS (if it resolves) ==
+  (no A record; nothing to geolocate)
+
+== HTTP STATUS ==
+  https://cyberleeks.fun -> HTTP 000 (no response / down)
+
+== TLS CERT (if serving) ==
+
+== CERTIFICATE TRANSPARENCY (crt.sh cyberleeks.fun) ==
