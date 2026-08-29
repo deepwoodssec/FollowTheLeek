@@ -8,7 +8,7 @@ from a copycat token that went nowhere.
 Credit: the funding-to-exchange trace was first published by GTAForums user
 [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077).
 Reproduced independently here; raw transactions in
-[`evidence/funding_spine/`](evidence/funding_spine/).
+[`evidence/operation/funding_spine/`](evidence/operation/funding_spine/).
 
 ## Two things called CyberLeek (do not confuse them)
 
@@ -98,7 +98,7 @@ flowchart LR
   requests. That is the concrete off-ledger identity target. See **What KYC is**
   below for how that door opens, including the Seychelles / MLAT nuance.
 
-Raw proof for every hop is in [`evidence/funding_spine/`](evidence/funding_spine/),
+Raw proof for every hop is in [`evidence/operation/funding_spine/`](evidence/operation/funding_spine/),
 one `vc_tx_*.json` file per cited transaction.
 
 ## What KYC is, and why it is the identity lead
@@ -258,16 +258,24 @@ KuCoin chain):
 
 Raw pulls plus a SHA256 manifest are in [`evidence/`](evidence/):
 
-- `funding_spine/` - the funding wallet, buffer, creator, 270M-burn wallet, ArNS
-  name wallet, Arweave key, the KuCoin processing wallet, and one raw transaction
-  per cited hop (`vc_tx_*.json`).
-- `raw/`, `complete_history/` - per-wallet balances, signatures, and transactions
-  for the two token mints, the copycat deployer (`HhFa`) and its Relay funder
-  (`F7p3`), and the three poll option wallets.
+The package is split by track, the real operation and the copycat persona:
+
+- `operation/` - the real cyber-leek.com money operation:
+  - `funding_spine/` - the KuCoin funding trail: funding wallet, buffer, creator,
+    270M-burn wallet, ArNS name, Arweave key, the KuCoin processing wallet, and one
+    raw transaction per cited hop (`vc_tx_*.json`).
+  - `live_token/` - the live SPL token (`ApZux`), raw supply/account plus parsed
+    `history/`.
+  - `polls/` - the three pay-to-vote option wallets (`Cpj7`, `78Bk`, `3wFK`).
+- `copycat/` - the `@cyberleeksreal` pump.fun persona:
+  - `deployer/` - the pump.fun deployer (`HhFa`), raw pulls plus parsed `history/`.
+  - `funding/` - the Relay solver (`F7p3`) that bridged in to seed the deployer.
+  - `token/` - the pump.fun token (`2hRg6`), raw supply/account plus parsed
+    `history/`.
 - `collection_log.txt`, `README_EVIDENCE.txt` - what was collected and when.
 - `SHA256SUMS.txt` - SHA256 of every file (chain of custody).
 
-Manifest SHA256: `f521bc973306e887011f980677de432d46437825f77c8c4a6acc6b6d7d9a8338`
+Manifest SHA256: `525a8b53f6b3d2a3508c39bcb9893568487e2f333dadcdc6c810185bcb8b0222`
 
 Verify:
 

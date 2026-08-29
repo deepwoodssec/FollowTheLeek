@@ -100,14 +100,14 @@ flowchart LR
 
 | When (UTC) | Track | Event | Source |
 | --- | --- | --- | --- |
-| 2026-08-13 09:22 to 18:47 | money | KuCoin processing wallet (`BmFd`) funds the chain; six hops reach the funding wallet (`3YLN`) | on-chain, [`crypto/evidence/funding_spine/`](crypto/evidence/funding_spine/) |
-| 2026-08-14 09:42 | money | ArNS leak-site name wallet (`52yK`) first active (registers the on-chain site name) | on-chain, `funding_spine/arns_52yK_*` |
-| 2026-08-15 09:49 | money | Funding wallet pays the buffer (`Ec2q`) | on-chain, `funding_spine/buffer_Ec2q_*` |
-| 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active (signs the permanent leak uploads) | on-chain, `funding_spine/arweave_667G_*` |
-| 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
-| 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
+| 2026-08-13 09:22 to 18:47 | money | KuCoin processing wallet (`BmFd`) funds the chain; six hops reach the funding wallet (`3YLN`) | on-chain, [`operation/funding_spine/`](crypto/evidence/operation/funding_spine/) |
+| 2026-08-14 09:42 | money | ArNS leak-site name wallet (`52yK`) first active (registers the on-chain site name) | on-chain, `operation/funding_spine/arns_52yK_*` |
+| 2026-08-15 09:49 | money | Funding wallet pays the buffer (`Ec2q`) | on-chain, `operation/funding_spine/buffer_Ec2q_*` |
+| 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active (signs the permanent leak uploads) | on-chain, `operation/funding_spine/arweave_667G_*` |
+| 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `operation/funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
+| 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `operation/funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
 | 2026-08-24 | money | `cyber-leek.com` first Let's Encrypt certificate issued (HTTPS on). A lower bound, not the domain registration date, which is still to be pulled (see infrastructure/) | Certificate Transparency, [`infrastructure/recon/dns-cert-recon.txt`](infrastructure/recon/dns-cert-recon.txt) |
-| 2026-08-24 | money | Pay-to-vote poll option wallets (`Cpj7`, `3wFK`) first active | on-chain, `complete_history/poll_*` |
+| 2026-08-24 | money | Pay-to-vote poll option wallets (`Cpj7`, `3wFK`) first active | on-chain, `operation/polls/` |
 | 2026-08-25 06:33:48 | persona | Copycat pump.fun token (`2hRg6`) minted by deployer (`HhFa`) | on-chain, [`infrastructure/`](infrastructure/) on-chain table |
 | 2026-08-25 07:08 | persona | `@cyberleeksreal` Telegram persona's first captured post | [`posting-pattern/telegram-post-times.txt`](posting-pattern/telegram-post-times.txt) |
 | 2026-08-27 | recon | First passive infrastructure recon (DNS, IP, TLS, CT) | [`infrastructure/recon/dns-cert-recon.txt`](infrastructure/recon/dns-cert-recon.txt) |
