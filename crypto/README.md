@@ -92,14 +92,55 @@ flowchart LR
 - **The funding wallet traces back to KuCoin.** Six hops, all reproduced from our
   own pull on 2026-08-13: `BmFdpraQ…` (a KuCoin processing wallet) sent 100.202 SOL
   to `FWbi…`, then `FWbi → J4zo → 26sZ → EjsB → 2ZdU → 3YLN`.
-- **Why it matters:** KuCoin performs identity verification, and since August 2023
-  new accounts must verify a government ID. A subpoena to KuCoin for the account
-  behind that deposit could return the holder's identity, transaction records, and
-  session history. That is the concrete off-ledger identity target, and it is
-  reachable by law enforcement.
+- **Why it matters:** the account behind that deposit has a verified real-world
+  identity on file. KuCoin has required a government ID from all users since
+  **July 15, 2023**, and its own policy is to answer authorized law-enforcement
+  requests. That is the concrete off-ledger identity target. See **What KYC is**
+  below for how that door opens, including the Seychelles / MLAT nuance.
 
 Raw proof for every hop is in [`evidence/funding_spine/`](evidence/funding_spine/),
 one `vc_tx_*.json` file per cited transaction.
+
+## What KYC is, and why it is the identity lead
+
+**KYC stands for "Know Your Customer."** It is the rule that makes a regulated
+exchange verify who its users actually are: your real name, a government photo ID
+(passport or driver's license), often a selfie and proof of address, before you
+can trade, deposit, or withdraw. The exchange keeps that identity record on file.
+
+Here is why that is the whole game in a trace like this. A blockchain wallet is
+**pseudonymous**: it is a string of characters with no name attached. The public
+ledger shows *what* moved and *where* it went, in full, forever, but never *who*
+is behind the keys. On-chain analysis can follow the money across dozens of
+wallets and still never reach a person. KYC is the one place the chain touches the
+real world. The moment money comes **out of a KYC exchange account**, that account
+has a verified human identity sitting behind it. That is why a trail that leads
+*backward into* an exchange is stronger than one that leads *out to* a mixer or a
+bridge: the exchange is a door with a name on the other side, not a dead end.
+
+For this case specifically:
+
+- **The identity exists.** KuCoin has required identity verification with a
+  government ID from **all** users since **July 15, 2023**. The account that
+  funded this operation was verified under that rule, so a real identity is on
+  file with the exchange.
+- **KuCoin answers law enforcement, by its own written policy.** KuCoin publishes
+  a Law Enforcement Request Process and states it will *"respond to all law
+  enforcement requests from authorized law enforcement officials with proof of
+  authority,"* returning account and identity records on a subpoena, court order,
+  or warrant.
+- **The Seychelles nuance.** KuCoin's operating entity, **Mek Global Limited**, is
+  registered in the **Seychelles**, so a request from a foreign authority does not
+  travel as a plain domestic subpoena; it goes through a **Mutual Legal Assistance
+  Treaty (MLAT)**, which KuCoin's own guidelines require for cross-border requests.
+- **Why it is more reachable now.** In **March 2025 KuCoin pleaded guilty** in U.S.
+  federal court (SDNY) to unlicensed money transmission and paid **$297.4M**, with
+  ongoing compliance obligations. That plea gives U.S. authorities real leverage
+  and a cooperation posture, Seychelles registration notwithstanding.
+
+So the funding wallet's SOL leading back six hops to a KuCoin account is not a
+loose thread. It is the point where a pseudonymous money trail meets a verified,
+subpoena-reachable identity. That is the identity lead.
 
 ## The copycat token (separate, went nowhere)
 
