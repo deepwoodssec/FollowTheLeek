@@ -49,8 +49,8 @@ whole operation is advertised through **Google Ads**.
 The bottom line for a non-technical reader: the operator tried hard to stay
 hidden, but every layer here, the servers, the domain name, the ad account,
 the video storage, is rented or bought from a real company that keeps a
-billing record tied to whoever paid for it. He hid from the public, not from a
-subpoena.
+billing record tied to whoever paid for it. He hid from the public, not from law
+enforcement.
 
 ## Infrastructure indicators
 
@@ -209,7 +209,7 @@ flowchart TD
     end
 
     MED -. "QR burned into videos points here" .-> GW
-    ORIG -. "billing/account records" .-> LEAD["subpoena leads"]
+    ORIG -. "billing/account records" .-> LEAD["law-enforcement leads"]
     ARW -. "paid upload via ArDrive/Turbo:<br/>paying wallet + receipt on record" .-> LEAD
 
     classDef op fill:#7f1d1d,stroke:#ef4444,color:#ffffff;
@@ -256,4 +256,4 @@ Every layer is operated by an identifiable company that keeps records tying it t
 
 None of these are reachable by a researcher from the outside. All of them
 are reachable by law enforcement with a records request. The public
-evidence in this repo is what points a subpoena at the right company.
+evidence in this repo is what points a records request at the right company.

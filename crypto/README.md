@@ -255,7 +255,7 @@ KuCoin chain):
   setup, the ~$40k to $60k in fees, the daily volume and fee rate. Estimates from
   public Raydium data, not exact figures.
 - **Established but off the public ledger:** the identity behind the KuCoin account
-  (subpoena).
+  (reachable by a law-enforcement request; MLAT for the Seychelles entity).
 - **Credit:** the funding-to-KuCoin trace was first published by GTAForums user
   [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077); we reproduced it independently.
 
