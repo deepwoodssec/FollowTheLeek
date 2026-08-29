@@ -97,7 +97,7 @@ flowchart LR
 | 2026-08-13 09:22 to 18:47 | money | KuCoin processing wallet (`BmFd`) funds the chain; six hops reach the funding wallet (`3YLN`) | on-chain, [`operation/funding_spine/`](crypto/evidence/operation/funding_spine/) |
 | 2026-08-14 09:42 | money | ArNS leak-site name wallet (`52yK`) first active (registers the on-chain site name) | on-chain, `operation/funding_spine/arns_52yK_*` |
 | 2026-08-15 09:49 | money | Funding wallet pays the buffer (`Ec2q`) | on-chain, `operation/funding_spine/buffer_Ec2q_*` |
-| 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active (signs the permanent leak uploads) | on-chain, `operation/funding_spine/arweave_667G_*` |
+| 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active; first Arweave leak upload follows. The leaks were **first posted on the dark-web forum Dread**, then mirrored to Arweave here, before any clearnet site (Dread origin per Vice Cit) | on-chain, `operation/funding_spine/arweave_667G_*` |
 | 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `operation/funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
 | 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `operation/funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
 | 2026-08-24 | money | `cyber-leek.com` first Let's Encrypt certificate issued (HTTPS on). A lower bound, not the domain registration date, which is still to be pulled (see infrastructure/) | Certificate Transparency, [`infrastructure/recon/dns-cert-recon.txt`](infrastructure/recon/dns-cert-recon.txt) |
