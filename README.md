@@ -24,10 +24,6 @@ tends to be a door. Claim only what a specific transaction proves, not who trade
 the most or who posts the loudest. When two things share a name, treat them as
 different until a transaction says otherwise.
 
-In an investigation like this you follow every lead, but you always follow the
-money. Leads get chased and, when the complete data does not support them, dropped
-rather than forced to fit. What stands here is what a specific transaction proves,
-and the money trail is the spine everything else hangs on.
 
 ## A tale of two thieves
 
