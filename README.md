@@ -71,21 +71,31 @@ Every dated event below is anchored to a verifiable source: an on-chain block
 time, a Certificate Transparency record, or a captured post. Times are UTC, 2026.
 
 ```mermaid
-timeline
-    title CyberLeek: from KuCoin funding to a dead site (UTC, 2026)
-    section Funding (the money)
-      Aug 13 : KuCoin account funds the chain : six hops to the funding wallet 3YLN
-      Aug 14 : ArNS leak-site name registered (52yK)
-      Aug 15 : Buffer and token creator funded : $CYBERLEEK minted 14:20Z, liquidity locked : Arweave upload key active
-    section Trust signal
-      Aug 22 : 270,000,000 dev tokens burned (overhang removed)
-    section Public launch
-      Aug 24 : cyber-leek.com goes live (first TLS cert) : pay-to-vote polls open
-      Aug 25 : Copycat pump.fun token minted (2hRg6) : @cyberleeksreal Telegram persona starts posting
-    section Recon and decline
-      Aug 27 : First passive infrastructure recon
-      Aug 28 : Cloudflare DNS change : cyberleeks.fun goes dark (no A record)
-      Aug 29 : cyber-leek.com down (HTTP 000) : DNS still resolves to InterServer
+flowchart LR
+    subgraph FUND["Funding (the money)"]
+      direction LR
+      A13["Aug 13<br/>KuCoin funds the chain<br/>six hops to 3YLN"] --> A14["Aug 14<br/>Leak-site name<br/>registered (52yK)"] --> A15["Aug 15<br/>$CYBERLEEK minted 14:20Z<br/>liquidity locked"]
+    end
+    subgraph TRUST["Trust signal"]
+      A22["Aug 22<br/>270,000,000 dev<br/>tokens burned"]
+    end
+    subgraph LAUNCH["Public launch"]
+      direction LR
+      A24["Aug 24<br/>cyber-leek.com live<br/>pay-to-vote polls open"] --> A25["Aug 25<br/>Copycat pump.fun token<br/>@cyberleeksreal posting"]
+    end
+    subgraph RECON["Recon and decline"]
+      direction LR
+      A27["Aug 27<br/>First passive recon"] --> A28["Aug 28<br/>cyberleeks.fun<br/>goes dark"] --> A29["Aug 29<br/>Site down (HTTP 000)"]
+    end
+    A15 --> A22 --> A24
+    A25 --> A27
+
+    classDef money fill:#dcfce7,stroke:#166534,color:#052e16;
+    classDef persona fill:#fee2e2,stroke:#991b1b,color:#450a0a;
+    classDef recon fill:#f3f4f6,stroke:#6b7280,color:#111827;
+    class A13,A14,A15,A22,A24 money;
+    class A25 persona;
+    class A27,A28,A29 recon;
 ```
 
 | When (UTC) | Track | Event | Source |
