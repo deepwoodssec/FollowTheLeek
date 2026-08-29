@@ -109,8 +109,10 @@ flowchart LR
 
 The shape of it: the money was funded from a KuCoin account and the token built and
 burn-signalled over roughly ten quiet days (Aug 13 to 22). Then `cyber-leek.com`
-was registered through Cloudflare (Aug 22) and went live (Aug 24), and the copycat
-spun up Aug 25 on a different registrar (Hostinger). Every dated event here is a
+was registered through Cloudflare (Aug 22) and first seen serving by Aug 24 (it
+went live somewhere in that Aug 22 to 24 window; the exact moment is not
+independently recorded), and the copycat spun up Aug 25 on a different registrar
+(Hostinger). Every dated event here is a
 hard on-chain block time, an RDAP/WHOIS record, or a Certificate Transparency
 record, not an observation date.
 
