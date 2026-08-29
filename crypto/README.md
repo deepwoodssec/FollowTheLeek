@@ -127,12 +127,12 @@ flowchart TD
     A7["7sg dump wallet"] -->|"1,849.73 SOL"| RELAY
     HC["Hc8yCCo4..."] -->|"1,854.86 SOL"| RELAY
     DU -->|"481.39 SOL"| RELAY
-    RELAY["5kSRXuv relay (pass-through, ~$0.48)"] -->|"4,185.98 SOL (~$439K)"| UNIT
+    RELAY["5kSRXuv relay (pass-through, near-zero)"] -->|"4,185.98 SOL (~$439K)"| UNIT
     UNIT["9SLPTL41 : Unit / Hyperunit bridge (shared custody)"] -->|bridge| HL["operator's Hyperliquid account (subpoena target)"]
 ```
 
-- **Relay:** `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` - 16
-  transactions total, holds \~$0.48. Every amount in is forwarded out
+- **Relay:** `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` - 14
+  transactions total, holds almost nothing. Every amount in is forwarded out
   near-instantly (e.g. in 289.68 -> out 289.67). A pass-through layering
   wallet, not a store of value.
 - **Bridge:** `9SLPTL41SPsYkgdsMzdfJsxymEANKr5bYoBsQzJyKpKS` - Solscan
@@ -154,7 +154,7 @@ operation runs value **in through Relay** and **out through Unit** into
 Hyperliquid.
 
 `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` is a second dump wallet (sold
-\~$93.6K, bought $0) funded the same way. Its full outflow is not traced here.
+\~$93.6K, bought $0) funded the same way. Its SOL proceeds are not part of the relay reconciliation above; its complete history is in complete_history/ for anyone tracing further.
 
 ## Where the Solana trail ends, and the real subpoena targets
 
