@@ -4,8 +4,8 @@ Hosting, DNS, certificates, media delivery, and how the operation is
 wired end to end.
 
 > **Two fronts.** This maps the wiring of the money operation
-> (`cyber-leek.com`, its media host, and the Arweave leak distribution) and,
-> the **copycat's** now-dead `cyberleeks.fun` domain. `cyber-leek.com` is the
+> (`cyber-leek.com`, its media host, and the Arweave leak distribution) and the
+> **copycat's** now-dead `cyberleeks.fun` domain. `cyber-leek.com` is the
 > operation; `cyberleeks.fun` is the copycat persona. They are
 > two separate tracks; see the repo root.
 
@@ -39,8 +39,8 @@ Here is why any of this matters. A careful operator hides his server's real
 IP address behind a shield service (a well-known one is **Cloudflare**), which
 sits in front of the real machine like a receptionist, so outsiders only ever
 see the shield and never the computer behind it. CyberLeek uses Cloudflare for
-the phone-book (DNS) part but never switched the shield on, so the real server
-address is exposed. That is a serious mistake: it points anyone, law
+the phone-book (DNS) part, and registered the domain through Cloudflare too, but
+never switched the shield on, so the real server address is exposed. That is a serious mistake: it points anyone, law
 enforcement included, straight at the actual rented computer. The leak videos
 are served from a second rented server and also copied onto **Arweave** (a
 decentralized "permanent" storage network that is hard to take down), and the
@@ -171,7 +171,7 @@ run by a real company that keeps billing and account records.
 **Front to back:**
 
 1. **Paid traffic.** Google Ads (tag `AW-18404896621`) drives victims to the site. Google holds the advertiser's billing identity.
-2. **Front door.** `cyber-leek.com` resolves **directly** to `162.35.101.236`, an InterServer server in Los Angeles (AS26666). Cloudflare handles the domain's DNS, but the record is unproxied, so the host IP is exposed. The domain registrar holds the registrant account.
+2. **Front door.** `cyber-leek.com` resolves **directly** to `162.35.101.236`, an InterServer server in Los Angeles (AS26666). Cloudflare handles the domain's DNS **and is its registrar** (IANA 1910), but the record is unproxied, so the host IP is exposed. The registrant account behind the domain sits with Cloudflare.
 3. **Origin host.** InterServer (US) runs that server and holds the hosting account and payment method behind it.
 4. **Content distribution.** The leak videos are served from a second InterServer host (`media.cyber-leek.com`, `69.10.50.177`) that refuses direct requests, and are mirrored on Arweave (`cyberleek.ar.io`, `turbo-gateway` fallback) via ArDrive / Turbo - the Arweave uploads are paid for, with the paying wallet and receipt on record.
 5. **The token.** The live `$CYBERLEEK` is a classic SPL token with locked Raydium liquidity, traded on Raydium / Jupiter and tracked on DexScreener. A separate pump.fun token of the same name (the persona's) stalled and is not part of this operation.
@@ -187,7 +187,7 @@ run by a real company that keeps billing and account records.
 Every layer is operated by an identifiable company that keeps records tying it to a paying account:
 
 - **Google** - the Ads billing identity behind the operation's own ad account (tag `AW-18404896621`, loaded on `cyber-leek.com`; archived: https://archive.ph/oPlW4)
-- The **domain registrar** and **Cloudflare** - the registrant / DNS account behind the domains
+- **Cloudflare** - registrar *and* DNS for `cyber-leek.com` (IANA registrar 1910); the registrant account and billing behind the operation's domain sit here. **Hostinger** is the registrar for the copycat's `cyberleeks.fun`.
 - **InterServer** (origin host, `162.35.101.236`, AS26666) - the server account and payment method
 - **ArDrive / Turbo** - the wallet and receipt that paid for the Arweave uploads
 - **KuCoin** - the KYC exchange the setup funding traces back to, six hops from the funding wallet; the account records behind that deposit are the identity lead, reachable through KuCoin's law-enforcement request process (MLAT for the Seychelles entity). See [`crypto/`](../crypto/) for the KYC detail and sources.
