@@ -38,7 +38,7 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 | --- | --- | --- | --- |
 | DNS + IP + TLS certificate lookups | `infrastructure/recon/dns-cert-recon.txt` | `262887dc3e90b007c9d6b74f6ff82454cf10e122c4d249542441d7f2e3f46abd` | 2026-08-27 |
 | Passive re-verification (DNS/Cloudflare change, .fun dark) | `infrastructure/recon/infra-recon-2026-08-28.txt` | `818797eacad3da336e06112bf1cf23e4343ba084d65bc4e2bf5c4f9a99ee5ce7` | 2026-08-28 |
-| Independent macOS re-pull (site down confirmed, reverse DNS) | `infrastructure/recon/infra-recon-2026-08-29.txt` | `3b454ba800c47d109ea555c687051153125b13fcf56a4f5987841a1edeb1ec85` | 2026-08-29 |
+| Independent re-pull (site down confirmed, reverse DNS) | `infrastructure/recon/infra-recon-2026-08-29.txt` | `3b454ba800c47d109ea555c687051153125b13fcf56a4f5987841a1edeb1ec85` | 2026-08-29 |
 
 ## Archived pages (archive.ph)
 

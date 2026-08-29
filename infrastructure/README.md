@@ -98,14 +98,20 @@ split:
 - `cyber-leek.com` nameservers: `crystal.ns.cloudflare.com`, `nash.ns.cloudflare.com` (Cloudflare DNS)
 - `cyber-leek.com` A record: `162.35.101.236` (InterServer, Los Angeles) - **unproxied (DNS-only)**. Cloudflare runs the domain's DNS, but the record is not proxied, so it returns the raw origin IP instead of a Cloudflare edge address. The origin is exposed regardless.
 - `cyberleeks.fun`: as of **2026-08-28** returns **no A record** (does not resolve); nameservers on NS1 (`dns1`-`dns4.p03.nsone.net`). Archived while live: https://archive.ph/rYIMI
-- **As of 2026-08-29 (independent macOS re-pull):** all three domains return **HTTP 000 (no response): the site is down.** DNS still resolves `cyber-leek.com` and `media.cyber-leek.com` to the same InterServer IPs (`162.35.101.236`, `69.10.50.177`), whose reverse DNS is `vps3572431.trouble-free.net` and `vps3577375.trouble-free.net` (InterServer VPS instances; `trouble-free.net` is InterServer's hosting domain). DNS records outlive a stopped server, and the InterServer hosting account behind those IPs stays the seizable record. `cyberleeks.fun` still returns no A record.
-- TLS: Let's Encrypt, first certificate issued **2026-08-24** (Certificate Transparency) - the site was stood up around that date
+- **As of 2026-08-29 (independent re-pull):** all three domains return **HTTP 000 (no response): the site is down.** DNS still resolves `cyber-leek.com` and `media.cyber-leek.com` to the same InterServer IPs (`162.35.101.236`, `69.10.50.177`), whose reverse DNS is `vps3572431.trouble-free.net` and `vps3577375.trouble-free.net` (InterServer VPS instances; `trouble-free.net` is InterServer's hosting domain). DNS records outlive a stopped server, and the InterServer hosting account behind those IPs stays the seizable record. `cyberleeks.fun` still returns no A record.
+- TLS: Let's Encrypt, first certificate issued **2026-08-24** (Certificate Transparency). This is when HTTPS was switched on, a **lower bound**, not proof of when the domain was registered or the site first served. The clearnet `cyber-leek.com` could have existed earlier over plain HTTP, and the operation's on-chain setup began on **2026-08-13** (see the timeline in the repo root).
+- **Domain registrar and registration date: not yet pulled.** Run [`recon/recon-operation.sh`](recon/recon-operation.sh) (RDAP + WHOIS) to obtain the registrar, the registrant account holder, and the true creation date for `cyber-leek.com`; run [`recon/recon-copycat.sh`](recon/recon-copycat.sh) for `cyberleeks.fun`. This is the open gap that fixes the standup date.
 
 Raw lookups:
 
 - [`recon/dns-cert-recon.txt`](recon/dns-cert-recon.txt) - first collection (2026-08-27); carries the Certificate Transparency cert data.
 - [`recon/infra-recon-2026-08-28.txt`](recon/infra-recon-2026-08-28.txt) - passive re-verification (2026-08-28), SHA256 `818797eacad3da336e06112bf1cf23e4343ba084d65bc4e2bf5c4f9a99ee5ce7`; this pull surfaced the Cloudflare DNS change and `cyberleeks.fun` going dark.
-- [`recon/infra-recon-2026-08-29.txt`](recon/infra-recon-2026-08-29.txt) - independent macOS re-pull (2026-08-29), SHA256 `3b454ba800c47d109ea555c687051153125b13fcf56a4f5987841a1edeb1ec85`; confirmed the site down (HTTP 000 on all three domains) with DNS still resolving to the same InterServer IPs, and surfaced the reverse-DNS hostnames. Reproducible via [`recon/recon-macos.sh`](recon/recon-macos.sh).
+- [`recon/infra-recon-2026-08-29.txt`](recon/infra-recon-2026-08-29.txt) - independent re-pull (2026-08-29), SHA256 `3b454ba800c47d109ea555c687051153125b13fcf56a4f5987841a1edeb1ec85`; confirmed the site down (HTTP 000 on all three domains) with DNS still resolving to the same InterServer IPs, and surfaced the reverse-DNS hostnames.
+
+Two passive recon scripts, split by target, refresh the data (each adds an RDAP + WHOIS registrar lookup):
+
+- [`recon/recon-operation.sh`](recon/recon-operation.sh) - the real operation: `cyber-leek.com` and `media.cyber-leek.com`. Writes `operation-recon-<date>.txt`.
+- [`recon/recon-copycat.sh`](recon/recon-copycat.sh) - the copycat persona: `cyberleeks.fun`. Writes `copycat-recon-<date>.txt`.
 
 ### Media delivery and anti-recon
 
