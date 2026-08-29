@@ -48,9 +48,47 @@ whole operation is advertised through **Google Ads**.
 
 The bottom line for a non-technical reader: the operator tried hard to stay
 hidden, but every layer here, the servers, the domain name, the ad account,
-the video storage, is rented or bought from a real company that keeps a
-billing record tied to whoever paid for it. He hid from the public, not from law
-enforcement.
+the video storage, is rented from a real, subpoenable company (mostly US or
+US-reachable) that keeps some record: a payment trail, an email, and the IP
+addresses he connected from. He hid from the public. Whether he also hid from
+law enforcement depends on two things the public data cannot yet answer: how he
+paid, and whether he ever logged in to his own server without a VPN.
+
+### InterServer, how he paid, and whether a VPN saves him
+
+The origin host is **InterServer**, a US company registered in Englewood Cliffs,
+New Jersey ([BBB](https://www.bbb.org/us/nj/englewood-cliffs/profile/web-hosting/interserver-inc-0221-90153894/customer-reviews)).
+Two things about it decide how far the exposed IP leads.
+
+First, InterServer does no identity KYC. A hands-on review shows signup verified
+by an emailed code only, no government ID and no phone check ([HostAdvice](https://hostadvice.com/hosting-company/interserver-reviews/));
+a hosting company is not a bank and carries no know-your-customer duty. What it
+does carry is US jurisdiction: a US records request reaches whatever it holds,
+however weak the signup was.
+
+Second, InterServer takes crypto, Bitcoin, Ethereum and Tether through Coinbase,
+and will even refund to a wallet ([WebsitePlanet](https://www.websiteplanet.com/blog/web-hosting-companies-that-accept-bitcoin/); [HostAdvice](https://hostadvice.com/hosting-company/interserver-reviews/)).
+So the operator could have rented the box with no card and no bank name. That
+removes the easy billing identity, but not the trail:
+
+- A Coinbase payment still settles on-chain. If the wallet that paid for the
+  server (or the domain, or Google Ads) sits in the same cluster this
+  investigation already traced back to KuCoin, the infrastructure spend links
+  straight into the identity trail. That is a concrete on-chain lead to run:
+  look for outflows from the traced wallets to a Coinbase Commerce or InterServer
+  payment address in the Aug 22 to 25 window.
+- The account email and, above all, the server and control-panel logs do not
+  care how he paid. Those logs record the IP addresses he connected from to run
+  the box.
+
+This is where a VPN is the whole question. The exposed origin IP tells law
+enforcement which InterServer box to subpoena; the prize inside is the
+connection log. Administer that server without a VPN or Tor and the log holds
+his real residential IP, subpoena InterServer for the box, subpoena the ISP for
+the subscriber, and there is a name, with the crypto payment never having to
+break. Use a no-logs VPN in an uncooperative jurisdiction and that layer can
+dead-end the trail. The public evidence cannot say which; it only guarantees
+investigators get to ask.
 
 ## Infrastructure indicators
 
@@ -185,7 +223,7 @@ run by a real company that keeps billing and account records.
 
 1. **Paid traffic.** Google Ads (tag `AW-18404896621`) drives victims to the site. Google holds the advertiser's billing identity.
 2. **Front door.** `cyber-leek.com` resolves **directly** to `162.35.101.236`, an InterServer server in Los Angeles (AS26666). Cloudflare handles the domain's DNS **and is its registrar** (IANA 1910), but the record is unproxied, so the host IP is exposed. The registrant account behind the domain sits with Cloudflare.
-3. **Origin host.** InterServer (US) runs that server and holds the hosting account and payment method behind it.
+3. **Origin host.** InterServer (US, Englewood Cliffs NJ) runs that server and holds the hosting account, email, connection logs and payment trail behind it. No identity KYC at signup, but a US company and so subpoenable.
 4. **Content distribution.** The leak videos are served from a second InterServer host (`media.cyber-leek.com`, `69.10.50.177`) that refuses direct requests, and are mirrored on Arweave (`cyberleek.ar.io`, `turbo-gateway` fallback) via ArDrive / Turbo - the Arweave uploads are paid for, with the paying wallet and receipt on record.
 5. **The token.** The live `$CYBERLEEK` is a classic SPL token with locked Raydium liquidity, traded on Raydium / Jupiter and tracked on DexScreener. A separate pump.fun token of the same name (the persona's) stalled and is not part of this operation.
 6. **The money.** The token's liquidity is locked (Raydium burn-and-earn) and the operation earns the trading fee on every trade; the 270M dev allocation was burned. The whole setup was paid for by one funding wallet whose SOL traces back six hops to a KuCoin (KYC) account, the identity lead. See [`crypto/`](../crypto/).
@@ -201,7 +239,7 @@ Every layer is operated by an identifiable company that keeps records tying it t
 
 - **Google** - the Ads billing identity behind the operation's own ad account (tag `AW-18404896621`, loaded on `cyber-leek.com`; archived: https://archive.ph/oPlW4)
 - **Cloudflare** - registrar *and* DNS for `cyber-leek.com` (IANA registrar 1910); the registrant account and billing behind the operation's domain sit here. **Hostinger** is the registrar for the copycat's `cyberleeks.fun`.
-- **InterServer** (origin host, `162.35.101.236`, AS26666) - the server account and payment method
+- **InterServer** (origin host, `162.35.101.236`, AS26666) - the server account, email, connection logs and payment trail. A US company (Englewood Cliffs, NJ) with no ID check at signup that accepts crypto; see the note above on why payment method and connection logs, not KYC, are what identify the renter
 - **ArDrive / Turbo** - the wallet and receipt that paid for the Arweave uploads
 - **KuCoin** - the KYC exchange the setup funding traces back to, six hops from the funding wallet; the account records behind that deposit are the identity lead, reachable through KuCoin's law-enforcement request process (MLAT for the Seychelles entity). See [`crypto/`](../crypto/) for the KYC detail and sources.
 - **Raydium** - the locked-liquidity market the operation earns its fees from; on-chain and public, but the income is a fee stream, not a withdrawal to chase
