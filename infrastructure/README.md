@@ -73,28 +73,32 @@ subpoena.
 | Google Ads tag ID | `AW-18404896621` |
 | gtag loader (in page source) | `https://www.googletagmanager.com/gtag/js?id=AW-18404896621` (archived: https://archive.ph/oPlW4) |
 
-### On-chain
+### On-chain: which mint is which
 
-Two distinct CyberLeek token mints exist, on different token programs, with
-different decimals and activity windows. `cyber-leek.com` displays the live SPL
-token `ApZux...`, the operation with the real money. The Token-2022 mint
-`2hRg6...` was launched on pump.fun, is promoted by the `@cyberleeksreal`
-persona, and stalled. On-chain the two do not connect; see
-[`crypto/`](../crypto/).
+Two different token mints carry the CyberLeek name, on different token programs.
+They do not connect on-chain, and keeping them straight is the whole point of the
+split:
 
-| Indicator | Value | Notes |
-| --- | --- | --- |
-| Token mint - CYBERLEEKS | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | Token-2022; "Cyber Leeks Real" / CYBERLEEKS; 1,000,000,000 supply; 6 decimals; authority renounced (verified on Solscan) |
-| Token mint - site CA | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | classic SPL Token; \~729.95M supply; 9 decimals; the CA displayed on cyber-leek.com; verified on Solscan (re-pull 2026-08-28) |
-| Trading venues referenced | pump.fun, Raydium, Jupiter, DexScreener | linked from the site |
-| Token deployer wallet | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` | fee payer on the CYBERLEEKS mint-creation tx (2026-08-25T06:33:48Z) |
-| Deployer funding path | Relay solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` | bridge-in that seeded the deployer; shared infra, not the operator |
+- **The operation (the money):** the classic SPL token `ApZux...`, the contract
+  address shown on `cyber-leek.com`. Locked liquidity, trading-fee income, funding
+  traced back to KuCoin (see [`crypto/`](../crypto/)).
+- **The copycat (the persona):** the pump.fun Token-2022 `2hRg6...`, pushed by the
+  `@cyberleeksreal` persona. It stalled and never caught real money.
+
+| Track | Indicator | Value | Notes |
+| --- | --- | --- | --- |
+| **Operation** | Live token (site CA) | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | The money. Classic SPL, \~729.95M supply, 9 decimals; the CA displayed on `cyber-leek.com`; locked LP plus trading fees; funding traces to KuCoin. Verified on Solscan (re-pull 2026-08-28). |
+| **Copycat** | Persona token | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | The persona. Token-2022 "Cyber Leeks Real" / CYBERLEEKS, 1,000,000,000 supply, 6 decimals, authority renounced; launched on pump.fun, pushed by `@cyberleeksreal`, stalled. Verified on Solscan. |
+| **Copycat** | Persona token deployer | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` | Persona side. Fee payer on the CYBERLEEKS mint-creation tx (2026-08-25T06:33:48Z). |
+| **Copycat** | Deployer funding (bridge-in) | Relay solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` | Persona side. A cross-chain bridge-in that seeded the copycat deployer; shared bridge infrastructure, not the operator, and not linked on-chain to the operation token. |
+| Both | Trading venues referenced | pump.fun, Raydium, Jupiter, DexScreener | linked from `cyber-leek.com` |
 
 ### DNS and certificates
 
 - `cyber-leek.com` nameservers: `crystal.ns.cloudflare.com`, `nash.ns.cloudflare.com` (Cloudflare DNS)
 - `cyber-leek.com` A record: `162.35.101.236` (InterServer, Los Angeles) - **unproxied (DNS-only)**. Cloudflare runs the domain's DNS, but the record is not proxied, so it returns the raw origin IP instead of a Cloudflare edge address. The origin is exposed regardless.
 - `cyberleeks.fun`: as of **2026-08-28** returns **no A record** (does not resolve); nameservers on NS1 (`dns1`-`dns4.p03.nsone.net`). Archived while live: https://archive.ph/rYIMI
+- **As of 2026-08-29:** `cyber-leek.com` and `media.cyber-leek.com` still resolve to the same InterServer IPs (`162.35.101.236`, `69.10.50.177`), but the site is reported down (not serving). DNS records outlive a stopped server, and the InterServer hosting account behind those IPs stays the seizable record. `cyberleeks.fun` still returns no A record.
 - TLS: Let's Encrypt, first certificate issued **2026-08-24** (Certificate Transparency) - the site was stood up around that date
 
 Raw lookups:
@@ -104,13 +108,13 @@ Raw lookups:
 
 ### Media delivery and anti-recon
 
-The leak videos are served from a separate host, hardened against direct access:
+The leak videos were served from a separate host that refused direct access while the site was live:
 
 - **Media host:** `media.cyber-leek.com` resolves to `69.10.50.177` (InterServer, Los Angeles, AS26666) - a second InterServer IP, distinct from the main site at `162.35.101.236`.
-- **Direct access is blocked.** HTTPS requests to the media host from an external server return no HTTP response at all (connection dropped, `curl` code `000`) instead of content. The endpoint does not serve direct or enumeration requests; the videos are only reachable through the site's own flow. (Re-confirmed on the 2026-08-28 pull: both the main origin and the media host dropped the connection to a non-browser request.)
+- **Direct access, while the site was live.** Through the 2026-08-28 pull, while `cyber-leek.com` was serving, HTTPS requests to the media host from an external, non-browser client got no HTTP response at all (connection dropped, `curl` code `000`) rather than content, and the origin rate-limited non-browser requests. The videos were reachable only through the site's own flow. As of **2026-08-29 the site is down** (see the DNS status note above): the domains still resolve, but nothing is served, so this can no longer be re-pulled and a `000` now means offline, not active filtering.
 - **Takedown-resistant distribution.** The circulated leak video's QR points at Arweave (`cyberleek.ar.io`) and prints a fallback gateway (`cyberleek.turbo-gateway.com`) with "if blocked, change gateway." The content lives on Arweave (permanent, decentralized), so blocking one gateway does not remove it.
 
-Net: the main origin IP is exposed, but the media path is deliberately defended - a separate host that drops direct connections, plus a permaweb copy with gateway failover.
+Net: the origin IP was exposed the whole time it was up, and the leak video also sits on Arweave with gateway failover, so no single takedown removes it. The site being down now undoes neither: the InterServer account behind the IPs and the Arweave upload receipt are still on record.
 
 ### How the leak video is distributed (Arweave, gateways, and the QR)
 

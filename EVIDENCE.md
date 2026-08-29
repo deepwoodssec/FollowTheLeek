@@ -9,7 +9,7 @@ link prove existence and integrity without redistribution.
 
 | Artifact | SHA256 | Collected (UTC) |
 | --- | --- | --- |
-| `crypto/evidence/` package (SHA256SUMS.txt) | `a73dd3cd5b9c4255795cbc810b6d82253f1983b15c5d3d60d96898e5ce93a223` | 2026-08-29 |
+| `crypto/evidence/` package (SHA256SUMS.txt) | `d0694e83ba90794bd2ce7e961318b9814f3d600488eee6134c7b041759e6dd76` | 2026-08-29 |
 
 Solana data is public and re-pullable. The package holds the
 raw pulls plus a per-file SHA256 manifest; regenerate any time.

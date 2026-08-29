@@ -25,11 +25,9 @@ the most or who posts the loudest. When two things share a name, treat them as
 different until a transaction says otherwise.
 
 In an investigation like this you follow every lead, but you always follow the
-money. Some leads looked strong and did not survive the complete data: an earlier
-"cash-out" figure, and an assumed link between the loud persona and the money,
-were each chased, tested, and retired. Those corrections are left visible here
-rather than quietly deleted. The money trail is the spine everything else hangs
-on.
+money. Leads get chased and, when the complete data does not support them, dropped
+rather than forced to fit. What stands here is what a specific transaction proves,
+and the money trail is the spine everything else hangs on.
 
 ## A tale of two thieves
 

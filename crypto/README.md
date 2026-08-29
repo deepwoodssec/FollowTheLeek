@@ -47,6 +47,16 @@ That model explains the behaviour. The leaks drip out and the site runs "vote on
 the next leak" polls because the point is to keep the coin **trading**, not to make
 one big splash. Sustained attention is the revenue.
 
+![CYBERLEEK live market on Raydium (DexScreener): market cap fading from about $8M toward $1.9M](../assets/crypto-token-dexscreener.png)
+
+*The live CYBERLEEK token (`ApZux...`) on Raydium, via DexScreener. The market cap
+slid from about $8M toward $1.9M (down ~54% in 24h) as holders sold, 13,202 sells
+against 11,478 buys. The liquidity is locked (about $527K, note the lock icon on
+the panel), so the operator cannot pull it, yet still earns the trading fee on
+every one of those sells. The price dump falls on holders, not the operator: with
+the dev allocation burned and the pool locked, the operator's income is the fee on
+volume, whichever way the price runs. Captured 2026-08-28.*
+
 ## The 270M burn
 
 At creation the supply was 1,000,000,000 CYBERLEEK. 730M went into the locked pool.
@@ -196,13 +206,6 @@ KuCoin chain):
   public Raydium data, not exact figures.
 - **Established but off the public ledger:** the identity behind the KuCoin account
   (subpoena).
-- **Retired, on purpose:** an earlier version of this section traced a bridge path
-  (`7sg → relay → Unit`) and attached a ~4,186 SOL / ~$439k "cash-out" figure. On the
-  complete data that path mixes wallets not tied to the operation (one never held
-  the token, one was bridged-in pass-through), so it has been removed and its
-  transactions moved to
-  [`evidence/examined_not_attributed/`](evidence/examined_not_attributed/). The
-  correction is left on the record deliberately.
 - **Credit:** the funding-to-KuCoin trace was first published by GTAForums user
   [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077); we reproduced it independently.
 
@@ -215,12 +218,10 @@ Raw pulls plus a SHA256 manifest are in [`evidence/`](evidence/):
   per cited hop (`vc_tx_*.json`).
 - `raw/`, `complete_history/` - per-wallet balances, signatures, and transactions
   for the tokens and the wallets examined.
-- `examined_not_attributed/` - the retired bridge-path transactions, kept for
-  transparency, not as an attribution.
 - `collection_log.txt`, `README_EVIDENCE.txt` - what was collected and when.
 - `SHA256SUMS.txt` - SHA256 of every file (chain of custody).
 
-Manifest SHA256: `a73dd3cd5b9c4255795cbc810b6d82253f1983b15c5d3d60d96898e5ce93a223`
+Manifest SHA256: `d0694e83ba90794bd2ce7e961318b9814f3d600488eee6134c7b041759e6dd76`
 
 Verify:
 
