@@ -5,9 +5,9 @@ Solana. Two different things carry the CyberLeek name. This section is about the
 one with the real money (the leak site and its live token), and it separates that
 from a copycat token that went nowhere.
 
-Credit where it is due: the funding-to-exchange trace was first published by
-GTAForums user [**Vice Cit**](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077). Everything below was reproduced independently from our
-own on-chain pull, and the raw transactions are in
+Credit: the funding-to-exchange trace was first published by GTAForums user
+[Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077).
+Reproduced independently here; raw transactions in
 [`evidence/funding_spine/`](evidence/funding_spine/).
 
 ## Two things called CyberLeek (do not confuse them)
