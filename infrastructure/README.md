@@ -5,7 +5,8 @@ wired end to end.
 
 > **Two fronts.** This maps the wiring of the money operation
 > (`cyber-leek.com`, its media host, and the Arweave leak distribution) and,
-> where they overlap, the persona's now-dead `cyberleeks.fun` domain. They are
+> the **copycat's** now-dead `cyberleeks.fun` domain. `cyber-leek.com` is the
+> operation; `cyberleeks.fun` is the copycat persona. They are
 > two separate tracks; see the repo root.
 
 ![CyberLeek homepage (cyber-leek.com)](../assets/cyber-leek-home.png)
@@ -61,7 +62,7 @@ subpoena.
 | Origin server IP | `162.35.101.236` | InterServer, Inc - AS26666 - Los Angeles, US |
 | Media subdomain (video delivery) | `media.cyber-leek.com` | resolves to `69.10.50.177` (2nd InterServer IP) |
 | Media server IP | `69.10.50.177` | InterServer, Inc - AS26666 - Los Angeles, US |
-| Secondary domain | `cyberleeks.fun` | advertised as the official site by @cyberleeksreal (archived: https://archive.ph/rYIMI); no A record as of 2026-08-28 |
+| Copycat domain | `cyberleeks.fun` | the **copycat persona's** site, pushed by @cyberleeksreal (archived: https://archive.ph/rYIMI); no A record as of 2026-08-28 |
 | Arweave gateway (QR target) | `cyberleek.ar.io` | permaweb copy of the branded leak distribution |
 | Fallback gateway | `cyberleek.turbo-gateway.com` | printed on the in-video QR ("if blocked, change gateway") |
 
@@ -168,29 +169,34 @@ Angeles (`162.35.101.236`). Gateway IPs are not attributed to the
 operator anywhere in this repo.
 
 
-## How the operation is wired (and where it breaks)
+## How it is wired (two tracks, and where each breaks)
 
-The stack at a glance. Red is the operator's own, seizable infrastructure
-(every box keeps billing or account records); blue is shared decentralized
-infrastructure that is not his; green is where the money begins.
+The stack at a glance, split by track. Red is the operation's own, seizable
+infrastructure behind `cyber-leek.com` (every box keeps billing or account
+records). Amber is the copycat persona's separate front (the `@cyberleeksreal`
+Telegram and X accounts, the `cyberleeks.fun` domain, and the stalled pump.fun
+token); on-chain it does not connect to the money. Blue is shared decentralized
+infrastructure that is nobody's to seize; green is the live token where the
+money is made. The Google ad account drives traffic to the operation; the
+Telegram and X accounts belong to the copycat.
 
 ```mermaid
 flowchart TD
-    ADS["Google Ads<br/>tag AW-18404896621"] --> VIC(["victims"])
-    TG["Telegram<br/>@cyberleeksreal"] --> VIC
-    XX["X / Twitter<br/>@cyberleeksreal"] --> VIC
-
-    VIC --> DOM["cyber-leek.com"]
-
-    subgraph SEIZE["Operator infrastructure (seizable; keeps billing/account records)"]
+    subgraph OP["THE OPERATION (the money): cyber-leek.com"]
       direction TB
+      ADS["Google Ads<br/>tag AW-18404896621"] --> DOM["cyber-leek.com"]
       DOM --> CF["Cloudflare DNS<br/>A record unproxied<br/>(origin exposed)"]
       CF --> ORIG["Origin server<br/>162.35.101.236<br/>InterServer, Los Angeles (AS26666)"]
       DOM --> MED["media.cyber-leek.com<br/>69.10.50.177 (InterServer, LA)<br/>hardened: drops direct requests"]
-      FUN["cyberleeks.fun<br/>backup domain (no A record)"]
+      ORIG --> TOK["Live SPL token on Solana (ApZux...)<br/>locked LP, earns trading fees<br/>funding traces to KuCoin (KYC)<br/>see crypto/"]
     end
 
-    ORIG --> TOK["CyberLeek token on Solana<br/>see crypto/ for the money trail"]
+    subgraph COPY["THE COPYCAT (the persona): separate track, no on-chain link to the money"]
+      direction TB
+      TG["Telegram<br/>@cyberleeksreal"] --> FUN["cyberleeks.fun<br/>(dead: no A record, 2026-08-28)"]
+      XX["X / Twitter<br/>@cyberleeksreal"] --> FUN
+      FUN --> PUMP["pump.fun token (2hRg6...)<br/>stalled on the bonding curve"]
+    end
 
     subgraph NEU["Decentralized (NOT operator infrastructure)"]
       direction TB
@@ -198,16 +204,19 @@ flowchart TD
     end
 
     MED -. "QR burned into videos points here" .-> GW
-    ARW -. "paid upload via ArDrive/Turbo:<br/>paying wallet + receipt on record" .-> LEAD["subpoena lead"]
+    ORIG -. "billing/account records" .-> LEAD["subpoena leads"]
+    ARW -. "paid upload via ArDrive/Turbo:<br/>paying wallet + receipt on record" .-> LEAD
 
-    classDef seize fill:#7f1d1d,stroke:#ef4444,color:#ffffff;
+    classDef op fill:#7f1d1d,stroke:#ef4444,color:#ffffff;
+    classDef copy fill:#78350f,stroke:#f59e0b,color:#ffffff;
     classDef neutral fill:#1e3a8a,stroke:#60a5fa,color:#ffffff;
     classDef money fill:#166534,stroke:#22c55e,color:#ffffff;
     classDef src fill:#374151,stroke:#9ca3af,color:#ffffff;
-    class ORIG,MED,CF,DOM,FUN seize;
+    class DOM,CF,ORIG,MED op;
+    class TG,XX,FUN,PUMP copy;
     class GW,ARW neutral;
     class TOK money;
-    class ADS,TG,XX,VIC,LEAD src;
+    class ADS,LEAD src;
 ```
 
 
@@ -227,18 +236,18 @@ run by a real company that keeps billing and account records.
 **Why it's hard to track from the outside:**
 
 - Arweave is decentralized and permanent - no host to lean on, no simple owner lookup.
-- Once the proceeds leave Solana through a cross-chain swap, the public on-chain link breaks by design, so the trail cannot be followed from public data alone.
+- The proceeds never leave in a lump. The liquidity is locked and the operator earns a trading fee on every trade, so there is no single off-Solana cash-out to chase. The identity lead is on the funding side (KuCoin), not on a payout.
 
 **Why it's still reachable - the companies in the middle:**
 
 Every layer is operated by an identifiable company that keeps records tying it to a paying account:
 
-- **Google** - Ads billing, and the signed-in Google account behind the operator's browser (see [`browser/`](../browser/))
+- **Google** - the Ads billing identity behind the operation's own ad account (tag `AW-18404896621`, loaded on `cyber-leek.com`; archived: https://archive.ph/oPlW4)
 - The **domain registrar** and **Cloudflare** - the registrant / DNS account behind the domains
 - **InterServer** (origin host, `162.35.101.236`, AS26666) - the server account and payment method
 - **ArDrive / Turbo** - the wallet and receipt that paid for the Arweave uploads
-- **pump.fun** and the **exchanges** the money touched
-- The **Unit bridge** (which maps the Solana deposit to a Hyperliquid account) and **Hyperliquid** (account activity and any onward withdrawal to a fiat exchange) - the records that tie the bridged proceeds to a person
+- **KuCoin** - the KYC exchange the setup funding traces back to, six hops from the funding wallet; the account records behind that deposit are the identity lead (subpoena). See [`crypto/`](../crypto/).
+- **Raydium** - the locked-liquidity market the operation earns its fees from; on-chain and public, but the income is a fee stream, not a withdrawal to chase
 
 None of these are reachable by a researcher from the outside. All of them
 are reachable by law enforcement with a records request. The public

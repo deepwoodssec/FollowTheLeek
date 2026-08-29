@@ -1,7 +1,7 @@
 ![FollowTheLeek - tracing a GTA VI leak-branded crypto operation](assets/banner.png)
 
 **CyberLeek** is an active operation that uses stolen Grand Theft Auto VI material
-- Rockstar Games' unreleased IP - as bait for a cryptocurrency it profits from.
+(Rockstar Games' unreleased IP) as bait for a cryptocurrency it profits from.
 This is an open, evidence-backed investigation. Every indicator here is public,
 verifiable, and cryptographically hashed, so researchers, defenders, exchanges,
 and platforms can identify the operation and act on it.
@@ -31,7 +31,7 @@ money trail that was never linked to it. Both were wrong. Both were retired, and
 corrected reasoning is left visible rather than quietly deleted. A trace worth
 trusting shows where it was wrong, not only where it was right.
 
-## Two things wear the name (a tale of two thieves)
+## A tale of two thieves
 
 There are two separate things carrying the CyberLeek name, and on-chain they do not
 connect:
@@ -105,7 +105,7 @@ artifact's SHA256. No PII, no leaked media, no accusations against named people.
 ## Credit
 
 The funding-to-KuCoin trace in [`crypto/`](crypto/) was first published by GTAForums
-user Vice Cit and reproduced here independently.
+user [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077) and reproduced here independently.
 
 ## Victims
 

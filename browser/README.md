@@ -1,4 +1,4 @@
-# Metadata: persona browser fingerprint
+# Browser: the persona's browser fingerprint
 
 > **Which track: the persona, not the money.** This section documents the loud
 > half of the case: the `@cyberleeksreal` Telegram / X account, the
@@ -10,25 +10,26 @@
 > whoever holds the money.
 
 
-![CyberLeek operator browser: Citron theme and the Ask Gemini button](browser.png)
+![CyberLeek persona browser: Citron theme and the Ask Gemini button](browser.png)
 
-*The operator's own Chrome window on cyberleeks.fun - the olive-yellow Citron theme across the toolbar and the Ask Gemini button, top right.*
+*The persona's own Chrome window on cyberleeks.fun - the olive-yellow Citron theme across the toolbar and the Ask Gemini button, top right.*
 
-![Zoom: the operator's browser chrome](browser-chrome-zoom.png)
+![Zoom: the persona's browser chrome](browser-chrome-zoom.png)
 
 *Zoomed in on the browser chrome from the same capture: the olive-yellow Citron toolbar, the `cyberleeks.fun` address bar, the signed-in account avatar, and the Ask Gemini button.*
 
-The operator posted screen captures taken on the operation's own
-machine while viewing its own site. Those captures leak a consistent environment
-fingerprint. Any one attribute is common; taken together, and
-cross-referenced against the Google account that accessed the site, they
-narrow the operator profile.
+The persona account posted screen captures taken on its own machine while
+viewing cyberleeks.fun. Those captures leak a consistent environment
+fingerprint. Any one attribute is common; taken together, and cross-referenced
+against the Google account that accessed the site, they narrow the persona
+profile. This is the persona track, not the money; nothing here is tied on-chain
+to the operation's wallets.
 
 ## In plain terms
 
 Your computer's core software is its **operating system** (Windows, macOS, or
 Linux). The program you use to open websites is a **web browser** (Chrome,
-Safari, Firefox). The operator posted screenshots of his own screen, and those
+Safari, Firefox). The persona account holder posted screenshots of his own screen, and those
 pictures give away several of these settings at once: he is on **Windows**,
 using **Google Chrome**, with a specific built-in color **theme**, and he is
 **signed in to a Google account** (a Google AI feature called Gemini is
@@ -44,7 +45,7 @@ account, so Google holds records that tie all of it back to one person.
 - **Browser:** Google Chrome
 - **Theme:** Chrome's built-in "Citron" color, dark mode
 - **Google account:** signed in (Gemini active, account avatar present)
-- **Context:** the operation's own screenshot of its own site (cyberleeks.fun)
+- **Context:** the persona's own screenshot of its own site (cyberleeks.fun)
 
 ## Operating system: Windows
 
@@ -65,7 +66,7 @@ reproducible setting on the signed-in profile rather than a one-off.
 
 ![Reference: Chrome Appearance panel with the Citron preset](browser-appearance-reference.png)
 
-*Reference: Chrome's built-in Appearance panel (Settings > Appearance), Dark mode with the Citron color preset selected. The operator's sampled toolbar color (about `#2e2b18`) matches this built-in preset, not a custom or Web Store theme. This is how the theme was identified.*
+*Reference: Chrome's built-in Appearance panel (Settings > Appearance), Dark mode with the Citron color preset selected. The persona's sampled toolbar color (about `#2e2b18`) matches this built-in preset, not a custom or Web Store theme. This is how the theme was identified.*
 
 ## Signed-in Google account
 
@@ -80,12 +81,12 @@ Two independent signals show an active Google sign-in:
 Chrome Sync ties the theme, extensions, history, and open tabs above to
 this Google account. That account is the anchor.
 
-## Context: the operation's own view of its own site
+## Context: the persona's own view of its own site
 
-The capture is the operation's own screenshot of cyberleeks.fun, taken on
+The capture is the persona's own screenshot of cyberleeks.fun, taken on
 its working machine, not a visitor's view. The environment shown - the
-OS, the browser, the theme, the signed-in account - is therefore the
-operator's real day-to-day setup, not a throwaway.
+OS, the browser, the theme, the signed-in account - is therefore the persona
+account holder's real day-to-day setup, not a throwaway.
 
 ## Why it matters
 
@@ -98,7 +99,7 @@ standalone identifier.
 
 ## How it was found
 
-Read directly from pixels in the operator's own posted captures:
+Read directly from pixels in the persona's own posted captures:
 
 - window-control placement -> operating system (Windows)
 - toolbar color sampled and matched to Chrome's Citron preset -> theme

@@ -26,10 +26,10 @@ The image is also stored on **IPFS**, a decentralized file network where a
 file's address is a **hash**: a unique fingerprint calculated from the file's
 exact bytes. Because the address is derived from the contents, anyone can
 re-calculate it from the downloaded file and prove they are looking at the very
-same image the operator published, with nothing swapped or altered along the
+same image the persona published, with nothing swapped or altered along the
 way. This section walks through both checks.
 
-![Operator profile picture](pfp.jpg)
+![Persona profile picture](pfp.jpg)
 
 ## Source
 
@@ -40,11 +40,11 @@ The profile picture is stored on IPFS:
 IPFS addresses are content-addressed. The CID is a hash of the file
 itself, so that string is both the location and the integrity check. If
 the bytes change, the CID changes. The image you read the credentials
-from is provably the same image the operator published.
+from is provably the same image the persona published.
 
 ## How we found it
 
-Nothing here required contact with the operator or any private data. It
+Nothing here required contact with the persona account or any private data. It
 is all read off the published image.
 
 **1. Pull the CID off the profile.** The avatar on the profile did not
@@ -87,7 +87,7 @@ The C2PA manifest reads:
   LOCAL USE ONLY", common name `xAI Grok Imagine`
 - **Certificate serial:** `50872080510237537`
 
-In plain terms: the operator generated his own profile picture with
+In plain terms: the persona account holder generated the profile picture with
 Grok Imagine and used it as-is, with the content credentials left
 intact.
 
@@ -123,18 +123,18 @@ manifest whose hashes all match the published bytes.
   the same manifest. There is no chain-of-custody gap to argue about.
 - **It ties the avatar to a specific generation workflow.** The credential
   points straight at a Grok Imagine session. That distinguishes the
-  operator's own generated assets from any genuine material he reposts.
+  persona's own generated assets from any genuine material reposted.
 - **The "LOCAL USE ONLY" self-signed certificate** means the credential
   was not produced by a hardened publishing pipeline. It is the default
   stamp a Grok Imagine output carries. Its presence, untouched, tells you
-  the operator did not strip metadata before posting, which is itself a
+  the persona account holder did not strip metadata before posting, which is itself a
   small operational-hygiene tell.
 
 ## The avatar in use
 
 ![CyberLeek verified X account @cyberleeksreal](../assets/x-account.png)
 
-*The same Grok-generated leek character is the avatar and banner on the operation's verified X account, `@cyberleeksreal` ("The Only Real Cyberleek"), which links `cyberleeks.fun` and the Telegram channel `t.me/cyberleeksreal`. Listed location "Vice City, CA, US" is a Grand Theft Auto reference, not a geolocation claim.*
+*The same Grok-generated leek character is the avatar and banner on the persona's verified X account, `@cyberleeksreal` ("The Only Real Cyberleek"), which links `cyberleeks.fun` and the Telegram channel `t.me/cyberleeksreal`. Listed location "Vice City, CA, US" is a Grand Theft Auto reference, not a geolocation claim.*
 
 ## What this is and is not
 

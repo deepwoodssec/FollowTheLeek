@@ -29,12 +29,15 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 | Poll: prologue with Lucia | `assets/crypto-poll-lucia.png` | `0c46f0012d2470750fb01104c2c3aee355e5b7d5ca87878a14c93c85fd26ab11` | cyber-leek.com poll, archive.ph/A4zKG |
 | Poll: next GTA 6 video | `assets/crypto-poll-nextvideo.png` | `0f5bbf4d35ecc85570e4c59de44fcdea61d13675ebbf4125471640b78042a005` | cyber-leek.com poll (full homepage capture), archive.ph/cpbHi |
 | Telegram "good morning" post /33 | `posting-pattern/tg-good-morning.png` | `0fca459dbe5b9a4e319b4c8312d2caa9befab3b9470b78071dd7cc60f57a896b` | t.me/cyberleeksreal/33, archive.ph/zkVZh |
+| Telegram hashtags post /24 | `writing-style/tg-hashtags.png` | `4cb4928efcfa9d66da92152fefb8a03a75f1fa7885ce9e96627413ad8077d824` | t.me/cyberleeksreal/24, archive.ph/I0X9X |
+| Telegram broken-English post /31 | `writing-style/tg-broken-english.png` | `630d28c7af6d27cb3f32f9028d4f76d3e738f9b5fa69815c097a4007414736fd` | t.me/cyberleeksreal/31, archive.ph/9J4OI |
 
 ## Infrastructure recon
 
 | Artifact | File | SHA256 | Collected (UTC) |
 | --- | --- | --- | --- |
 | DNS + IP + TLS certificate lookups | `infrastructure/recon/dns-cert-recon.txt` | `262887dc3e90b007c9d6b74f6ff82454cf10e122c4d249542441d7f2e3f46abd` | 2026-08-27 |
+| Passive re-verification (DNS/Cloudflare change, .fun dark) | `infrastructure/recon/infra-recon-2026-08-28.txt` | `818797eacad3da336e06112bf1cf23e4343ba084d65bc4e2bf5c4f9a99ee5ce7` | 2026-08-28 |
 
 ## Archived pages (archive.ph)
 

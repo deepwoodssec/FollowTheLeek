@@ -11,9 +11,13 @@
 
 
 When the persona is active on its channels, measured from two independent
-sources: the Telegram channel and the pump.fun token deployer wallet, both part of
-this persona and not the wallet behind the money. Post and transaction times are facts you can
-measure; the pattern they form is the finding.
+persona-side sources: the `@cyberleeksreal` Telegram channel and the pump.fun
+token deployer wallet (`HhFa...`). Both belong to the copycat persona, and
+neither is a wallet behind the money (the KuCoin-funded live token and leak
+site; see [`../crypto/`](../crypto/)). This correlation stays entirely inside
+the persona track: at most it shows the Telegram account and the pump.fun wallet
+are one hand. It says nothing about who holds the money. Post and transaction
+times are facts you can measure; the pattern they form is the finding.
 
 
 ![Daily activity window, UTC - Telegram and on-chain deployer sessions](activity-window.png)
@@ -21,23 +25,23 @@ measure; the pattern they form is the finding.
 ## In plain terms
 
 People run on habits, and scammers are no exception. If you write down the
-exact time of everything the operator does in public, both his Telegram posts
-and his own blockchain transactions, a daily rhythm appears: the hours he is
-awake and working, and the hours he goes dark. One catch has to be handled
+exact time of everything the persona does in public, both its Telegram posts
+and the pump.fun deployer wallet's own transactions, a daily rhythm appears: the
+hours it is active, and the hours it goes dark. One catch has to be handled
 first: apps show each viewer the time in their own local zone, so to compare
 honestly we convert every timestamp to one shared world clock called **UTC
 (Coordinated Universal Time)**, the global reference that does not shift with
 location or daylight saving. Lined up in UTC, his active window and his quiet
 window are consistent from day to day. That repeatable rhythm is what
-investigators call a **pattern of life**. It does not name him, but it links
-his separate accounts to one routine and, because morning and night fall at
-different UTC hours around the world, it hints at what part of the globe he
-sits in.
+investigators call a **pattern of life**. It does not name anyone, but it links
+the persona's separate accounts (the Telegram and the pump.fun wallet) to one
+routine. It still does not reach the money wallets, and this repo does not use
+it to fix a timezone or a location.
 
 ## Sources
 
 - **Telegram** - `t.me/cyberleeksreal` post datetimes (scraped from the public `t.me/s/` view). Raw: [`telegram-post-times.txt`](telegram-post-times.txt).
-- **On-chain** - transactions signed by the CYBERLEEKS deployer wallet `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` (the operator's own signed actions, not general token trades). Raw: [`deployer-onchain-times.txt`](deployer-onchain-times.txt).
+- **On-chain (persona-side)** - transactions signed by the persona's pump.fun CYBERLEEKS deployer wallet `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` (the persona's own signed actions on its stalled token, not general token trades, and not the money wallets). Raw: [`deployer-onchain-times.txt`](deployer-onchain-times.txt).
 
 ## Method
 
@@ -51,7 +55,7 @@ session count are shown below. See [`analyze_times.py`](analyze_times.py).
 
 23 Telegram posts + 23 on-chain deployer actions. All timestamps UTC.
 
-![Operator activity by hour, UTC - Telegram and on-chain deployer activity](activity-by-hour.png)
+![Persona activity by hour, UTC - Telegram and pump.fun deployer activity](activity-by-hour.png)
 
 ```
 hour          TG (raw/sessions)   on-chain (raw/sessions)
@@ -91,26 +95,26 @@ client shows is the viewer's own local time; the collector records the post's
 UTC timestamp, which lands at the early edge of the active window.*
 
 A "good morning" greeting is different from a bare timestamp: it is a semantic
-self-report of local time of day. Taken at face value it aligns the operator's
-local morning with the start of the active band (about 05:00-06:00 UTC), which
-would point to roughly **UTC+1 to UTC+3** (Europe, West or East Africa, or the
-Middle East) and is inconsistent with the Americas (that hour is the middle of
-the night there) or East Asia (the afternoon). Treat this as a lead, not a
-conclusion: a single greeting is weak, and could be performative, scheduled, or
-written by one of several operators.
+self-report of local time of day. Taken at face value it puts the persona's
+local morning at the start of the active band (about 05:00-06:00 UTC), which is
+consistent with the daily rhythm the two channels already show. We deliberately
+stop there: this repo does not publish a location or timezone attribution. A
+single greeting is weak anyway, and could be performative, scheduled, or written
+by one of several people running the persona.
 
 
 ## What this is, and what it is not
 
 This is a behavioral fingerprint: a repeatable active/quiet cycle that
-shows up in two independent sources and can be used to correlate activity
-between them.
+shows up in two independent persona-side sources and can be used to correlate
+the persona's Telegram with its pump.fun wallet. It does not correlate to, or
+say anything about, the money wallets.
 
-On its own, the active/quiet cycle fixes **no** timezone and **no** location;
-the "good morning" greeting above is the first semantic signal that points
-toward one, but a single greeting does not establish it. The pattern does
-**not** indicate whether one person or several are behind the operation. A quiet
+On its own, the active/quiet cycle fixes **no** timezone and **no** location,
+and this repo does not attempt to place the persona geographically. The "good
+morning" greeting is a self-reported local-morning marker, nothing more. The pattern does
+**not** indicate whether one person or several are behind the persona. A quiet
 window is not proof of sleep - scheduled posting, automation, shift work,
-or multiple operators in different places would all produce the same
+or multiple people running the persona in different places would all produce the same
 shape. The samples span 2026-08-25 through 08-28, still a short
 window.

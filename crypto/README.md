@@ -6,7 +6,7 @@ one with the real money (the leak site and its live token), and it separates tha
 from a copycat token that went nowhere.
 
 Credit where it is due: the funding-to-exchange trace was first published by
-GTAForums user **Vice Cit**. Everything below was reproduced independently from our
+GTAForums user [**Vice Cit**](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077). Everything below was reproduced independently from our
 own on-chain pull, and the raw transactions are in
 [`evidence/funding_spine/`](evidence/funding_spine/).
 
@@ -189,8 +189,8 @@ KuCoin chain):
   transactions moved to
   [`evidence/examined_not_attributed/`](evidence/examined_not_attributed/). The
   correction is left on the record deliberately.
-- **Credit:** the funding-to-KuCoin trace was first published by GTAForums user Vice
-  Cit; we reproduced it independently.
+- **Credit:** the funding-to-KuCoin trace was first published by GTAForums user
+  [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077); we reproduced it independently.
 
 ## Evidence files (hashed)
 

@@ -1,19 +1,19 @@
 # Language and writing style
 
-> **Which track: the persona, not the money.** This section documents the loud
-> half of the case: the `@cyberleeksreal` Telegram / X account, the
-> `cyberleeks.fun` domain, and a pump.fun token that stalled. On-chain, none of it
-> connects to the KuCoin-funded wallets behind the live token and the leak site
-> (see [`../crypto/`](../crypto/)). Whether this persona is the money operator
-> keeping a loud alias walled off, or a copycat riding the brand, is unproven.
-> Read what follows as observations about the persona, not an identification of
-> whoever holds the money.
+> **Which track: this one compares both.** The other persona sections stay on
+> the copycat side. This one sets the operation's own `cyber-leek.com` site copy
+> next to the persona's `@cyberleeksreal` Telegram / X copy and asks whether one
+> hand wrote both. It does not. The two fronts share only generic broken-English
+> scam habits, while their distinctive tells differ by channel, which matches the
+> on-chain finding that the money and the persona do not connect (see
+> [`../crypto/`](../crypto/)). Read this as a comparison of two writers wearing
+> one name, not an identification of either.
 
 
-Documented language from the operator's official channels. Every item is
-a direct quote from captured copy; the notes are limited to what is
-observable in the text. This is a language observation, not an
-identification.
+Documented language from both fronts: the operation's `cyber-leek.com` site
+copy and the persona's `@cyberleeksreal` Telegram / X posts. Every item is a
+direct quote from captured copy; the notes are limited to what is observable in
+the text. This is a language comparison, not an identification.
 
 ## In plain terms
 
@@ -21,13 +21,16 @@ The way a person writes is almost as individual as a fingerprint, and the
 practice of studying it to identify or link authors even has a name:
 **stylometry**. People repeat the same small, mostly unconscious habits,
 particular spellings, spacing, punctuation, and word choices, without ever
-noticing they do it. This section simply collects the operator's quirks from
-across his website and his posts, with a direct quote for every one. Two things
-fall out. First, the same quirks appear on the website and on Telegram, which
-ties those separate accounts to a **single author**. Second, some of the habits
-are the traces of a person's native language showing through their English,
-which hints at the language he grew up speaking. It is a set of observations,
-not a name.
+noticing they do it. This section collects the quirks from both
+fronts, the leak site and the Telegram persona, with a direct quote for every
+one. What falls out cuts **against** a single author. The two channels share
+only generic broken-English scam habits (a currency symbol after the number,
+dropped articles), which are common and prove nothing on their own. Their
+**distinctive** tells differ: the site copy carries French-flavored markers,
+while the Telegram persona's signature is a Turkish/Azerbaijani character.
+Different fingerprints on different channels, consistent with the on-chain
+finding that the money and the persona do not connect. It is a set of
+observations, not a name.
 
 ## Sources
 
@@ -96,14 +99,15 @@ Full hashtag set observed: `#gtavıleak`, `#gtavı`, `#gtavıleaks`,
 `#GTAVI`, `#RockstarGames`, `#GTA6News`, `#GTA`, plus `@RockstarGames`
 mentions.
 
-### Currency symbol after the amount (now confirmed on both channels)
+### Currency symbol after the amount (the one shared habit)
 
 > "THIS WILL MAKE 300K+$"
 > "ROI 115K$"
 > "INVEST IT ONLY 20$"
 
-Matches the site's "ONLY 499$" - a consistent post-fixed currency symbol
-across the site and Telegram.
+Matches the site's "ONLY 499$": a post-fixed currency symbol on both fronts.
+This is the one habit the two share, and it is a weak signal, common well
+outside US English, so on its own it ties nothing to a single author.
 
 ### "GAVE" for "give" (repeated)
 
@@ -141,14 +145,20 @@ Consistent `..` (two dots) rather than `...`.
 
 ## Reading
 
-The same non-standard conventions appear on **both** the site and
-Telegram - the post-fixed currency symbol (`499$` / `300K+$` / `20$`),
-and consistent non-native grammar (dropped articles, "gave" for "give",
-broken passive). Combined with the dotless-`ı` hashtag signature, this is
-a consistent authorial style across channels. These are observations
-about the writing; they do not identify a location, a native language,
-or whether one or more people produced the copy. Several markers (the
-post-fixed currency symbol, the space before punctuation, `acces` for
-`access`) align with French/European writing conventions, while the dotless
-`ı` is a Turkish/Azerbaijani character; these associations are noted as
-observations and are not used here to claim a native language or origin.
+Two hands, one brand. The leak site and the Telegram persona share only
+low-specificity habits: a currency symbol after the number (`499$` on the site,
+`300K+$` / `20$` on Telegram) and generic non-native grammar (dropped articles,
+"gave" for "give", broken passive). Those are common to scam copy and prove
+nothing about authorship on their own.
+
+Where the **distinctive** markers sit, the two fronts diverge rather than match.
+The site copy carries French/European tells: `acces` for `accès`, a space before
+`!` and `?`, the post-fixed currency symbol. The Telegram persona's signature is
+a different one: the dotless `ı` (U+0131, a Turkish/Azerbaijani character)
+recurring across its hashtags, plus its own broken-English habits and two-dot
+ellipses. A single author does not usually leave one language's fingerprint on
+one channel and a different one on another. That divergence, alongside the
+on-chain separation, is why this investigation treats `cyber-leek.com` and
+`@cyberleeksreal` as two different hands wearing one name. The language
+associations (French/European, Turkish/Azerbaijani) are recorded as observations
+and are not used to claim a native language or origin for either.
