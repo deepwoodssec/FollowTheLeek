@@ -76,12 +76,12 @@ flowchart LR
       direction LR
       A13["Aug 13<br/>KuCoin funds the chain<br/>six hops to 3YLN"] --> A14["Aug 14<br/>Leak-site name<br/>registered (52yK)"] --> A15["Aug 15<br/>$CYBERLEEK minted 14:20Z<br/>liquidity locked"]
     end
-    subgraph TRUST["Trust signal"]
-      A22["Aug 22<br/>270,000,000 dev<br/>tokens burned"]
+    subgraph TRUST["Trust signal + domain"]
+      A22["Aug 22<br/>270M burned +<br/>cyber-leek.com<br/>registered (Cloudflare)"]
     end
     subgraph LAUNCH["Public launch"]
       direction LR
-      A24["Aug 24<br/>cyber-leek.com first TLS cert<br/>(HTTPS on) + polls open"] --> A25["Aug 25<br/>Copycat pump.fun token<br/>@cyberleeksreal posting"]
+      A24["Aug 24<br/>site live<br/>(TLS + first archive)<br/>+ polls open"] --> A25["Aug 25<br/>Copycat: pump.fun token +<br/>cyberleeks.fun (Hostinger)<br/>+ @cyberleeksreal"]
     end
     A15 --> A22 --> A24
 
@@ -99,17 +99,20 @@ flowchart LR
 | 2026-08-15 09:49 | money | Funding wallet pays the buffer (`Ec2q`) | on-chain, `operation/funding_spine/buffer_Ec2q_*` |
 | 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active; first Arweave leak upload follows. The leaks were **first posted on the dark-web forum Dread**, then mirrored to Arweave here, before any clearnet site (Dread origin per Vice Cit) | on-chain, `operation/funding_spine/arweave_667G_*` |
 | 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `operation/funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
+| 2026-08-22 06:36:48 | money | `cyber-leek.com` domain registered through **Cloudflare** (registrar IANA 1910) | RDAP + WHOIS, [`operation-recon-2026-08-29.txt`](infrastructure/recon/operation-recon-2026-08-29.txt) |
 | 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `operation/funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
-| 2026-08-24 | money | `cyber-leek.com` first Let's Encrypt certificate issued (HTTPS on). A lower bound, not the domain registration date, which is still to be pulled (see infrastructure/) | Certificate Transparency, [`infrastructure/recon/dns-cert-recon.txt`](infrastructure/recon/dns-cert-recon.txt) |
+| 2026-08-24 | money | `cyber-leek.com` goes live: first Let's Encrypt cert (HTTPS on) and the earliest archive snapshot (14:20Z). The domain itself was registered Aug 22 (above) | Certificate Transparency + archive.today |
 | 2026-08-24 | money | Pay-to-vote poll option wallets (`Cpj7`, `3wFK`) first active | on-chain, `operation/polls/` |
 | 2026-08-25 06:33:48 | persona | Copycat pump.fun token (`2hRg6`) minted by deployer (`HhFa`) | on-chain, [`infrastructure/`](infrastructure/) on-chain table |
 | 2026-08-25 07:08 | persona | `@cyberleeksreal` Telegram persona's first captured post | [`posting-pattern/telegram-post-times.txt`](posting-pattern/telegram-post-times.txt) |
+| 2026-08-25 12:11:02 | persona | `cyberleeks.fun` domain registered through **Hostinger** (a different registrar from the operation) | WHOIS, [`copycat-recon-2026-08-29.txt`](infrastructure/recon/copycat-recon-2026-08-29.txt) |
 
 The shape of it: the money was funded from a KuCoin account and the token built and
-burn-signalled over roughly ten quiet days (Aug 13 to 22), then the site's HTTPS
-and the loud persona came in the Aug 24 to 25 window (the true domain-registration
-date is still to be pulled). Every dated event here is a hard on-chain block time
-or Certificate Transparency record, not an observation date.
+burn-signalled over roughly ten quiet days (Aug 13 to 22). Then `cyber-leek.com`
+was registered through Cloudflare (Aug 22) and went live (Aug 24), and the copycat
+spun up Aug 25 on a different registrar (Hostinger). Every dated event here is a
+hard on-chain block time, an RDAP/WHOIS record, or a Certificate Transparency
+record, not an observation date.
 
 ## Evidence integrity (chain of custody)
 
