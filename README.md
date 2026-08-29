@@ -24,12 +24,12 @@ tends to be a door. Claim only what a specific transaction proves, not who trade
 the most or who posts the loudest. When two things share a name, treat them as
 different until a transaction says otherwise.
 
-This repo also shows its own corrections, on purpose. An earlier version of this
-investigation attached a large "cash-out" figure to a set of wallets that, on
-complete data, were not the operator's, and it merged a loud online persona with a
-money trail that was never linked to it. Both were wrong. Both were retired, and the
-corrected reasoning is left visible rather than quietly deleted. A trace worth
-trusting shows where it was wrong, not only where it was right.
+In an investigation like this you follow every lead, but you always follow the
+money. Some leads looked strong and did not survive the complete data: an earlier
+"cash-out" figure, and an assumed link between the loud persona and the money,
+were each chased, tested, and retired. Those corrections are left visible here
+rather than quietly deleted. The money trail is the spine everything else hangs
+on.
 
 ## A tale of two thieves
 
