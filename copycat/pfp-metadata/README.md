@@ -4,7 +4,7 @@
 > half of the case: the `@cyberleeksreal` Telegram / X account, the
 > `cyberleeks.fun` domain, and a pump.fun token that stalled. On-chain, none of it
 > connects to the KuCoin-funded wallets behind the live token and the leak site
-> (see [`../crypto/`](../crypto/)). Whether this persona is the money operator
+> (see [`../../real/crypto/`](../../real/crypto/)). Whether this persona is the money operator
 > keeping a loud alias walled off, or a copycat riding the brand, is unproven.
 > Read what follows as observations about the persona, not an identification of
 > whoever holds the money.
@@ -132,7 +132,7 @@ manifest whose hashes all match the published bytes.
 
 ## The avatar in use
 
-![CyberLeek verified X account @cyberleeksreal](../assets/x-account.png)
+![CyberLeek verified X account @cyberleeksreal](../../assets/x-account.png)
 
 *The same Grok-generated leek character is the avatar and banner on the persona's verified X account, `@cyberleeksreal` ("The Only Real Cyberleek"), which links `cyberleeks.fun` and the Telegram channel `t.me/cyberleeksreal`. Listed location "Vice City, CA, US" is a Grand Theft Auto reference, not a geolocation claim.*
 
@@ -151,4 +151,4 @@ manifest whose hashes all match the published bytes.
   `bafkreibqtf7qdhk3sq5icul4mnbfretwn5vyvw56ask5e25symri627wn4`
 - Full raw manifest: `c2pa-credentials.txt`
 - SHA256 of the fetched image and archive.ph link: see
-  [`../EVIDENCE.md`](../EVIDENCE.md)
+  [`../../EVIDENCE.md`](../../EVIDENCE.md)

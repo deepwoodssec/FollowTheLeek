@@ -4,7 +4,7 @@
 > half of the case: the `@cyberleeksreal` Telegram / X account, the
 > `cyberleeks.fun` domain, and a pump.fun token that stalled. On-chain, none of it
 > connects to the KuCoin-funded wallets behind the live token and the leak site
-> (see [`../crypto/`](../crypto/)). Whether this persona is the money operator
+> (see [`../../real/crypto/`](../../real/crypto/)). Whether this persona is the money operator
 > keeping a loud alias walled off, or a copycat riding the brand, is unproven.
 > Read what follows as observations about the persona, not an identification of
 > whoever holds the money.
@@ -107,4 +107,4 @@ Read directly from pixels in the persona's own posted captures:
 
 ## Sources
 
-- The screenshot is the image embedded in Telegram post `t.me/cyberleeksreal/24` (archived: https://archive.ph/I0X9X); its SHA256 is recorded in [`../EVIDENCE.md`](../EVIDENCE.md).
+- The screenshot is the image embedded in Telegram post `t.me/cyberleeksreal/24` (archived: https://archive.ph/I0X9X); its SHA256 is recorded in [`../../EVIDENCE.md`](../../EVIDENCE.md).

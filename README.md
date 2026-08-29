@@ -49,20 +49,20 @@ apart, and labels which track each finding belongs to.
 
 **Track 1 - the operation (the money)**
 
-- [`crypto/`](crypto/) - the funding traced back to KuCoin, the locked-liquidity fee
+- [`crypto/`](real/crypto/) - the funding traced back to KuCoin, the locked-liquidity fee
   model, and the 270M dev-token burn
-- [`infrastructure/`](infrastructure/) - hosting, DNS, media delivery, and the
+- [`infrastructure/`](real/infrastructure/) - hosting, DNS, media delivery, and the
   Arweave leak distribution behind `cyber-leek.com` (also maps the persona's dead
   `cyberleeks.fun` domain)
 
 **Track 2 - the persona (the copycat)**
 
-- [`posting-pattern/`](posting-pattern/) - the Telegram and pump-wallet activity
+- [`posting-pattern/`](copycat/posting-pattern/) - the Telegram and pump-wallet activity
   rhythm, and how well they match
-- [`writing-style/`](writing-style/) - language and writing-style markers
-- [`browser/`](browser/) - the persona's browser fingerprint, from their own
+- [`writing-style/`](copycat/writing-style/) - language and writing-style markers
+- [`browser/`](copycat/browser/) - the persona's browser fingerprint, from their own
   `cyberleeks.fun` screenshot
-- [`pfp-metadata/`](pfp-metadata/) - the AI-generated profile picture and its C2PA /
+- [`pfp-metadata/`](copycat/pfp-metadata/) - the AI-generated profile picture and its C2PA /
   Grok content-credential provenance
 
 ## Timeline
@@ -94,18 +94,18 @@ flowchart LR
 
 | When (UTC) | Track | Event | Source |
 | --- | --- | --- | --- |
-| 2026-08-13 09:22 to 18:47 | money | KuCoin processing wallet (`BmFd`) funds the chain; six hops reach the funding wallet (`3YLN`) | on-chain, [`operation/funding_spine/`](crypto/evidence/operation/funding_spine/) |
+| 2026-08-13 09:22 to 18:47 | money | KuCoin processing wallet (`BmFd`) funds the chain; six hops reach the funding wallet (`3YLN`) | on-chain, [`operation/funding_spine/`](real/crypto/evidence/operation/funding_spine/) |
 | 2026-08-14 09:42 | money | ArNS leak-site name wallet (`52yK`) first active (registers the on-chain site name) | on-chain, `operation/funding_spine/arns_52yK_*` |
 | 2026-08-15 09:49 | money | Funding wallet pays the buffer (`Ec2q`) | on-chain, `operation/funding_spine/buffer_Ec2q_*` |
 | 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active; first Arweave leak upload follows. The leaks were **first posted on the dark-web forum Dread**, then mirrored to Arweave here, before any clearnet site (Dread origin per Vice Cit) | on-chain, `operation/funding_spine/arweave_667G_*` |
 | 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `operation/funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
-| 2026-08-22 06:36:48 | money | `cyber-leek.com` domain registered through **Cloudflare** (registrar IANA 1910) | RDAP + WHOIS, [`operation-recon-2026-08-29.txt`](infrastructure/recon/operation-recon-2026-08-29.txt) |
+| 2026-08-22 06:36:48 | money | `cyber-leek.com` domain registered through **Cloudflare** (registrar IANA 1910) | RDAP + WHOIS, [`operation-recon-2026-08-29.txt`](real/infrastructure/recon/operation-recon-2026-08-29.txt) |
 | 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `operation/funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
 | 2026-08-24 | money | `cyber-leek.com` first *seen* live: first Let's Encrypt cert and earliest archive snapshot (14:20Z). Domain registered Aug 22; exact go-live in the Aug 22 to 24 window is not independently recorded | Certificate Transparency + archive.today |
 | 2026-08-24 | money | Pay-to-vote poll option wallets (`Cpj7`, `3wFK`) first active | on-chain, `operation/polls/` |
-| 2026-08-25 06:33:48 | persona | Copycat pump.fun token (`2hRg6`) minted by deployer (`HhFa`) | on-chain, [`infrastructure/`](infrastructure/) on-chain table |
-| 2026-08-25 07:08 | persona | `@cyberleeksreal` Telegram persona's first captured post | [`posting-pattern/telegram-post-times.txt`](posting-pattern/telegram-post-times.txt) |
-| 2026-08-25 12:11:02 | persona | `cyberleeks.fun` domain registered through **Hostinger** (a different registrar from the operation) | WHOIS, [`copycat-recon-2026-08-29.txt`](infrastructure/recon/copycat-recon-2026-08-29.txt) |
+| 2026-08-25 06:33:48 | persona | Copycat pump.fun token (`2hRg6`) minted by deployer (`HhFa`) | on-chain, [`infrastructure/`](real/infrastructure/) on-chain table |
+| 2026-08-25 07:08 | persona | `@cyberleeksreal` Telegram persona's first captured post | [`posting-pattern/telegram-post-times.txt`](copycat/posting-pattern/telegram-post-times.txt) |
+| 2026-08-25 12:11:02 | persona | `cyberleeks.fun` domain registered through **Hostinger** (a different registrar from the operation) | WHOIS, [`copycat-recon-2026-08-29.txt`](real/infrastructure/recon/copycat-recon-2026-08-29.txt) |
 
 The shape of it: the money was funded from a KuCoin account and the token built and
 burn-signalled over roughly ten quiet days (Aug 13 to 22). Then `cyber-leek.com`
@@ -147,7 +147,7 @@ artifact's SHA256. No PII, no leaked media, no accusations against named people.
 
 ## Credit
 
-The funding-to-KuCoin trace in [`crypto/`](crypto/) was first published by GTAForums
+The funding-to-KuCoin trace in [`crypto/`](real/crypto/) was first published by GTAForums
 user [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077) and reproduced here independently.
 
 ## Victims

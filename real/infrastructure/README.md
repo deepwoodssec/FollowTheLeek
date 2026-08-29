@@ -9,7 +9,7 @@ wired end to end.
 > operation; `cyberleeks.fun` is the copycat persona. They are
 > two separate tracks; see the repo root.
 
-![CyberLeek homepage (cyber-leek.com)](../assets/cyber-leek-home.png)
+![CyberLeek homepage (cyber-leek.com)](../../assets/cyber-leek-home.png)
 
 *Live front page of `cyber-leek.com`: the token contract address
 (`ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg`, the SPL "site CA" in the
@@ -101,7 +101,7 @@ split:
 - **`cyber-leek.com` was registered 2026-08-22 06:36:48 UTC** through **Cloudflare, Inc.** (RDAP + WHOIS, IANA registrar 1910; status `clientTransferProhibited`). Its first Let's Encrypt cert followed on **2026-08-24** (Certificate Transparency), and the earliest independent archive snapshot is **2026-08-24 14:20 UTC** (archive.today). So the clearnet front stood up in the **Aug 22 to 24** window. The leak *content* is older: the on-chain setup began **2026-08-13** and the Arweave leak-upload key was active from **2026-08-15**, before the clearnet domain existed.
 - **The copycat domain `cyberleeks.fun` was registered 2026-08-25 12:11:02 UTC** through **HOSTINGER operations, UAB** (WHOIS), NS on NS1. A **different registrar** from the operation's Cloudflare, registered three days later, the same day as the copycat pump.fun token and the first Telegram post. The registrar split is one more line between the two tracks.
 
-Recon evidence is two files, one per track, produced by the scripts in [`recon/`](recon/): `operation-recon-<date>.txt` (run [`recon/recon-operation.sh`](recon/recon-operation.sh)) and `copycat-recon-<date>.txt` (run [`recon/recon-copycat.sh`](recon/recon-copycat.sh)). Each captures DNS, IP ownership and reverse DNS, the domain registrar (RDAP + WHOIS), TLS, Certificate Transparency and HTTP status; the operation script also checks the Google Ads tag. Both are hashed in [`EVIDENCE.md`](../EVIDENCE.md) once generated.
+Recon evidence is two files, one per track, produced by the scripts in [`recon/`](recon/): `operation-recon-<date>.txt` (run [`recon/recon-operation.sh`](recon/recon-operation.sh)) and `copycat-recon-<date>.txt` (run [`recon/recon-copycat.sh`](recon/recon-copycat.sh)). Each captures DNS, IP ownership and reverse DNS, the domain registrar (RDAP + WHOIS), TLS, Certificate Transparency and HTTP status; the operation script also checks the Google Ads tag. Both are hashed in [`EVIDENCE.md`](../../EVIDENCE.md) once generated.
 
 ### Media delivery
 

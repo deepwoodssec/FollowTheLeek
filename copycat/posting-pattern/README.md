@@ -4,7 +4,7 @@
 > half of the case: the `@cyberleeksreal` Telegram / X account, the
 > `cyberleeks.fun` domain, and a pump.fun token that stalled. On-chain, none of it
 > connects to the KuCoin-funded wallets behind the live token and the leak site
-> (see [`../crypto/`](../crypto/)). Whether this persona is the money operator
+> (see [`../../real/crypto/`](../../real/crypto/)). Whether this persona is the money operator
 > keeping a loud alias walled off, or a copycat riding the brand, is unproven.
 > Read what follows as observations about the persona, not an identification of
 > whoever holds the money.
@@ -14,7 +14,7 @@ When the persona is active on its channels, measured from two independent
 persona-side sources: the `@cyberleeksreal` Telegram channel and the pump.fun
 token deployer wallet (`HhFa...`). Both belong to the copycat persona, and
 neither is a wallet behind the money (the KuCoin-funded live token and leak
-site; see [`../crypto/`](../crypto/)). This correlation stays entirely inside
+site; see [`../../real/crypto/`](../../real/crypto/)). This correlation stays entirely inside
 the persona track: at most it shows the Telegram account and the pump.fun wallet
 are one hand. It says nothing about who holds the money. Post and transaction
 times are facts you can measure; the pattern they form is the finding.

@@ -47,7 +47,7 @@ That model explains the behaviour. The leaks drip out and the site runs "vote on
 the next leak" polls because the point is to keep the coin **trading**, not to make
 one big splash. Sustained attention is the revenue.
 
-![CYBERLEEK live market on Raydium (DexScreener): market cap fading from about $8M toward $1.9M](../assets/crypto-token-dexscreener.png)
+![CYBERLEEK live market on Raydium (DexScreener): market cap fading from about $8M toward $1.9M](../../assets/crypto-token-dexscreener.png)
 
 *The live CYBERLEEK token (`ApZux...`) on Raydium, via DexScreener. The market cap
 slid from about $8M toward $1.9M (down ~54% in 24h) as holders sold, 13,202 sells
@@ -176,12 +176,12 @@ So a "vote" is a transfer of $CYBERLEEK to an operator-controlled wallet, and th
 poll decides which leak drops next, which pulls the next wave of trading. The polls
 are a second on-chain intake and a demand-manufacturing device at once.
 
-![cyber-leek.com poll: "Do you really want to see the prologue with Lucia?"](../assets/crypto-poll-lucia.png)
+![cyber-leek.com poll: "Do you really want to see the prologue with Lucia?"](../../assets/crypto-poll-lucia.png)
 
 *The "Lucia prologue" poll on `cyber-leek.com`. "Yes Please" collects $CYBERLEEK to
 `Cpj7QARn...`, "Fuck No" to `3wFKU8bz...`. Archived: https://archive.ph/A4zKG*
 
-![cyber-leek.com poll: "Next GTA 6 Video?"](../assets/crypto-poll-nextvideo.png)
+![cyber-leek.com poll: "Next GTA 6 Video?"](../../assets/crypto-poll-nextvideo.png)
 
 *The "Next GTA 6 video" poll on the same site. The identical `Cpj7QARn...` wallet is
 now labelled "Beach" and `3wFKU8bz...` is "Nudist Town", with `78BkUe4b...` added as
