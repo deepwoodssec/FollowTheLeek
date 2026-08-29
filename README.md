@@ -65,6 +65,50 @@ apart, and labels which track each finding belongs to.
 - [`pfp-metadata/`](pfp-metadata/) - the AI-generated profile picture and its C2PA /
   Grok content-credential provenance
 
+## Timeline
+
+Every dated event below is anchored to a verifiable source: an on-chain block
+time, a Certificate Transparency record, or a captured post. Times are UTC, 2026.
+
+```mermaid
+timeline
+    title CyberLeek: from KuCoin funding to a dead site (UTC, 2026)
+    section Funding (the money)
+      Aug 13 : KuCoin account funds the chain : six hops to the funding wallet 3YLN
+      Aug 14 : ArNS leak-site name registered (52yK)
+      Aug 15 : Buffer and token creator funded : $CYBERLEEK minted 14:20Z, liquidity locked : Arweave upload key active
+    section Trust signal
+      Aug 22 : 270,000,000 dev tokens burned (overhang removed)
+    section Public launch
+      Aug 24 : cyber-leek.com goes live (first TLS cert) : pay-to-vote polls open
+      Aug 25 : Copycat pump.fun token minted (2hRg6) : @cyberleeksreal Telegram persona starts posting
+    section Recon and decline
+      Aug 27 : First passive infrastructure recon
+      Aug 28 : Cloudflare DNS change : cyberleeks.fun goes dark (no A record)
+      Aug 29 : cyber-leek.com down (HTTP 000) : DNS still resolves to InterServer
+```
+
+| When (UTC) | Track | Event | Source |
+| --- | --- | --- | --- |
+| 2026-08-13 09:22 to 18:47 | money | KuCoin processing wallet (`BmFd`) funds the chain; six hops reach the funding wallet (`3YLN`) | on-chain, [`crypto/evidence/funding_spine/`](crypto/evidence/funding_spine/) |
+| 2026-08-14 09:42 | money | ArNS leak-site name wallet (`52yK`) first active (registers the on-chain site name) | on-chain, `funding_spine/arns_52yK_*` |
+| 2026-08-15 09:49 | money | Funding wallet pays the buffer (`Ec2q`) | on-chain, `funding_spine/buffer_Ec2q_*` |
+| 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active (signs the permanent leak uploads) | on-chain, `funding_spine/arweave_667G_*` |
+| 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
+| 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
+| 2026-08-24 | money | `cyber-leek.com` stood up: first Let's Encrypt certificate issued | Certificate Transparency, [`infrastructure/recon/dns-cert-recon.txt`](infrastructure/recon/dns-cert-recon.txt) |
+| 2026-08-24 | money | Pay-to-vote poll option wallets (`Cpj7`, `3wFK`) first active | on-chain, `complete_history/poll_*` |
+| 2026-08-25 06:33:48 | persona | Copycat pump.fun token (`2hRg6`) minted by deployer (`HhFa`) | on-chain, [`infrastructure/`](infrastructure/) on-chain table |
+| 2026-08-25 07:08 | persona | `@cyberleeksreal` Telegram persona's first captured post | [`posting-pattern/telegram-post-times.txt`](posting-pattern/telegram-post-times.txt) |
+| 2026-08-27 | recon | First passive infrastructure recon (DNS, IP, TLS, CT) | [`infrastructure/recon/dns-cert-recon.txt`](infrastructure/recon/dns-cert-recon.txt) |
+| 2026-08-28 | recon | Re-verification: Cloudflare DNS change; `cyberleeks.fun` goes dark (no A record) | [`infrastructure/recon/infra-recon-2026-08-28.txt`](infrastructure/recon/infra-recon-2026-08-28.txt) |
+| 2026-08-29 | recon | `cyber-leek.com` down (HTTP 000) on an independent macOS pull; DNS still resolves to InterServer | [`infrastructure/recon/infra-recon-2026-08-29.txt`](infrastructure/recon/infra-recon-2026-08-29.txt) |
+
+The shape of it: the money was funded from a KuCoin account and the token built and
+burn-signalled over roughly ten quiet days (Aug 13 to 22), the public site and the
+loud persona appeared together at launch (Aug 24 to 25), and within days the site
+went dark while the on-chain records stayed permanent.
+
 ## Evidence integrity (chain of custody)
 
 Every artifact cited in this repo is hashed and timestamped so anyone can confirm it
