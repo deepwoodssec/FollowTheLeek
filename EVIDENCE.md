@@ -38,6 +38,7 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 | --- | --- | --- | --- |
 | Operation recon (real cyber-leek.com; registrar Cloudflare, reg 2026-08-22) | `real/infrastructure/recon/operation-recon-2026-08-29.txt` | `eabab98964abbf9ee64ebd034e96b37b0f3646f29086914e9a2bc0b84eb59d86` | 2026-08-29 |
 | Copycat recon (cyberleeks.fun; registrar Hostinger, reg 2026-08-25) | `real/infrastructure/recon/copycat-recon-2026-08-29.txt` | `b0510aaf22c6a90a2076eaedd1cc29f33e5d8a4b5d7f34de95efaaf87df0b031` | 2026-08-29 |
+| Wayback CDX capture index (last-serving bounds, both domains) | `real/infrastructure/recon/wayback-cdx-2026-08-29.txt` | `667e374bdd142877f2f0c77f82276e4c1657339829875aa07ae966c2ec303e34` | 2026-08-29 |
 
 ## Archived pages (archive.ph)
 

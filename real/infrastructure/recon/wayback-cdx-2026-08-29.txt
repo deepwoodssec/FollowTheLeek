@@ -1,0 +1,22 @@
+== WAYBACK MACHINE CDX CAPTURE INDEX ==
+Source: http://web.archive.org (Internet Archive Wayback Machine), CDX API
+Pulled: 2026-08-29
+Purpose: bound when each site was last serving (HTTP 200), independent of our own checks.
+Columns: urlkey  timestamp(YYYYMMDDhhmmss UTC)  original  mimetype  statuscode  digest  length
+
+-- cyber-leek.com (operation) : curl "http://web.archive.org/cdx/search/cdx?url=cyber-leek.com&output=text&limit=-15" --
+com,cyber-leek)/ 20260824002605 https://cyber-leek.com/ text/html 200 OJ453TO7CFDDW6V6K7OLO3L7RY3PPOJJ 12053
+com,cyber-leek)/ 20260824042417 https://cyber-leek.com/ text/html 200 OJ453TO7CFDDW6V6K7OLO3L7RY3PPOJJ 12054
+com,cyber-leek)/ 20260824094322 https://cyber-leek.com/ text/html 200 LFFZMEJ2NQJRWCPMSMVVNVGDT6JNYHZ4 12873
+com,cyber-leek)/ 20260824195223 https://cyber-leek.com/ text/html 200 775UCNRGLIFRX3O256NQK3UXGUTHCR2Z 12359
+com,cyber-leek)/ 20260824195244 https://cyber-leek.com/ text/html 200 GPOMEDDCOQAIOJLOLCER7RLF7C7A3AEZ 12072
+com,cyber-leek)/ 20260825000156 https://cyber-leek.com/ text/html 200 TZGYYOSGEWMXT4FAMSXPLMINNEBYVRN3 13283
+com,cyber-leek)/ 20260825013547 https://cyber-leek.com/ text/html 200 KZ5B45LQBANCXJSVILGVPV3XGLYTQRDS 13286
+com,cyber-leek)/ 20260825043621 https://cyber-leek.com/ text/html 200 UZAQNYTJO2SHLXOEYYGJDJQ6WH337SSQ 13282
+com,cyber-leek)/ 20260825092142 https://cyber-leek.com/ text/html 200 55IS63YYDBAGCJ4B7T4DPWTOR56MG3II 13283
+com,cyber-leek)/ 20260825183626 https://cyber-leek.com/ text/html 200 QBCMYQKBUY5WB4OIPH27DIGGI243UVF6 13797
+  Last capture: 2026-08-25 18:36:26 UTC, HTTP 200. No error captures after. First direct check finding it down: 2026-08-29 (HTTP 000).
+
+-- cyberleeks.fun (copycat) : curl "http://web.archive.org/cdx/search/cdx?url=cyberleeks.fun&output=text&limit=-15" --
+fun,cyberleeks)/ 20260825214041 https://cyberleeks.fun/ text/html 200 YHZPGUDVPJ72TMVUM5OBII4UAQ65SO3V 13337
+  Only capture: 2026-08-25 21:40:41 UTC, HTTP 200. No A record since 2026-08-28.
