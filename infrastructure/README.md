@@ -95,89 +95,21 @@ split:
 
 ### DNS and certificates
 
-- `cyber-leek.com` nameservers: `crystal.ns.cloudflare.com`, `nash.ns.cloudflare.com` (Cloudflare DNS)
-- `cyber-leek.com` A record: `162.35.101.236` (InterServer, Los Angeles) - **unproxied (DNS-only)**. Cloudflare runs the domain's DNS, but the record is not proxied, so it returns the raw origin IP instead of a Cloudflare edge address. The origin is exposed regardless.
-- `cyberleeks.fun`: as of **2026-08-28** returns **no A record** (does not resolve); nameservers on NS1 (`dns1`-`dns4.p03.nsone.net`). Archived while live: https://archive.ph/rYIMI
-- **As of 2026-08-29 (independent re-pull):** all three domains return **HTTP 000 (no response): the site is down.** DNS still resolves `cyber-leek.com` and `media.cyber-leek.com` to the same InterServer IPs (`162.35.101.236`, `69.10.50.177`), whose reverse DNS is `vps3572431.trouble-free.net` and `vps3577375.trouble-free.net` (InterServer VPS instances; `trouble-free.net` is InterServer's hosting domain). DNS records outlive a stopped server, and the InterServer hosting account behind those IPs stays the seizable record. `cyberleeks.fun` still returns no A record.
-- TLS: Let's Encrypt, first certificate issued **2026-08-24** (Certificate Transparency). This is when HTTPS was switched on, a **lower bound**, not proof of when the domain was registered or the site first served. The clearnet `cyber-leek.com` could have existed earlier over plain HTTP, and the operation's on-chain setup began on **2026-08-13** (see the timeline in the repo root).
-- **Domain registrar and registration date: not yet pulled.** Run [`recon/recon-operation.sh`](recon/recon-operation.sh) (RDAP + WHOIS) to obtain the registrar, the registrant account holder, and the true creation date for `cyber-leek.com`; run [`recon/recon-copycat.sh`](recon/recon-copycat.sh) for `cyberleeks.fun`. This is the open gap that fixes the standup date.
+- `cyber-leek.com`: nameservers on Cloudflare (`crystal` / `nash.ns.cloudflare.com`), but the A record is **unproxied**, so it returns the raw origin IP (`162.35.101.236`, InterServer, Los Angeles, AS26666), not a Cloudflare edge. The origin is exposed.
+- `cyberleeks.fun` (copycat): **no A record** since **2026-08-28**; NS on NS1 (`dns1`-`dns4.p03.nsone.net`). Archived while live: https://archive.ph/rYIMI
+- **As of 2026-08-29 the site is down** (HTTP 000). The InterServer IPs still resolve, reverse DNS `vps3572431` / `vps3577375.trouble-free.net` (InterServer VPS instances). DNS outlives a stopped server; the InterServer account behind the IPs stays the seizable record.
+- TLS: first Let's Encrypt cert **2026-08-24** (Certificate Transparency). This is when HTTPS went on, a **lower bound**, not the domain registration date; the on-chain setup began **2026-08-13**.
+- **Domain registrar and registration date: not yet pulled** (the open gap on the standup date). Run [`recon/recon-operation.sh`](recon/recon-operation.sh) for `cyber-leek.com` and [`recon/recon-copycat.sh`](recon/recon-copycat.sh) for `cyberleeks.fun`; both do an RDAP + WHOIS lookup.
 
-Raw lookups:
+Raw lookups (hashed in [`EVIDENCE.md`](../EVIDENCE.md)): [`recon/dns-cert-recon.txt`](recon/dns-cert-recon.txt) (2026-08-27), [`recon/infra-recon-2026-08-28.txt`](recon/infra-recon-2026-08-28.txt) (Cloudflare change, `.fun` dark), [`recon/infra-recon-2026-08-29.txt`](recon/infra-recon-2026-08-29.txt) (site down, reverse DNS). The two recon scripts above refresh the data, split by target.
 
-- [`recon/dns-cert-recon.txt`](recon/dns-cert-recon.txt) - first collection (2026-08-27); carries the Certificate Transparency cert data.
-- [`recon/infra-recon-2026-08-28.txt`](recon/infra-recon-2026-08-28.txt) - passive re-verification (2026-08-28), SHA256 `818797eacad3da336e06112bf1cf23e4343ba084d65bc4e2bf5c4f9a99ee5ce7`; this pull surfaced the Cloudflare DNS change and `cyberleeks.fun` going dark.
-- [`recon/infra-recon-2026-08-29.txt`](recon/infra-recon-2026-08-29.txt) - independent re-pull (2026-08-29), SHA256 `3b454ba800c47d109ea555c687051153125b13fcf56a4f5987841a1edeb1ec85`; confirmed the site down (HTTP 000 on all three domains) with DNS still resolving to the same InterServer IPs, and surfaced the reverse-DNS hostnames.
+### Media delivery
 
-Two passive recon scripts, split by target, refresh the data (each adds an RDAP + WHOIS registrar lookup):
+- **Media host:** `media.cyber-leek.com` resolves to `69.10.50.177`, a second InterServer IP, distinct from the main origin.
+- **Hardened while live:** through the 2026-08-28 pull the media host dropped external non-browser requests (`curl` code `000`) and the origin rate-limited them; the videos were reachable only through the site's own flow. Since the site went down (2026-08-29) a `000` now just means offline.
+- **Also on Arweave.** The circulated leak video carries a burned-in QR to a permanent Arweave copy, with a fallback gateway (`cyberleek.ar.io` / `cyberleek.turbo-gateway.com`, "if blocked, change gateway"). Arweave is content-addressed and decentralized, so no single takedown removes it, but the upload was **paid for through a wallet**, leaving a traceable receipt (paying wallet plus upload tx, via ArDrive / Turbo).
 
-- [`recon/recon-operation.sh`](recon/recon-operation.sh) - the real operation: `cyber-leek.com` and `media.cyber-leek.com`. Writes `operation-recon-<date>.txt`.
-- [`recon/recon-copycat.sh`](recon/recon-copycat.sh) - the copycat persona: `cyberleeks.fun`. Writes `copycat-recon-<date>.txt`.
-
-### Media delivery and anti-recon
-
-The leak videos were served from a separate host that refused direct access while the site was live:
-
-- **Media host:** `media.cyber-leek.com` resolves to `69.10.50.177` (InterServer, Los Angeles, AS26666) - a second InterServer IP, distinct from the main site at `162.35.101.236`.
-- **Direct access, while the site was live.** Through the 2026-08-28 pull, while `cyber-leek.com` was serving, HTTPS requests to the media host from an external, non-browser client got no HTTP response at all (connection dropped, `curl` code `000`) rather than content, and the origin rate-limited non-browser requests. The videos were reachable only through the site's own flow. As of **2026-08-29 the site is down** (see the DNS status note above): the domains still resolve, but nothing is served, so this can no longer be re-pulled and a `000` now means offline, not active filtering.
-- **Takedown-resistant distribution.** The circulated leak video's QR points at Arweave (`cyberleek.ar.io`) and prints a fallback gateway (`cyberleek.turbo-gateway.com`) with "if blocked, change gateway." The content lives on Arweave (permanent, decentralized), so blocking one gateway does not remove it.
-
-Net: the origin IP was exposed the whole time it was up, and the leak video also sits on Arweave with gateway failover, so no single takedown removes it. The site being down now undoes neither: the InterServer account behind the IPs and the Arweave upload receipt are still on record.
-
-### How the leak video is distributed (Arweave, gateways, and the QR)
-
-The leak video is delivered two ways at once: from the operator's own
-server, and from a permanent, decentralized copy on Arweave. The second
-path is built to survive takedowns, so it is worth stating plainly.
-
-- **Content-addressing, not location.** A normal web link points at a
-  place (a server, a folder, a file); take the server down and the link
-  dies. Arweave addresses a file by its content instead. An upload gets a
-  permanent ID derived from the file itself, and the data is replicated
-  across a decentralized network of storage nodes paid once to keep it
-  permanently. This is the "permaweb": there is no single host to seize.
-- **Gateways are interchangeable doors.** A browser speaks HTTP, not
-  Arweave, so a gateway sits in the middle: it takes an ordinary HTTPS
-  request, fetches the content from Arweave, and returns it as a normal
-  web response. Any gateway returns the identical file, because the file
-  is addressed by its content. A gateway is a read path, not the file.
-  `cyberleek.ar.io` and `cyberleek.turbo-gateway.com` are two different
-  gateways pointing at the same underlying Arweave content.
-- **The QR ties it together.** The circulated leak video has a QR burned
-  into the frames, so it travels with every re-upload instead of living
-  in a caption that can be stripped. The QR points at the Arweave copy,
-  not the operator's own host, and the video prints a fallback gateway
-  with "if blocked, change gateway." Because the content is permanent and
-  gateways are swappable, blocking or removing one gateway does not remove
-  the video; the viewer just routes through another door to the same file.
-- **Why it still points back at him.** The resilience protects the
-  content, not the operator. Permanent storage on Arweave is paid for at
-  upload, through a wallet, leaving a receipt (paying wallet plus upload
-  transaction, on record via ArDrive / Turbo). The one durable thing built
-  to be un-takedownable, the permanent upload the QR points at, is exactly
-  the thing that was paid for, and that payment is traceable.
-
-### A note on the Arweave gateway IPs (not the operator's host)
-
-`cyberleek.ar.io` resolves to servers on the public AR.IO gateway network
-(for example, Hetzner-hosted gateway nodes in Germany). **These are not
-the operator's infrastructure, and they are not where the site is
-hosted.** An `.ar.io` name is served by whichever gateway node answers
-for it, and a single node serves thousands of unrelated names. Three
-things confirm this is shared gateway infrastructure, not an operator
-server:
-
-- The TLS certificate on that endpoint is a wildcard for the **gateway
-  operator's** own domain (`*.ar.io`), not for CyberLeek.
-- The endpoint applies **its own** access policy - it returned HTTP `451`
-  (Unavailable For Legal Reasons) for this name, which an operator does
-  not do to his own content.
-- The branded media itself lives on **Arweave**, content-addressed and
-  permanent. The gateway is only one interchangeable read path to it,
-  which is exactly why the in-video QR says "if blocked, change gateway."
-
-The operator's own, seizable host is the InterServer origin in Los
-Angeles (`162.35.101.236`). Gateway IPs are not attributed to the
-operator anywhere in this repo.
+**The gateway IPs are not the operator's.** `cyberleek.ar.io` resolves to the public AR.IO gateway network (for example Hetzner nodes in Germany), which serves thousands of unrelated names, presents a `*.ar.io` wildcard certificate, and returned HTTP `451` for this name (something an operator does not do to his own content). The operator's own seizable host is the InterServer origin (`162.35.101.236`); gateway IPs are not attributed to the operator anywhere in this repo.
 
 
 ## How it is wired (two tracks, and where each breaks)
