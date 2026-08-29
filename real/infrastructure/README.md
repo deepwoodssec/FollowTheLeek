@@ -68,10 +68,23 @@ enforcement.
 
 ### Tracking and paid acquisition
 
-| Indicator | Value |
-| --- | --- |
-| Google Ads tag ID | `AW-18404896621` |
-| gtag loader (in page source) | `https://www.googletagmanager.com/gtag/js?id=AW-18404896621` (archived: https://archive.ph/oPlW4) |
+The site loads a single Google tag (`AW-18404896621`) whose config binds four
+Google tag IDs together, so one Google account sits behind all of them. All are
+delivered on `cyber-leek.com`; none of them appear on the copycat's `cyberleeks.fun`.
+
+| Indicator | Value | Notes |
+| --- | --- | --- |
+| gtag loader (in page source) | `https://www.googletagmanager.com/gtag/js?id=AW-18404896621` | archived: https://archive.ph/oPlW4 |
+| Google Ads account 1 | `AW-18404896621` | the tag loaded in the page source |
+| Google Ads account 2 | `AW-18405840843` | linked in the same gtag config |
+| Google Tag container 1 | `GT-P8ZRMZD5` | linked in the same gtag config |
+| Google Tag container 2 | `GT-KVMKLRPR` | linked in the same gtag config |
+
+The four IDs come from the linked-tags list returned inside the gtag.js response
+for `AW-18404896621` (`AW-18404896621|GT-P8ZRMZD5|AW-18405840843|GT-KVMKLRPR`).
+Two Google Ads conversion accounts and two Google Tag containers under one setup
+is the operation's paid-acquisition machinery, and each is a billing/account
+record Google holds.
 
 ### On-chain: which mint is which
 
