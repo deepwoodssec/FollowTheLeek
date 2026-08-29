@@ -83,19 +83,13 @@ flowchart LR
       direction LR
       A24["Aug 24<br/>cyber-leek.com first TLS cert<br/>(HTTPS on) + polls open"] --> A25["Aug 25<br/>Copycat pump.fun token<br/>@cyberleeksreal posting"]
     end
-    subgraph RECON["Recon and decline"]
-      direction LR
-      A27["Aug 27<br/>First passive recon"] --> A28["Aug 28<br/>cyberleeks.fun<br/>goes dark"] --> A29["Aug 29<br/>Site down (HTTP 000)"]
-    end
     A15 --> A22 --> A24
-    A25 --> A27
 
     classDef money fill:#dcfce7,stroke:#166534,color:#052e16;
     classDef persona fill:#fee2e2,stroke:#991b1b,color:#450a0a;
     classDef recon fill:#f3f4f6,stroke:#6b7280,color:#111827;
     class A13,A14,A15,A22,A24 money;
     class A25 persona;
-    class A27,A28,A29 recon;
 ```
 
 | When (UTC) | Track | Event | Source |
@@ -110,15 +104,12 @@ flowchart LR
 | 2026-08-24 | money | Pay-to-vote poll option wallets (`Cpj7`, `3wFK`) first active | on-chain, `operation/polls/` |
 | 2026-08-25 06:33:48 | persona | Copycat pump.fun token (`2hRg6`) minted by deployer (`HhFa`) | on-chain, [`infrastructure/`](infrastructure/) on-chain table |
 | 2026-08-25 07:08 | persona | `@cyberleeksreal` Telegram persona's first captured post | [`posting-pattern/telegram-post-times.txt`](posting-pattern/telegram-post-times.txt) |
-| 2026-08-27 | recon | First passive infrastructure recon (DNS, IP, TLS, CT) | [`infrastructure/recon/dns-cert-recon.txt`](infrastructure/recon/dns-cert-recon.txt) |
-| 2026-08-28 | recon | Re-verification: Cloudflare DNS change; `cyberleeks.fun` goes dark (no A record) | [`infrastructure/recon/infra-recon-2026-08-28.txt`](infrastructure/recon/infra-recon-2026-08-28.txt) |
-| 2026-08-29 | recon | `cyber-leek.com` down (HTTP 000) on an independent re-pull; DNS still resolves to InterServer | [`infrastructure/recon/infra-recon-2026-08-29.txt`](infrastructure/recon/infra-recon-2026-08-29.txt) |
 
 The shape of it: the money was funded from a KuCoin account and the token built and
 burn-signalled over roughly ten quiet days (Aug 13 to 22), then the site's HTTPS
 and the loud persona came in the Aug 24 to 25 window (the true domain-registration
-date is still to be pulled), and within days the site went dark while the on-chain
-records stayed permanent.
+date is still to be pulled). Every dated event here is a hard on-chain block time
+or Certificate Transparency record, not an observation date.
 
 ## Evidence integrity (chain of custody)
 
