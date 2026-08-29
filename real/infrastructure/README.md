@@ -83,12 +83,14 @@ removes the easy billing identity, but not the trail:
 
 This is where a VPN is the whole question. The exposed origin IP tells law
 enforcement which InterServer box to subpoena; the prize inside is the
-connection log. Administer that server without a VPN or Tor and the log holds
-his real residential IP, subpoena InterServer for the box, subpoena the ISP for
-the subscriber, and there is a name, with the crypto payment never having to
-break. Use a no-logs VPN in an uncooperative jurisdiction and that layer can
-dead-end the trail. The public evidence cannot say which; it only guarantees
-investigators get to ask.
+connection log, the record of every IP that logged in to run the machine (SSH,
+the control panel, file uploads). SSH into that box straight from his own
+connection and the log holds his real residential IP: subpoena InterServer for
+the box, subpoena the ISP for the subscriber, and there is a name, with the
+crypto payment never having to break. Route that same SSH through Tor or a
+no-logs VPN in an uncooperative jurisdiction and that layer can dead-end the
+trail. The public evidence cannot say which; it only guarantees investigators
+get to ask.
 
 ## Infrastructure indicators
 
