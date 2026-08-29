@@ -111,10 +111,8 @@ the money operator.
 The operation's site, `cyber-leek.com`, also ran "polls" that charge the audience
 to take part. Both polls below are captured on that site: the "Lucia prologue"
 poll (archived: https://archive.ph/A4zKG) and the "Next GTA 6 video" poll (in the
-homepage snapshot, https://archive.ph/cpbHi); the screenshots are
-[`assets/crypto-poll-lucia.png`](../assets/crypto-poll-lucia.png) and
-[`assets/crypto-poll-nextvideo.png`](../assets/crypto-poll-nextvideo.png). The
-site's own rules state the mechanism:
+homepage snapshot, https://archive.ph/cpbHi). The site's own rules state the
+mechanism:
 
 > "Send only $CYBERLEEK to the wallet of the choice you want to vote for. Each
 > dedicated wallet is checked for the configured token mint... The percentage is
@@ -123,6 +121,17 @@ site's own rules state the mechanism:
 So a "vote" is a transfer of $CYBERLEEK to an operator-controlled wallet, and the
 poll decides which leak drops next, which pulls the next wave of trading. The polls
 are a second on-chain intake and a demand-manufacturing device at once.
+
+![cyber-leek.com poll: "Do you really want to see the prologue with Lucia?"](../assets/crypto-poll-lucia.png)
+
+*The "Lucia prologue" poll on `cyber-leek.com`. "Yes Please" collects $CYBERLEEK to
+`Cpj7QARn...`, "Fuck No" to `3wFKU8bz...`. Archived: https://archive.ph/A4zKG*
+
+![cyber-leek.com poll: "Next GTA 6 Video?"](../assets/crypto-poll-nextvideo.png)
+
+*The "Next GTA 6 video" poll on the same site. The identical `Cpj7QARn...` wallet is
+now labelled "Beach" and `3wFKU8bz...` is "Nudist Town", with `78BkUe4b...` added as
+"Strip Club 2". Same wallets, different options. Archived: https://archive.ph/cpbHi*
 
 **The option wallets are recycled across polls, so the displayed totals are not
 independent vote counts.** The same two wallets carry different, unrelated options
