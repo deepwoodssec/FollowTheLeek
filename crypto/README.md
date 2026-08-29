@@ -217,11 +217,12 @@ Raw pulls plus a SHA256 manifest are in [`evidence/`](evidence/):
   name wallet, Arweave key, the KuCoin processing wallet, and one raw transaction
   per cited hop (`vc_tx_*.json`).
 - `raw/`, `complete_history/` - per-wallet balances, signatures, and transactions
-  for the tokens and the wallets examined.
+  for the two token mints, the copycat deployer (`HhFa`) and its Relay funder
+  (`F7p3`), and the three poll option wallets.
 - `collection_log.txt`, `README_EVIDENCE.txt` - what was collected and when.
 - `SHA256SUMS.txt` - SHA256 of every file (chain of custody).
 
-Manifest SHA256: `d0694e83ba90794bd2ce7e961318b9814f3d600488eee6134c7b041759e6dd76`
+Manifest SHA256: `f521bc973306e887011f980677de432d46437825f77c8c4a6acc6b6d7d9a8338`
 
 Verify:
 
