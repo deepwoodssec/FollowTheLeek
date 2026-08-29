@@ -145,11 +145,6 @@ So the funding wallet's SOL leading back six hops to a KuCoin account is not a
 loose thread. It is the point where a pseudonymous money trail meets a verified,
 law-enforcement-reachable identity. That is the identity lead.
 
-Sources: [KuCoin identity-verification statement](https://www.kucoin.com/announcement/en-kyc-user-identity-authentication-statement) ·
-[KuCoin Law Enforcement Request Process](https://www.kucoin.com/legal/law-enforcement-request-guidelines) ·
-[People v. Mek Global Limited (NY AG)](https://ag.ny.gov/sites/default/files/2023.03.09_-_memorandum_of_law_-_people_v_mek_global_limited_and_phoenixfin_pte_ltd_dba_kucoin.pdf) ·
-[DOJ / SDNY: KuCoin guilty plea, March 2025](https://www.justice.gov/usao-sdny/pr/kucoin-pleads-guilty-unlicensed-money-transmission-charge-and-agrees-pay-penalties).
-
 ## The copycat token (separate, went nowhere)
 
 A second token carries the CyberLeek name: a Token-2022 launched on **pump.fun**
