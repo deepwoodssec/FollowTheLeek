@@ -57,6 +57,19 @@ for r in rows:
     if k in seen: continue
     seen.add(k); print("   ",r.get("not_before",""),"|",r.get("common_name",""),"|",r.get("issuer_name","")[:50])
 ' 2>/dev/null | head -12 || echo "  (crt.sh unavailable)"
+echo; echo "== SITE HISTORY: WHEN IT WAS UP / DROPPING (independent archives) =="
+echo "  -- Wayback Machine (web.archive.org), earliest + latest capture --"
+curl -s -m 30 "http://web.archive.org/cdx/search/cdx?url=cyber-leek.com*&output=text&fl=timestamp,original,statuscode&collapse=digest&limit=500" > /tmp/cl_wb.txt 2>/dev/null
+if [ -s /tmp/cl_wb.txt ]; then
+  echo "    captures: $(wc -l < /tmp/cl_wb.txt)"
+  echo "    EARLIEST: $(head -1 /tmp/cl_wb.txt)"
+  echo "    LATEST  : $(tail -1 /tmp/cl_wb.txt)"
+  echo "    (full list of capture timestamps:)"; awk '{print "      "$1"  "$3"  "$2}' /tmp/cl_wb.txt | head -60
+else
+  echo "    (no Wayback captures, or archive.org unreachable)"
+fi
+echo "  -- archive.today / archive.ph timemap (manual snapshots) --"
+curl -sL -m 30 "http://archive.ph/timemap/https://cyber-leek.com" 2>/dev/null | grep -oE "datetime=\"[^\"]+\"" | sed "s/datetime=/      snapshot: /; s/\"//g" | head -40 || echo "    (archive.ph timemap unreachable)"
 echo; echo "== GOOGLE ADS TAG ($GTAG) =="
 body=$(curl -s -m 12 -A "Mozilla/5.0" "https://cyber-leek.com" 2>/dev/null)
 echo "$body" | grep -q "$GTAG" && echo "  cyber-leek.com : $GTAG FOUND in page source" || echo "  cyber-leek.com : $GTAG not found (changed, blocked, or site down)"
