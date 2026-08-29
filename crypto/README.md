@@ -121,26 +121,34 @@ bridge: the exchange is a door with a name on the other side, not a dead end.
 For this case specifically:
 
 - **The identity exists.** KuCoin has required identity verification with a
-  government ID from **all** users since **July 15, 2023**. The account that
+  government ID from **all** users since **July 15, 2023** ([KuCoin identity
+  verification statement](https://www.kucoin.com/announcement/en-kyc-user-identity-authentication-statement)). The account that
   funded this operation was verified under that rule, so a real identity is on
   file with the exchange.
 - **KuCoin answers law enforcement, by its own written policy.** KuCoin publishes
-  a Law Enforcement Request Process and states it will *"respond to all law
-  enforcement requests from authorized law enforcement officials with proof of
-  authority,"* returning account and identity records on a subpoena, court order,
+  a [Law Enforcement Request Process](https://www.kucoin.com/legal/law-enforcement-request-guidelines) and states it will *"respond to all
+  law enforcement requests from authorized law enforcement officials with proof
+  of authority,"* returning account and identity records on a subpoena, court order,
   or warrant.
 - **The Seychelles nuance.** KuCoin's operating entity, **Mek Global Limited**, is
-  registered in the **Seychelles**, so a request from a foreign authority does not
+  registered in the **Seychelles** (named as the defendant entity in [*People v.
+  Mek Global Limited & PhoenixFin Pte Ltd d/b/a KuCoin*](https://ag.ny.gov/sites/default/files/2023.03.09_-_memorandum_of_law_-_people_v_mek_global_limited_and_phoenixfin_pte_ltd_dba_kucoin.pdf)), so a request from a foreign authority does not
   travel as a plain domestic subpoena; it goes through a **Mutual Legal Assistance
-  Treaty (MLAT)**, which KuCoin's own guidelines require for cross-border requests.
-- **Why it is more reachable now.** In **March 2025 KuCoin pleaded guilty** in U.S.
-  federal court (SDNY) to unlicensed money transmission and paid **$297.4M**, with
+  Treaty (MLAT)**, which [KuCoin's own guidelines](https://www.kucoin.com/legal/law-enforcement-request-guidelines) require for cross-border
+  requests.
+- **Why it is more reachable now.** In **March 2025 [KuCoin pleaded guilty](https://www.justice.gov/usao-sdny/pr/kucoin-pleads-guilty-unlicensed-money-transmission-charge-and-agrees-pay-penalties)** in
+  U.S. federal court (SDNY) to unlicensed money transmission and paid **$297.4M**, with
   ongoing compliance obligations. That plea gives U.S. authorities real leverage
   and a cooperation posture, Seychelles registration notwithstanding.
 
 So the funding wallet's SOL leading back six hops to a KuCoin account is not a
 loose thread. It is the point where a pseudonymous money trail meets a verified,
-subpoena-reachable identity. That is the identity lead.
+law-enforcement-reachable identity. That is the identity lead.
+
+Sources: [KuCoin identity-verification statement](https://www.kucoin.com/announcement/en-kyc-user-identity-authentication-statement) ·
+[KuCoin Law Enforcement Request Process](https://www.kucoin.com/legal/law-enforcement-request-guidelines) ·
+[People v. Mek Global Limited (NY AG)](https://ag.ny.gov/sites/default/files/2023.03.09_-_memorandum_of_law_-_people_v_mek_global_limited_and_phoenixfin_pte_ltd_dba_kucoin.pdf) ·
+[DOJ / SDNY: KuCoin guilty plea, March 2025](https://www.justice.gov/usao-sdny/pr/kucoin-pleads-guilty-unlicensed-money-transmission-charge-and-agrees-pay-penalties).
 
 ## The copycat token (separate, went nowhere)
 
@@ -202,8 +210,9 @@ ballot box. The percentages are presentation, not a tally of independent voters.
 The public Solana data takes this to two doorways:
 
 - **The funding side ends at KuCoin.** Past the exchange wallet the trail is inside
-  KuCoin's private KYC records, reachable only by subpoena. That is the identity
-  target.
+  KuCoin's private KYC records, reachable through KuCoin's law-enforcement request
+  process (an MLAT for the Seychelles entity; see **What KYC is** above for the
+  sources). That is the identity target.
 - **The token side stays on-chain, but the money is not "out."** The liquidity is
   locked and the profit is a stream of trading fees, not a lump withdrawal, so there
   is no off-Solana cash-out to chase. The 270M dev allocation was burned.

@@ -251,7 +251,7 @@ Every layer is operated by an identifiable company that keeps records tying it t
 - The **domain registrar** and **Cloudflare** - the registrant / DNS account behind the domains
 - **InterServer** (origin host, `162.35.101.236`, AS26666) - the server account and payment method
 - **ArDrive / Turbo** - the wallet and receipt that paid for the Arweave uploads
-- **KuCoin** - the KYC exchange the setup funding traces back to, six hops from the funding wallet; the account records behind that deposit are the identity lead (subpoena). See [`crypto/`](../crypto/).
+- **KuCoin** - the KYC exchange the setup funding traces back to, six hops from the funding wallet; the account records behind that deposit are the identity lead, reachable through KuCoin's law-enforcement request process (MLAT for the Seychelles entity). See [`crypto/`](../crypto/) for the KYC detail and sources.
 - **Raydium** - the locked-liquidity market the operation earns its fees from; on-chain and public, but the income is a fee stream, not a withdrawal to chase
 
 None of these are reachable by a researcher from the outside. All of them
