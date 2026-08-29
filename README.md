@@ -1,79 +1,113 @@
-![FollowTheLeek - tracing a GTA VI leak-branded crypto scam](assets/banner.png)
+![FollowTheLeek - tracing a GTA VI leak-branded crypto operation](assets/banner.png)
 
-**CyberLeek** is an active cryptocurrency fraud operation built on stolen
-intellectual property. It uses leaked Grand Theft Auto VI material -
-Rockstar Games' unreleased IP - as bait to drive victims toward a
-fraudulent token, then launders the proceeds through a cross-chain trail
-and hides behind AI-generated branding.
-
-This is an open, evidence-backed investigation that follows the operation
-two ways: the **money**, traced on-chain from the token dump through a relay
-and across a bridge, and the **digital forensics** left in
-the operation's own media and browser. Every indicator here is public, verifiable, and
-cryptographically hashed - so researchers, defenders, exchanges, and
-platforms can identify the operation, disrupt it, and protect victims.
+**CyberLeek** is an active operation that uses stolen Grand Theft Auto VI material
+- Rockstar Games' unreleased IP - as bait for a cryptocurrency it profits from.
+This is an open, evidence-backed investigation. Every indicator here is public,
+verifiable, and cryptographically hashed, so researchers, defenders, exchanges,
+and platforms can identify the operation and act on it.
 
 Maintained by [Deep Woods Security](https://deepwoodssec.com).
 
-## The operation, start to finish
+## A note on signal and noise
 
-Read the sections in order and they tell one story. The operator stands up a
-website on rented US servers and pushes traffic to it with Google Ads and
-stolen GTA VI leak clips ([`infrastructure/`](infrastructure/)). Those clips
-funnel victims into a cryptocurrency token they created for free: they hype it,
-let real buyers pour their money into the trading pool, then sell their own
-free tokens on top of them and bridge the proceeds off Solana toward a trading
-platform ([`crypto/`](crypto/)). They tried to stay anonymous, but they left
-fingerprints. Their own screenshots expose the computer they work on and the
-Google account they are signed into ([`browser/`](browser/)); the times they
-post reveal their daily rhythm and rule out whole continents
-([`posting-pattern/`](posting-pattern/)); the way they write points to the
-language they grew up speaking ([`writing-style/`](writing-style/)); and even
-their profile picture is AI-generated, so the persona itself is fabricated
-([`pfp-metadata/`](pfp-metadata/)).
+A case like this is mostly noise, and that is the whole difficulty. A hyped token
+pulls in thousands of traders, bots, and arbitrage wallets. A loud social account
+insists it is "the only real one." A large number sitting on a block explorer looks
+like a smoking gun. None of that, on its own, is the operator. The work is not
+finding data, there is far too much of it. The work is separating the signal, what
+the operator actually did, from everything that only looks related.
 
-## Sections
+The method here is deliberately conservative. Start from what cannot be faked: who
+paid to register the site, who signed the file uploads, who created the token.
+Follow the funding, because money has to come from somewhere, and that somewhere
+tends to be a door. Claim only what a specific transaction proves, not who traded
+the most or who posts the loudest. When two things share a name, treat them as
+different until a transaction says otherwise.
 
-- [`infrastructure/`](infrastructure/) - hosting, DNS, media delivery, and how the operation is wired
-- [`crypto/`](crypto/) - the on-chain money trail, traced end to end
-- [`browser/`](browser/) - the operator's browser fingerprint
-- [`posting-pattern/`](posting-pattern/) - activity times across official channels
+This repo also shows its own corrections, on purpose. An earlier version of this
+investigation attached a large "cash-out" figure to a set of wallets that, on
+complete data, were not the operator's, and it merged a loud online persona with a
+money trail that was never linked to it. Both were wrong. Both were retired, and the
+corrected reasoning is left visible rather than quietly deleted. A trace worth
+trusting shows where it was wrong, not only where it was right.
+
+## Two things wear the name (a tale of two thieves)
+
+There are two separate things carrying the CyberLeek name, and on-chain they do not
+connect:
+
+- **The operation (the money).** The leak site `cyber-leek.com`, the Arweave-hosted
+  leak distribution, and a live token whose entire setup was funded, through one
+  wallet, from a **KuCoin** account. It is quiet, has no confirmed social presence,
+  and makes money from trading fees on locked liquidity. This is the real one, and
+  the KuCoin account behind it is the identity lead.
+- **The persona (the copycat).** A loud Telegram and X account (`@cyberleeksreal`,
+  "The Only Real Cyberleek"), the `cyberleeks.fun` domain, and a **pump.fun** token
+  that stalled and went nowhere. This is where the human fingerprints are (an
+  AI-generated profile picture, a writing style, a daily posting rhythm), but no
+  transaction ties any of it to the money.
+
+Whether these are two people, or one operator keeping the loud half walled off from
+the paying half, the chain does not link them. So this investigation keeps them
+apart, and labels which track each finding belongs to.
+
+## The two tracks
+
+**Track 1 - the operation (the money)**
+
+- [`crypto/`](crypto/) - the funding traced back to KuCoin, the locked-liquidity fee
+  model, and the 270M dev-token burn
+- [`infrastructure/`](infrastructure/) - hosting, DNS, media delivery, and the
+  Arweave leak distribution behind `cyber-leek.com` (also maps the persona's dead
+  `cyberleeks.fun` domain)
+
+**Track 2 - the persona (the copycat)**
+
+- [`posting-pattern/`](posting-pattern/) - the Telegram and pump-wallet activity
+  rhythm, and how well they match
 - [`writing-style/`](writing-style/) - language and writing-style markers
-- [`pfp-metadata/`](pfp-metadata/) - the IPFS profile picture and its C2PA / Grok content-credential provenance
+- [`browser/`](browser/) - the persona's browser fingerprint, from their own
+  `cyberleeks.fun` screenshot
+- [`pfp-metadata/`](pfp-metadata/) - the AI-generated profile picture and its C2PA /
+  Grok content-credential provenance
 
 ## Evidence integrity (chain of custody)
 
-Every artifact cited in this repo is hashed and timestamped so anyone
-can confirm it has not been altered since collection:
+Every artifact cited in this repo is hashed and timestamped so anyone can confirm it
+has not been altered since collection:
 
-- **SHA256** of each source artifact is recorded in
-  [`EVIDENCE.md`](EVIDENCE.md).
+- **SHA256** of each source artifact is recorded in [`EVIDENCE.md`](EVIDENCE.md).
 - **UTC capture time** is recorded next to each hash.
-- **archive.ph** snapshots provide an independent, third-party timestamp
-  for the live pages and posts.
+- **archive.ph** snapshots provide an independent, third-party timestamp for the
+  live pages and posts.
+- The crypto trail is reproducible from raw transactions; the on-chain evidence
+  package verifies against its own SHA256 manifest.
 
-Raw sensitive material (for example the leaked frames) is **not**
-published here. Its hash and archive link are enough to prove it existed
-and is unchanged, without redistributing it. Regenerate or verify the
-manifest with [`make_manifest.sh`](make_manifest.sh).
+Raw sensitive material (for example the leaked frames) is **not** published here. Its
+hash and archive link are enough to prove it existed and is unchanged, without
+redistributing it.
 
 ## Deliberately not here
 
 - No leaked media. The stolen frames are not redistributed.
-- No personal-identity attribution. This documents the operation, not a
-  named individual. We make no claim about whether it is run by one
-  person or a group, or where they are located - those determinations
-  are left to law enforcement. "Operator" is used throughout as neutral
-  shorthand and does not imply a single individual.
+- No personal-identity attribution. This documents the operation, not a named
+  individual. We make no claim about whether the money operation and the social
+  persona are the same actor, whether either is one person or a group, or where they
+  are located. Those determinations are left to law enforcement. "Operator" and
+  "persona" are neutral shorthand.
 
 ## Contributing
 
-PRs welcome if verifiable from public sources. Cite every indicator with
-a block-explorer link, an archive.ph snapshot, or a transaction hash,
-and include the artifact's SHA256. No PII, no leaked media, no
-accusations against named people.
+PRs welcome if verifiable from public sources. Cite every indicator with a
+block-explorer link, an archive.ph snapshot, or a transaction hash, and include the
+artifact's SHA256. No PII, no leaked media, no accusations against named people.
+
+## Credit
+
+The funding-to-KuCoin trace in [`crypto/`](crypto/) was first published by GTAForums
+user Vice Cit and reproduced here independently.
 
 ## Victims
 
-Report to https://www.ic3.gov with your transaction hashes, wallet
-addresses, and timestamps.
+Report to https://www.ic3.gov with your transaction hashes, wallet addresses, and
+timestamps.

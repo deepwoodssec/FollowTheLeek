@@ -27,3 +27,12 @@ Signature list: reconciliation_signatures.txt.
 complete_history/ holds full parsed history (Helius Enhanced API) for every wallet,
 including 16 top-trader "bundle" wallets examined and EXCLUDED: none routed SOL to the
 operator cluster; several are market-maker/bot wallets holding large balances.
+
+=== CORRECTION (2026-08-29): funding spine verified; bridge trail retired ===
+funding_spine/ : the funding wallet (3YLN), buffer (Ec2q), token creator (Hok9),
+270M-burn wallet (Cbfb), ArNS name (52yK), Arweave key (667G), KuCoin wallet (BmFd),
+and 14 raw transactions tracing the funding back to a KuCoin deposit (vc_tx_*.json).
+This reproduces, from our own pull, the funding->KuCoin trace first published by
+GTAForums user Vice Cit. The 270M dev tokens were verified BURNED (Cbfb, type=BURN).
+The earlier bridge-consolidation transactions were moved to examined_not_attributed/
+and the ~4,186 SOL figure retired.

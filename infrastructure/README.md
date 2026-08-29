@@ -3,6 +3,11 @@
 Hosting, DNS, certificates, media delivery, and how the operation is
 wired end to end.
 
+> **Two fronts.** This maps the wiring of the money operation
+> (`cyber-leek.com`, its media host, and the Arweave leak distribution) and,
+> where they overlap, the persona's now-dead `cyberleeks.fun` domain. They are
+> two separate tracks; see the repo root.
+
 ![CyberLeek homepage (cyber-leek.com)](../assets/cyber-leek-home.png)
 
 *Live front page of `cyber-leek.com`: the token contract address
@@ -69,10 +74,12 @@ subpoena.
 
 ### On-chain
 
-Two distinct CyberLeek token mints exist - different token programs,
-decimals, and activity windows - consistent with the site's advertised
-"second run of \$CYBERLEEK". The site currently displays `ApZux...`; the
-money trace in [`crypto/`](../crypto/) references `2hRg6...`.
+Two distinct CyberLeek token mints exist, on different token programs, with
+different decimals and activity windows. `cyber-leek.com` displays the live SPL
+token `ApZux...`, the operation with the real money. The Token-2022 mint
+`2hRg6...` was launched on pump.fun, is promoted by the `@cyberleeksreal`
+persona, and stalled. On-chain the two do not connect; see
+[`crypto/`](../crypto/).
 
 | Indicator | Value | Notes |
 | --- | --- | --- |
@@ -214,8 +221,8 @@ run by a real company that keeps billing and account records.
 2. **Front door.** `cyber-leek.com` resolves **directly** to `162.35.101.236`, an InterServer server in Los Angeles (AS26666). Cloudflare handles the domain's DNS, but the record is unproxied, so the host IP is exposed. The domain registrar holds the registrant account.
 3. **Origin host.** InterServer (US) runs that server and holds the hosting account and payment method behind it.
 4. **Content distribution.** The leak videos are served from a second InterServer host (`media.cyber-leek.com`, `69.10.50.177`) that refuses direct requests, and are mirrored on Arweave (`cyberleek.ar.io`, `turbo-gateway` fallback) via ArDrive / Turbo - the Arweave uploads are paid for, with the paying wallet and receipt on record.
-5. **The token.** Launched on pump.fun (Solana), traded on Raydium / Jupiter, tracked on DexScreener.
-6. **The money.** The operator dumps free token allocation for SOL (wallets that sold large amounts having bought nothing), consolidates it through a relay wallet, and bridges it into Hyperliquid via the Unit ("Hyperunit") bridge. \~$439K is traced this way. The Solana trail ends at the shared bridge hot wallet; the deposit credits the operator's Hyperliquid account, which Unit and Hyperliquid record. See [`crypto/`](../crypto/).
+5. **The token.** The live `$CYBERLEEK` is a classic SPL token with locked Raydium liquidity, traded on Raydium / Jupiter and tracked on DexScreener. A separate pump.fun token of the same name (the persona's) stalled and is not part of this operation.
+6. **The money.** The token's liquidity is locked (Raydium burn-and-earn) and the operation earns the trading fee on every trade; the 270M dev allocation was burned. The whole setup was paid for by one funding wallet whose SOL traces back six hops to a KuCoin (KYC) account, the identity lead. See [`crypto/`](../crypto/).
 
 **Why it's hard to track from the outside:**
 

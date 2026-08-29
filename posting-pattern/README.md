@@ -1,7 +1,18 @@
 # Posting pattern and activity times
 
-When the operator is active on the official channels, measured from two
-independent sources. Post and transaction times are facts you can
+> **Which track: the persona, not the money.** This section documents the loud
+> half of the case: the `@cyberleeksreal` Telegram / X account, the
+> `cyberleeks.fun` domain, and a pump.fun token that stalled. On-chain, none of it
+> connects to the KuCoin-funded wallets behind the live token and the leak site
+> (see [`../crypto/`](../crypto/)). Whether this persona is the money operator
+> keeping a loud alias walled off, or a copycat riding the brand, is unproven.
+> Read what follows as observations about the persona, not an identification of
+> whoever holds the money.
+
+
+When the persona is active on its channels, measured from two independent
+sources: the Telegram channel and the pump.fun token deployer wallet, both part of
+this persona and not the wallet behind the money. Post and transaction times are facts you can
 measure; the pattern they form is the finding.
 
 

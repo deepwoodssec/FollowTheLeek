@@ -1,5 +1,15 @@
 # Language and writing style
 
+> **Which track: the persona, not the money.** This section documents the loud
+> half of the case: the `@cyberleeksreal` Telegram / X account, the
+> `cyberleeks.fun` domain, and a pump.fun token that stalled. On-chain, none of it
+> connects to the KuCoin-funded wallets behind the live token and the leak site
+> (see [`../crypto/`](../crypto/)). Whether this persona is the money operator
+> keeping a loud alias walled off, or a copycat riding the brand, is unproven.
+> Read what follows as observations about the persona, not an identification of
+> whoever holds the money.
+
+
 Documented language from the operator's official channels. Every item is
 a direct quote from captured copy; the notes are limited to what is
 observable in the text. This is a language observation, not an

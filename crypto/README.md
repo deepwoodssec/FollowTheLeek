@@ -1,236 +1,212 @@
 # Crypto: tracing the money
 
-Passive on-chain analysis of the CyberLeek scam tokens on Solana, traced
-from the token dump to where the proceeds leave Solana. Every address and
-amount here is verifiable on a block explorer. Where the trail crosses a
-bridge off Solana, this section says so and names the record-holder.
+Passive on-chain analysis of the money behind the CyberLeek leak operation on
+Solana. Two different things carry the CyberLeek name. This section is about the
+one with the real money (the leak site and its live token), and it separates that
+from a copycat token that went nowhere.
 
-## How the rug pull works, in plain terms
+Credit where it is due: the funding-to-exchange trace was first published by
+GTAForums user **Vice Cit**. Everything below was reproduced independently from our
+own on-chain pull, and the raw transactions are in
+[`evidence/funding_spine/`](evidence/funding_spine/).
 
-Before the addresses and amounts, the mechanism in five steps:
+## Two things called CyberLeek (do not confuse them)
 
-1. The operator creates the token and keeps a large share for himself at zero cost (he minted it).
-2. He drives real buyers in with hype: the GTA VI leak brand, a "50% free" offer, a headline market cap.
-3. Buyers pay real SOL into the token's Raydium liquidity pool to get tokens. That pool fills with their money.
-4. The operator sells his own free tokens into that same pool, which pulls the buyers' SOL back out into his wallets.
-5. He put in nothing and walks away with real SOL. The buyers are left holding a token that craters as he sells.
-
-That is the rug pull. The on-chain tell is a wallet that **sold a large amount
-having bought nothing**: it could only have been handed those tokens at
-creation. The rest of this section identifies those dump wallets and traces
-where the SOL went after he pulled it out.
-
-
-## The tokens
-
-Two CyberLeek tokens exist. The one with real money is the one the site
-points buyers at.
-
-| Token | Address | What it is |
+| | The operation (real money) | The copycat token (went nowhere) |
 | --- | --- | --- |
-| **CYBERLEEK (live)** | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` | classic SPL; \~729.95M supply; 9 decimals; the CA displayed on cyber-leek.com. Trades on Raydium: \~$681K liquidity, \~$7.5M volume, 47,800+ transactions, 61,000+ holders, \~$3.1M market cap (Solscan / DexScreener, 2026-08-28). |
-| CYBERLEEKS (earlier run) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` | Token-2022 (program verified on-chain), launched on pump.fun (the `pump` suffix and its pump.fun listing); 1B supply; 6 decimals; deployer `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` (created 2026-08-25T06:33:48Z), itself funded via the Relay bridge. Stalled on the bonding curve; low activity. |
+| Token | live SPL `ApZuxdpz…` | pump.fun Token-2022 `2hRg6…pump` |
+| Front | `cyber-leek.com` + Arweave leak distribution | `@cyberleeksreal` (X / Telegram), `cyberleeks.fun` |
+| Funded by | one wallet (`3YLN…`) traced back to **KuCoin** | the shared Relay bridge |
+| Status | locked liquidity, earning trading fees | stalled on the bonding curve |
+| On-chain link between the two | **none found** | |
 
-The advertised "$17M market cap" on the site is nominal (supply x price).
-The real, tradeable money is the Raydium liquidity behind the live token.
+The rest of this section is the operation. The copycat token, and the social
+persona around it, are a separate track (documented in the persona sections of
+this repo). On-chain, nothing we can find connects them to the money.
 
-The two tokens mark a progression. The earlier one was launched on **pump.fun**,
-a Solana memecoin launchpad where a token starts on an automated bonding curve
-and only migrates to a full exchange if it gains enough traction. It stalled
-there. The operator then relaunched as the classic-SPL live token above and
-advertised it as the "second run", and that is the one that caught real money on
-Raydium (pump.fun/coin/2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump).
+## The token, and how it actually makes money
 
-![Live CYBERLEEK/SOL market on Raydium (DexScreener)](../assets/crypto-token-dexscreener.png)
+The live token (`ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg`) is a classic SPL
+token, about 729.95M supply, 9 decimals, and it is the contract address shown on
+`cyber-leek.com`. It trades on a real Raydium market with tens of thousands of
+transactions and holders.
 
-*The live CYBERLEEK/SOL market on Raydium (DexScreener, 2026-08-28 around 20:00 UTC, later than the table above). A real, high-volume market and a token selling off: market cap sliding from about $7.6M at peak to about $1.9M (24h -53.78%), with sells (13,202) outnumbering buys (11,478) and sellers (5,308) outnumbering buyers (2,777). Liquidity about $527K, 24h volume about $3.2M, 58,940 holders. This is the pool the dump wallets sold into.*
+This is not a smash-and-grab rug. The creator supplied all the original liquidity
+(about 730M CYBERLEEK and 330 SOL) and **locked it** with Raydium's burn-and-earn.
+Locked means they cannot pull it back out and dump it, but they still collect the
+trading fee on every buy and every sell. So the operator earns from **volume**, not
+from selling the token.
 
-## The mechanism: free allocation, dumped
+Per Vice Cit's fee analysis on the public Raydium data: roughly $29,000 went into
+setting this up; the coin did about $15M in volume on day one (about $30,000 in
+fees); total fees so far are on the order of $40,000 to $60,000, roughly $4,400 a
+day at about $2.1M daily volume, for as long as interest holds. Those are estimates
+from public market data, not exact figures.
 
-The operator holds token supply at cost basis zero (creator / team
-allocation) and sells it into the pool that real buyers are filling. The
-on-chain signature is unmistakable on the token's top traders: **wallets
-that sold a large amount having bought nothing.**
+That model explains the behaviour. The leaks drip out and the site runs "vote on
+the next leak" polls because the point is to keep the coin **trading**, not to make
+one big splash. Sustained attention is the revenue.
 
-- `7sgG1Dsk84fgia5ewkhd8RfFymk64ETBVxs72Pzc2zDW` - **sold \~$174K** (10.7M
-  tokens over 62 sells), **bought $0**.
-- `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` - sold \~$93.6K, bought $0.
-- We also examined 16 further "sold, never bought" wallets from the token's
-  top-trader list. None routed SOL to the relay, the bridge, or any operator
-  wallet; several bought and sold the token (round-trip trading) or sit on
-  large balances and trade continuously, which is market-maker or bot
-  behavior, not a one-shot dump. They are not attributed to the operator.
-  The confirmed operator dump wallets are 7sg and EfV.
+## The 270M burn
 
-A wallet cannot sell 10.7M tokens it never bought unless it was handed them
-at creation. That is the dump.
+At creation the supply was 1,000,000,000 CYBERLEEK. 730M went into the locked pool.
+The remaining **270,000,000 were sent by the creator (`Hok9…`) to a holding wallet
+(`Cbfb…`), which then burned all 270,000,000** (verified on-chain, instruction type
+`BURN`). That removes the dev overhang that could otherwise have crashed the price,
+and it is a deliberate "this is not a rug" signal that keeps the fee machine
+credible. Our token-supply reading of 729,950,775 is exactly 1B minus that burn.
+
+## The funding spine, traced back to KuCoin
+
+This is the identity lead. A single funding wallet paid for the whole setup, and
+that wallet's SOL traces back to a regulated exchange.
+
+```mermaid
+flowchart LR
+    KC["KuCoin processing wallet<br/>BmFd (KYC exchange)"] --> H1["FWbi"] --> H2["J4zo"] --> H3["26sZ"] --> H4["EjsB"] --> H5["2ZdU"] --> FUND["Funding wallet<br/>3YLN"]
+    FUND -->|"1 SOL"| NAME["ArNS site name<br/>52yK"]
+    FUND -->|"1 SOL"| ARW["Arweave upload key<br/>667G"]
+    FUND -->|"25.06 SOL"| BUF["Buffer<br/>Ec2q"]
+    BUF -->|"321.42 SOL"| CRE["Token creator<br/>Hok9"]
+    CRE --> LP["Locked Raydium LP<br/>730M CYBERLEEK + 330 SOL"]
+    CRE --> BURN["270M to Cbfb, then BURNED"]
+```
+
+- **One funding wallet (`3YLNDXnV9fNysDWaD39uQxwxeSaMFeAswvoQPZNvuNA4`) paid for all
+  three pieces:** the ArNS website name (owner `52yKvgZK…`), the Arweave
+  leak-upload key (`667GfnDu…`, a Solana key that also signs the Arweave uploads),
+  and the token, funded through a buffer wallet (`Ec2qmcpC…`) into the creator
+  (`Hok9nbV8…`). Amounts reproduced from our pull: `3YLN` sent the buffer 17.3542 +
+  7.7084 SOL; the buffer sent the creator 10 + 311.42 SOL; the creator then made
+  the locked pool.
+- **The funding wallet traces back to KuCoin.** Six hops, all reproduced from our
+  own pull on 2026-08-13: `BmFdpraQ…` (a KuCoin processing wallet) sent 100.202 SOL
+  to `FWbi…`, then `FWbi → J4zo → 26sZ → EjsB → 2ZdU → 3YLN`.
+- **Why it matters:** KuCoin performs identity verification, and since August 2023
+  new accounts must verify a government ID. A subpoena to KuCoin for the account
+  behind that deposit could return the holder's identity, transaction records, and
+  session history. That is the concrete off-ledger identity target, and it is
+  reachable by law enforcement.
+
+Raw proof for every hop is in [`evidence/funding_spine/`](evidence/funding_spine/),
+one `vc_tx_*.json` file per cited transaction.
+
+## The copycat token (separate, went nowhere)
+
+A second token carries the CyberLeek name: a Token-2022 launched on **pump.fun**
+(`2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump`, deployer `HhFaWEVR…`), promoted by
+the `@cyberleeksreal` Telegram/X persona and the `cyberleeks.fun` domain. It stalled
+on the bonding curve and never caught real money.
+
+On-chain, this token and its deployer **do not connect to the funding spine or the
+live token** in any transaction we can find. Whether it is the same operator using
+separate, siloed wallets or a copycat riding the brand, no transaction links the
+loud social persona to the money. The persona itself (the Telegram, the
+AI-generated profile picture, the writing style, the posting rhythm) is documented
+separately in this repo as its own track, and should not be read as the identity of
+the money operator.
 
 ## Pay-to-vote polls: manufactured demand, paid in $CYBERLEEK
 
-The operation also ran on-site "polls" that charge the audience to take part.
-The site's own rules state the mechanism:
+The operation's site also ran "polls" that charge the audience to take part. The
+site's own rules state the mechanism:
 
-> "Send only $CYBERLEEK to the wallet of the choice you want to vote for.
-> Each dedicated wallet is checked for the configured token mint... The
-> percentage is each option wallet's detected balance divided by the poll
-> total."
+> "Send only $CYBERLEEK to the wallet of the choice you want to vote for. Each
+> dedicated wallet is checked for the configured token mint... The percentage is
+> each option wallet's detected balance divided by the poll total."
 
-So a "vote" is a transfer of $CYBERLEEK to an operator-controlled wallet, and
-the poll decides which leak video drops next, which is what pulls the next wave
-of buyers into the token. The polls are a second on-chain intake and a
-demand-manufacturing device at once.
-
-![Poll: prologue with Lucia](../assets/crypto-poll-lucia.png)
-
-*"Do you really want to see the prologue with Lucia?", shown at 99.7 percent
-Yes. Voters send $CYBERLEEK to `Cpj7...` (Yes) or `3wFK...` (No). Archived:
-https://archive.ph/A4zKG*
-
-![Poll: next GTA 6 video](../assets/crypto-poll-nextvideo.png)
-
-*A second live poll, "Next GTA 6 Video?", on the same widget with the same
-wallets carrying new option labels. Captured in the full homepage archive: https://archive.ph/cpbHi*
+So a "vote" is a transfer of $CYBERLEEK to an operator-controlled wallet, and the
+poll decides which leak drops next, which pulls the next wave of trading. The polls
+are a second on-chain intake and a demand-manufacturing device at once.
 
 **The option wallets are recycled across polls, so the displayed totals are not
-independent vote counts.** The same two wallets carry different, unrelated
-options in the two polls above:
+independent vote counts.** The same two wallets carry different, unrelated options
+across polls:
 
 | Option wallet | In the "Lucia" poll | In the "Next video" poll |
 | --- | --- | --- |
-| `Cpj7QARnmVR39NBGe4NWppUF7WUrWMamen4WsJNmbHQy` | "Yes Please" (262,141 shown) | "Beach" (11,706 shown) |
-| `3wFKU8bzomz8eSn179JFzR4oimC3esEXxhbaWtKgJ3K3` | "Fuck No" (904 shown) | "Nudist Town" (56,502 shown) |
-| `78BkUe4bywGhK6SJDHj5uwfyFJZ9NDG3iQ5U7rxo7QWA` | not used | "Strip Club 2" (11,351 shown) |
+| `Cpj7QARnmVR39NBGe4NWppUF7WUrWMamen4WsJNmbHQy` | "Yes Please" | "Beach" |
+| `3wFKU8bzomz8eSn179JFzR4oimC3esEXxhbaWtKgJ3K3` | "Fuck No" | "Nudist Town" |
+| `78BkUe4bywGhK6SJDHj5uwfyFJZ9NDG3iQ5U7rxo7QWA` | not used | "Strip Club 2" |
 
-A wallet that is "Yes Please" in one poll and "Beach" in another is not a
-dedicated ballot box. On-chain these wallets are short-lived: active only in a
-brief window, their token accounts closed to reclaim rent, then abandoned
-(current balances zero), and one inbound token load to an option wallet was
-authorized by the same Relay solver (`F7p3...`, shared bridge infrastructure)
-that appears in the money trail above. The percentages are presentation, not a
-tally of independent voters.
+A wallet that is "Yes Please" in one poll and "Beach" in another is not a dedicated
+ballot box. The percentages are presentation, not a tally of independent voters.
 
-Verifiable here: the pay-to-vote mechanism, the option-wallet addresses, their
-reuse across polls, and their short-lived operator-side on-chain footprint.
-What the polls produce for the operator is engagement paid in $CYBERLEEK and a
-pretext for the next drop.
+## Where the trail goes private
 
+The public Solana data takes this to two doorways:
 
-## The cash-out, traced on-chain to the bridge
-
-The dump proceeds converge through a relay and cross into Hyperliquid via
-the Unit ("Hyperunit") bridge. Every hop is a plain SOL transfer, labelled
-on Solscan:
-
-```mermaid
-flowchart TD
-    RB["Relay bridge (value in)"] -.->|seed SOL| DU["7dU2nE / feeder wallets"]
-    A7["7sg dump wallet"] -->|"1,849.73 SOL"| RELAY
-    HC["Hc8yCCo4..."] -->|"1,854.86 SOL"| RELAY
-    DU -->|"481.39 SOL"| RELAY
-    RELAY["5kSRXuv relay (pass-through, near-zero)"] -->|"4,185.98 SOL (~$439K)"| UNIT
-    UNIT["9SLPTL41 : Unit / Hyperunit bridge (shared custody)"] -->|bridge| HL["operator's Hyperliquid account (subpoena target)"]
-```
-
-- **Relay:** `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` - 14
-  transactions total, holds almost nothing. Every amount in is forwarded out
-  near-instantly (e.g. in 289.68 -> out 289.67). A pass-through layering
-  wallet, not a store of value.
-- **Bridge:** `9SLPTL41SPsYkgdsMzdfJsxymEANKr5bYoBsQzJyKpKS` - Solscan
-  labels it **"Hyperunit: Hot Wallet"**; it holds \~348,043 SOL (\~$36.5M)
-  across 1,000+ transactions. This is the **Unit bridge's shared custody
-  hot wallet**, the deposit endpoint that moves native SOL onto Hyperliquid.
-
-**\~4,186 SOL (\~$439K)** moved through this single path to the Unit bridge.
-The relay's inbound reconciles with its outbound to the lamport across six
-paired transfers: `7sg` sent 1,849.73 SOL (three transfers), `Hc8yCCo4...`
-1,854.86 SOL (two transfers), and `7dU2nE...` 481.39 SOL, for 4,185.98 SOL in,
-and the relay forwarded the same 4,185.98 SOL straight on to the Unit bridge.
-Each of the six deposits is matched by an equal payment out to the bridge.
-
-The inbound side runs a second bridge. The wallets were seeded through
-**Relay**: its solver `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe` funded
-`7dU2nE`, the second dump wallet `EfVhmasW...`, and the token deployer. So the
-operation runs value **in through Relay** and **out through Unit** into
-Hyperliquid.
-
-`EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` is a second dump wallet (sold
-\~$93.6K, bought $0) funded the same way. Its SOL proceeds are not part of the relay reconciliation above; its complete history is in complete_history/ for anyone tracing further.
-
-## Where the Solana trail ends, and the real subpoena targets
-
-Be precise about the boundary, because it is where an outside trace has to
-stop honestly:
-
-- **`9SLPTL41` is not the operator.** Its \~$36.5M balance is the Unit
-  bridge's pooled custody for all its users, exactly like a shared exchange
-  hot wallet. We do not attribute it to anyone.
-- **The deposit credits the operator's Hyperliquid account.** Unit records
-  which account a given Solana deposit is bridged to, and Hyperliquid
-  records what that account then does. Those two records tie the \~$439K to
-  a specific Hyperliquid account.
-- **Subpoena targets:** the **Unit bridge** (deposit-to-account mapping) and
-  **Hyperliquid** (account activity and any onward withdrawal to a fiat
-  exchange). Both are concrete and both are off the public Solana ledger.
-
-The money bridged into Hyperliquid, and the record of whose account it is sits with
-Unit and Hyperliquid.
+- **The funding side ends at KuCoin.** Past the exchange wallet the trail is inside
+  KuCoin's private KYC records, reachable only by subpoena. That is the identity
+  target.
+- **The token side stays on-chain, but the money is not "out."** The liquidity is
+  locked and the profit is a stream of trading fees, not a lump withdrawal, so there
+  is no off-Solana cash-out to chase. The 270M dev allocation was burned.
 
 ## Indicators
 
 | Type | Value |
 | --- | --- |
-| Live token (CYBERLEEK, SPL) | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` |
-| Earlier token (Token-2022) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` |
-| Token-2022 deployer | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` |
-| Dump wallet (sold big, bought $0) | `7sgG1Dsk84fgia5ewkhd8RfFymk64ETBVxs72Pzc2zDW` |
-| Dump wallet (sold big, bought $0) | `EfVhmasWL89KnqkNdHJ2TK3YC31aWMwU1vWR4Yb3SreE` |
-| Relay / layering wallet | `5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA` |
-| Unit bridge hot wallet (shared infra) | `9SLPTL41SPsYkgdsMzdfJsxymEANKr5bYoBsQzJyKpKS` |
-| Bridge / destination venue | Unit ("Hyperunit") -> Hyperliquid |
-| Poll option wallet (pay-to-vote) | `Cpj7QARnmVR39NBGe4NWppUF7WUrWMamen4WsJNmbHQy` |
-| Poll option wallet (pay-to-vote) | `3wFKU8bzomz8eSn179JFzR4oimC3esEXxhbaWtKgJ3K3` |
-| Poll option wallet (pay-to-vote) | `78BkUe4bywGhK6SJDHj5uwfyFJZ9NDG3iQ5U7rxo7QWA` |
+| Live token (the operation) | `ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg` |
+| Funding wallet | `3YLNDXnV9fNysDWaD39uQxwxeSaMFeAswvoQPZNvuNA4` |
+| Buffer wallet | `Ec2qmcpCCD9hjahAcquiQf5JkZWCK68BUahCje1izYC7` |
+| Token creator | `Hok9nbV89yBSKCttxe3goqajwbiqQa9mtHvQBsbJH3Np` |
+| 270M burn wallet | `CbfbaNpCGV64g2fbLBC2NXKSygeJJuC7S6i36cy8RMPo` |
+| ArNS site-name wallet | `52yKvgZKczDMUNBH4V8RSNG7tn9y8SxeyTavYBZmwDHZ` |
+| Arweave upload key | `667GfnDuPmamKPhPRjTfUA1nGyxg1wgP6ro4HZZ8L33D` |
+| KuCoin processing wallet (funding source) | `BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6` |
+| Copycat token (pump.fun, stalled) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` |
+| Copycat token deployer | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` |
+| Poll option wallets | `Cpj7…`, `3wFK…`, `78Bk…` |
 
 ## Reproduce it
 
-Token facts (supply, decimals, program owner):
+Token facts:
 
     curl -s https://api.mainnet-beta.solana.com -X POST -H 'content-type: application/json' \
       -d '{"jsonrpc":"2.0","id":1,"method":"getTokenSupply","params":["ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg"]}'
 
-Follow a dump wallet's SOL to the relay and the bridge (parse `transfer`
-instructions from each `getTransaction`):
+Walk the funding wallet's history and its inbound (the last hop before it is the
+KuCoin chain):
 
     curl -s https://api.mainnet-beta.solana.com -X POST -H 'content-type: application/json' \
-      -d '{"jsonrpc":"2.0","id":1,"method":"getSignaturesForAddress","params":["5kSRXuvcdkmuDUdUbJnCakwxZithtY1SnEs6S5SpVKeA",{"limit":30}]}'
-
-Top traders (the "sold big, bought nothing" signature) are read from the
-token's Raydium market on DexScreener / Solscan.
+      -d '{"jsonrpc":"2.0","id":1,"method":"getSignaturesForAddress","params":["3YLNDXnV9fNysDWaD39uQxwxeSaMFeAswvoQPZNvuNA4",{"limit":50}]}'
 
 ## Confidence and limits
 
-- **Verified on-chain / on public explorers:** the two tokens and their
-  parameters; the dump-wallet signature (large sells, zero buys); the
-  relay; the bridge destination and its label; and the \~4,186 SOL amount.
-- **Established but off the public Solana ledger:** the identity of the
-  operator's Hyperliquid account and any onward cash-out to fiat. These
-  live in Unit's and Hyperliquid's records, which is why they are
-  named as subpoena targets.
+- **Verified on-chain, reproduced from our own pull:** the funding wallet paying
+  the ArNS name, the Arweave key, and the token creation; the six-hop chain from
+  KuCoin to the funding wallet; the creator wallet; the 270,000,000 burn.
+- **From public market data (Vice Cit's fee analysis / DexScreener):** the ~$29k
+  setup, the ~$40k to $60k in fees, the daily volume and fee rate. Estimates from
+  public Raydium data, not exact figures.
+- **Established but off the public ledger:** the identity behind the KuCoin account
+  (subpoena).
+- **Retired, on purpose:** an earlier version of this section traced a bridge path
+  (`7sg → relay → Unit`) and attached a ~4,186 SOL / ~$439k "cash-out" figure. On the
+  complete data that path mixes wallets not tied to the operation (one never held
+  the token, one was bridged-in pass-through), so it has been removed and its
+  transactions moved to
+  [`evidence/examined_not_attributed/`](evidence/examined_not_attributed/). The
+  correction is left on the record deliberately.
+- **Credit:** the funding-to-KuCoin trace was first published by GTAForums user Vice
+  Cit; we reproduced it independently.
 
 ## Evidence files (hashed)
 
-Raw Solana pulls for every address in this section, plus a SHA256 manifest,
-are in [`evidence/`](evidence/):
+Raw pulls plus a SHA256 manifest are in [`evidence/`](evidence/):
 
-- `raw/token_*.json` - supply and account info for both tokens
-- `raw/dump_*.json`, `raw/relay_*.json`, `raw/paymaster_*.json`,
-  `raw/feeder_*.json`, `raw/funder_*.json`, `raw/deployer_*.json`,
-  `raw/bridge_*.json` - balance, signatures, and raw transactions for each
-  hop in the trail
-- `collection_log.txt` - timestamped log of every fetch
-- `SHA256SUMS.txt` - SHA256 of every file (chain of custody)
+- `funding_spine/` - the funding wallet, buffer, creator, 270M-burn wallet, ArNS
+  name wallet, Arweave key, the KuCoin processing wallet, and one raw transaction
+  per cited hop (`vc_tx_*.json`).
+- `raw/`, `complete_history/` - per-wallet balances, signatures, and transactions
+  for the tokens and the wallets examined.
+- `examined_not_attributed/` - the retired bridge-path transactions, kept for
+  transparency, not as an attribution.
+- `collection_log.txt`, `README_EVIDENCE.txt` - what was collected and when.
+- `SHA256SUMS.txt` - SHA256 of every file (chain of custody).
 
-Manifest SHA256: `8c8c3959bd54185885bf399f3406534631b48aebbdf5c7e03f95eef17ff254ed`
+Manifest SHA256: `a73dd3cd5b9c4255795cbc810b6d82253f1983b15c5d3d60d96898e5ce93a223`
 
 Verify:
 
