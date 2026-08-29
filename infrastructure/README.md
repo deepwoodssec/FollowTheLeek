@@ -101,7 +101,7 @@ split:
 - TLS: first Let's Encrypt cert **2026-08-24** (Certificate Transparency). This is when HTTPS went on, a **lower bound**, not the domain registration date; the on-chain setup began **2026-08-13**.
 - **Domain registrar and registration date: not yet pulled** (the open gap on the standup date). Run [`recon/recon-operation.sh`](recon/recon-operation.sh) for `cyber-leek.com` and [`recon/recon-copycat.sh`](recon/recon-copycat.sh) for `cyberleeks.fun`; both do an RDAP + WHOIS lookup.
 
-Raw lookups (hashed in [`EVIDENCE.md`](../EVIDENCE.md)): [`recon/dns-cert-recon.txt`](recon/dns-cert-recon.txt) (2026-08-27), [`recon/infra-recon-2026-08-28.txt`](recon/infra-recon-2026-08-28.txt) (Cloudflare change, `.fun` dark), [`recon/infra-recon-2026-08-29.txt`](recon/infra-recon-2026-08-29.txt) (site down, reverse DNS). The two recon scripts above refresh the data, split by target.
+Recon evidence is two files, one per track, produced by the scripts in [`recon/`](recon/): `operation-recon-<date>.txt` (run [`recon/recon-operation.sh`](recon/recon-operation.sh)) and `copycat-recon-<date>.txt` (run [`recon/recon-copycat.sh`](recon/recon-copycat.sh)). Each captures DNS, IP ownership and reverse DNS, the domain registrar (RDAP + WHOIS), TLS, Certificate Transparency and HTTP status; the operation script also checks the Google Ads tag. Both are hashed in [`EVIDENCE.md`](../EVIDENCE.md) once generated.
 
 ### Media delivery
 
