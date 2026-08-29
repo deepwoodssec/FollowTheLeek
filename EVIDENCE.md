@@ -46,6 +46,7 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 | cyber-leek.com | https://archive.ph/cpbHi |
 | cyberleeks.fun | https://archive.ph/rYIMI |
 | Telegram channel (t.me/cyberleeksreal) | https://archive.ph/vA8cN |
+| Telegram channel (writing-style source) | https://archive.ph/OnLUN |
 | Telegram post /24 (hashtags + browser screenshot) | https://archive.ph/I0X9X |
 | Telegram post /31 (broken English) | https://archive.ph/9J4OI |
 | Google tag JS (gtag) | https://archive.ph/oPlW4 |

@@ -62,7 +62,7 @@ for h in range(24):
     ax.bar(h-0.21, tg_sess.get(h,0), w, color=TG, alpha=1.0, zorder=4)
     ax.bar(h+0.21, oc_raw.get(h,0), w, color=ON, alpha=0.30, zorder=3)
     ax.bar(h+0.21, oc_sess.get(h,0), w, color=ON, alpha=1.0, zorder=4)
-fig.text(0.062,0.905,"Operator activity by hour ",fontsize=17,weight="bold",color=TITLE,ha="left")
+fig.text(0.062,0.905,"Persona activity by hour ",fontsize=17,weight="bold",color=TITLE,ha="left")
 fig.text(0.462,0.905,"(UTC)",fontsize=17,weight="bold",color=TG,ha="left")
 # legend row
 def legend_row(y):
