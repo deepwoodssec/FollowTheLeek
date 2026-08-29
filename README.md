@@ -81,7 +81,7 @@ flowchart LR
     end
     subgraph LAUNCH["Public launch"]
       direction LR
-      A24["Aug 24<br/>site live<br/>(TLS + first archive)<br/>+ polls open"] --> A25["Aug 25<br/>Copycat: pump.fun token +<br/>cyberleeks.fun (Hostinger)<br/>+ @cyberleeksreal"]
+      A24["Aug 24<br/>first seen live<br/>(TLS + first archive)<br/>+ polls open"] --> A25["Aug 25<br/>Copycat: pump.fun token +<br/>cyberleeks.fun (Hostinger)<br/>+ @cyberleeksreal"]
     end
     A15 --> A22 --> A24
 
@@ -101,7 +101,7 @@ flowchart LR
 | 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `operation/funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
 | 2026-08-22 06:36:48 | money | `cyber-leek.com` domain registered through **Cloudflare** (registrar IANA 1910) | RDAP + WHOIS, [`operation-recon-2026-08-29.txt`](infrastructure/recon/operation-recon-2026-08-29.txt) |
 | 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `operation/funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
-| 2026-08-24 | money | `cyber-leek.com` goes live: first Let's Encrypt cert (HTTPS on) and the earliest archive snapshot (14:20Z). The domain itself was registered Aug 22 (above) | Certificate Transparency + archive.today |
+| 2026-08-24 | money | `cyber-leek.com` first *seen* live: first Let's Encrypt cert and earliest archive snapshot (14:20Z). Domain registered Aug 22; exact go-live in the Aug 22 to 24 window is not independently recorded | Certificate Transparency + archive.today |
 | 2026-08-24 | money | Pay-to-vote poll option wallets (`Cpj7`, `3wFK`) first active | on-chain, `operation/polls/` |
 | 2026-08-25 06:33:48 | persona | Copycat pump.fun token (`2hRg6`) minted by deployer (`HhFa`) | on-chain, [`infrastructure/`](infrastructure/) on-chain table |
 | 2026-08-25 07:08 | persona | `@cyberleeksreal` Telegram persona's first captured post | [`posting-pattern/telegram-post-times.txt`](posting-pattern/telegram-post-times.txt) |
