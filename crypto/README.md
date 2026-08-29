@@ -108,7 +108,12 @@ the money operator.
 
 ## Pay-to-vote polls: manufactured demand, paid in $CYBERLEEK
 
-The operation's site also ran "polls" that charge the audience to take part. The
+The operation's site, `cyber-leek.com`, also ran "polls" that charge the audience
+to take part. Both polls below are captured on that site: the "Lucia prologue"
+poll (archived: https://archive.ph/A4zKG) and the "Next GTA 6 video" poll (in the
+homepage snapshot, https://archive.ph/cpbHi); the screenshots are
+[`assets/crypto-poll-lucia.png`](../assets/crypto-poll-lucia.png) and
+[`assets/crypto-poll-nextvideo.png`](../assets/crypto-poll-nextvideo.png). The
 site's own rules state the mechanism:
 
 > "Send only $CYBERLEEK to the wallet of the choice you want to vote for. Each
