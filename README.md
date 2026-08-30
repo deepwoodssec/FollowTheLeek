@@ -54,6 +54,9 @@ apart, and labels which track each finding belongs to.
 - [`infrastructure/`](real/infrastructure/) - hosting, DNS, media delivery, and the
   Arweave leak distribution behind `cyber-leek.com` (also maps the persona's dead
   `cyberleeks.fun` domain)
+- [`operator/`](real/operator/) - who is behind it: the open, publicly reported
+  attribution lead (the `stayonthegrindd` Discord handle, the `Cyberleeker` Dread
+  post) and the method to test it against the on-chain clock. No person is named.
 
 **Track 2 - the persona (the copycat)**
 
