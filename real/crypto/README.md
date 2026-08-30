@@ -201,6 +201,109 @@ across polls:
 A wallet that is "Yes Please" in one poll and "Beach" in another is not a dedicated
 ballot box. The percentages are presentation, not a tally of independent voters.
 
+## The cash-out (2026-08-27)
+
+The fee model above produced a withdrawal, and we traced all of it. On 2026-08-27
+the creator wallet (`Hok9`) claimed its accumulated Raydium trading fees, swapped
+them to SOL, and split the proceeds across two exchanges over the following hours.
+First flagged by GTAForums user
+[Vice Cit (Part 4)](https://gtaforums.com/topic/1007096-spoilers-gta-vi-cyberleeks-discussion/page/52/#comment-1072787879);
+we reproduced the entire flow hop by hop on our own node and it matches to the SOL.
+
+The first two hops:
+
+1. **07:27:33 - fee claim.** `Hok9` claims the locked-LP fees (tx `4YgZeKvf...z57V4`).
+2. **07:28:16 - swap to SOL.** 15,487,189.424 CYBERLEEK to SOL (tx `4dHLvgko...AUHnu`).
+3. **07:29 to 07:32 - four outflows, 2,705.07 SOL.** To four fresh wallets:
+   `He8Q` 781.24, `BFeK` 741.63, `Bv6U` 676.52, `8hyp` 505.68.
+4. **07:42 to 14:05 - each splits again** into eight second-hop wallets, which
+   deliver to the two exchanges below.
+
+```mermaid
+flowchart LR
+    HOK["Hok9 (creator)<br/>2,705 SOL"]
+    HOK --> He8Q["He8Q 781"]
+    HOK --> BFeK["BFeK 742"]
+    HOK --> Bv6U["Bv6U 677"]
+    HOK --> w8hyp["8hyp 506"]
+    He8Q --> w7M79["7M79 391"]
+    He8Q --> CfHp["CfHp 212"]
+    He8Q --> G2Va["G2Va 178"]
+    BFeK --> AZN1["AZN1 209"]
+    BFeK --> CoSK["CoSK 533"]
+    Bv6U --> GokF["GokF 378"]
+    Bv6U --> HLSU["HLSU 298"]
+    w8hyp --> HHRZ["HHRZ 506"]
+    w7M79 --> KC["KuCoin deposits<br/>GPscf / eS4n -> BmFd"]
+    AZN1 --> KC
+    GokF --> KC
+    CfHp --> HUB["btYki -> EceGdm<br/>-> 66ZQ -> 771y"]
+    G2Va --> HUB
+    HUB --> KC
+    CoSK --> CCE["CCE.Cash 3Afn<br/>(no-KYC)"]
+    HLSU --> CCE
+    HHRZ --> CCE
+
+    classDef kyc fill:#dcfce7,stroke:#166534,color:#052e16;
+    classDef nokyc fill:#fee2e2,stroke:#991b1b,color:#450a0a;
+    classDef hub fill:#f3f4f6,stroke:#6b7280,color:#111827;
+    class KC kyc;
+    class CCE nokyc;
+    class HUB hub;
+```
+
+Where it lands, in two roughly equal halves:
+
+- **~1,368 SOL (51%) to KuCoin.** Directly: `7M79` (391), `AZN1` (209), and `GokF`
+  (378) forward to two KuCoin deposit addresses (`GPscfRmN...bkQt`,
+  `eS4n56zr...99qW`) and on to the KuCoin processing wallet `BmFd`, the same wallet
+  the operation was funded from. Indirectly: `CfHp` (212) and `G2Va` (178) do not
+  stop at a neutral hub. They wash through `btYki -> EceGdm -> 66ZQ -> 771y` and
+  then hit the same `GPscf` KuCoin deposit. That laundering leg (~390 SOL) is
+  KuCoin-bound too, so what first looked like a dead-end hub is really a KuCoin
+  feeder.
+- **~1,337 SOL (49%) to CCE.Cash.** `CoSK` (533), `HLSU` (298), and `HHRZ` (506)
+  forward to one CCE.Cash deposit wallet (`3AfnRwXv...J2rH`, Solscan public name
+  "CCE.Cash: Exchange Deposit Wallet"), confirmed on our own pull (`CoSK` 08:31,
+  `HLSU` 08:54, `HHRZ` 14:05 UTC). CCE.Cash is a non-custodial, no-KYC instant-swap
+  service, so that leg leaves no identity record. `HHRZ` moved in the afternoon,
+  hours after Vice Cit's morning snapshot, so our trace runs slightly past theirs.
+
+The four splits reconcile exactly: 978 direct to KuCoin (36%) + 390 laundered to
+KuCoin via the hub (14%) + 1,337 to CCE.Cash (49%) = 2,705 SOL.
+
+Two things worth stating plainly:
+
+- **KuCoin is on both ends, and it is the larger end.** The operation was funded
+  from a KuCoin account, and the majority of the profit (~51%, once the laundered
+  hub leg is unwound) went back into KuCoin. Same exchange, same KYC records, on
+  both the origin and the primary cash-out destination. That is the strongest single
+  identity lead in this case.
+- **"At least two people" is Vice Cit's read, not our conclusion.** Vice Cit (Part
+  4) infers two people from the KuCoin-plus-CCE.Cash split. On-chain we confirm the
+  split and where each leg lands; we cannot confirm the headcount, and one person can
+  use two exchanges. We record the split as fact and the headcount as Vice Cit's
+  inference. (Our routing shows KuCoin, not CCE.Cash, taking the larger share once
+  the hub leg is unwound.)
+
+Profit picture: about $29,000 to set up against roughly $270,000 claimed and moved
+here, a net on the order of $241,000, larger than the ~$40k to $60k early-window fee
+estimate above because it is a later, cumulative withdrawal.
+
+Every hop is reproducible. The KuCoin and hub legs are in our Helius pulls; the CCE
+leg was confirmed keyless on the public Solana RPC:
+
+    for A in CoSKZDV8V6mzJkwKZeQx1bp52yHMwQv28u1WaGZwCv59 \
+             HLSU45P2DqDNiVserd1iFzgzv6E2nKjXjbSCzKJSh9RL \
+             HHRZoUMxdWPP2ThsVbVjCJmDw6idP7rP6TUXyiVeMgDH; do
+      curl -s https://api.mainnet-beta.solana.com -X POST -H 'content-type: application/json' \
+        -d '{"jsonrpc":"2.0","id":1,"method":"getSignaturesForAddress","params":["'$A'",{"limit":10}]}'
+    done
+
+Raw pulls for this cash-out are in
+[`evidence/operation/crosscheck/`](evidence/operation/crosscheck/) (`cashout_*.json`),
+SHA256 in the manifest.
+
 ## Where the trail goes private
 
 The public Solana data takes this to two doorways:
@@ -209,9 +312,12 @@ The public Solana data takes this to two doorways:
   KuCoin's private KYC records, reachable through KuCoin's law-enforcement request
   process (an MLAT for the Seychelles entity; see **What KYC is** above for the
   sources). That is the identity target.
-- **The token side stays on-chain, but the money is not "out."** The liquidity is
-  locked and the profit is a stream of trading fees, not a lump withdrawal, so there
-  is no off-Solana cash-out to chase. The 270M dev allocation was burned.
+- **The token side did cash out, on 2026-08-27.** The liquidity stays locked and the
+  dev allocation was burned, but the accumulated trading fees were claimed, swapped
+  to SOL, and split roughly in half: ~51% back to KuCoin (including a leg laundered
+  through a hub) and ~49% to the no-KYC CCE.Cash - see **The cash-out** above. The
+  KuCoin half lands back at the same KYC exchange the operation was funded from; the
+  CCE.Cash half goes private.
 
 ## Cross-checked against Divyasshree N's Bitquery analysis
 
@@ -272,6 +378,8 @@ same chain of custody as the rest.
 | ArNS site-name wallet | `52yKvgZKczDMUNBH4V8RSNG7tn9y8SxeyTavYBZmwDHZ` |
 | Arweave upload key | `667GfnDuPmamKPhPRjTfUA1nGyxg1wgP6ro4HZZ8L33D` |
 | KuCoin processing wallet (funding source) | `BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6` |
+| KuCoin cash-out deposit wallets | `GPscfRmNgRjtv8dLAGcXTmX83AL1eTjXZwtR3BqubkQt`, `eS4n56zrQ4ESznC8mDxQhsY4JoCpEt1jDczgcQ299qW` |
+| CCE.Cash cash-out deposit wallet | `3AfnRwXvWxu4HpA6HQQwMzWfP6bETq62oUrwPMfHJ2rH` |
 | Copycat token (pump.fun, stalled) | `2hRg6EhT2Z21xKPDnzniENFbQzLazoSjwt6K26bKpump` |
 | Copycat token deployer | `HhFaWEVRSktrUo3TnUdVrDmE6LHbkEi5rwNyR85P2GSB` |
 | Poll option wallets | `Cpj7…`, `3wFK…`, `78Bk…` |
@@ -293,7 +401,10 @@ KuCoin chain):
 
 - **Verified on-chain, reproduced from our own pull:** the funding wallet paying
   the ArNS name, the Arweave key, and the token creation; the six-hop chain from
-  KuCoin to the funding wallet; the creator wallet; the 270,000,000 burn.
+  KuCoin to the funding wallet; the creator wallet; the 270,000,000 burn; and the
+  2026-08-27 fee claim, CYBERLEEK-to-SOL swap, and the full split of ~2,705 SOL,
+  every hop reproduced on our own pull (~51% to KuCoin including a laundered hub leg,
+  ~49% to the no-KYC CCE.Cash).
 - **From public market data ([Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077)'s fee analysis / DexScreener):** the ~$29k
   setup, the ~$40k to $60k in fees, the daily volume and fee rate. Estimates from
   public Raydium data, not exact figures.
@@ -315,10 +426,12 @@ The package is split by track, the real operation and the copycat persona:
   - `live_token/` - the live SPL token (`ApZux`), raw supply/account plus parsed
     `history/`.
   - `polls/` - the three pay-to-vote option wallets (`Cpj7`, `78Bk`, `3wFK`).
-  - `crosscheck/` - our own pulls verifying the Bitquery analysis: the front-run
-    sniper wallets, the address-poisoning decoys, and the proof that the other
-    same-named tokens trace to the copycat's shared bridge (`F7p3`), not the
-    operator.
+  - `crosscheck/` - our own pulls verifying the Bitquery analysis (front-run
+    sniper wallets, address-poisoning decoys, and the proof that the other
+    same-named tokens trace to the copycat's shared bridge `F7p3`, not the
+    operator), plus the 2026-08-27 cash-out trace (`cashout_*.json`): the creator
+    fee claim, the swap, the four outflows, and the split to KuCoin, CCE.Cash, and
+    the shared hub.
 - `copycat/` - the `@cyberleeksreal` pump.fun persona:
   - `deployer/` - the pump.fun deployer (`HhFa`), raw pulls plus parsed `history/`.
   - `funding/` - the Relay solver (`F7p3`) that bridged in to seed the deployer.
@@ -327,7 +440,7 @@ The package is split by track, the real operation and the copycat persona:
 - `collection_log.txt`, `README_EVIDENCE.txt` - what was collected and when.
 - `SHA256SUMS.txt` - SHA256 of every file (chain of custody).
 
-Manifest SHA256: `628bf5a6cb34993838b979bb24c0acdd24e3f48f1a2ca433942de5066dd9d626`
+Manifest SHA256: `cc6aeaf608c51ecf798998dcc72c50c8f5372cc63442d5536ba16aee18af2824`
 
 Verify:
 

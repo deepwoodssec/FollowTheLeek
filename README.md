@@ -114,12 +114,12 @@ flowchart LR
       direction LR
       A24["Aug 24<br/>first seen live<br/>(TLS + first archive)<br/>+ polls open"] --> A25["Aug 25<br/>Copycat: pump.fun token +<br/>cyberleeks.fun (Hostinger)<br/>+ @cyberleeksreal"]
     end
-    A15 --> A18["Aug 18<br/>Leak clips spread;<br/>launch front-run<br/>(snipers buy 17:48-17:54Z)"] --> A22 --> A24
+    A15 --> A18["Aug 18<br/>Leak clips spread;<br/>launch front-run<br/>(snipers buy 17:48-17:54Z)"] --> A22 --> A24 --> A27["Aug 27<br/>Fees claimed + cashed out<br/>2,705 SOL: ~51% KuCoin<br/>~49% CCE.Cash"]
 
     classDef money fill:#dcfce7,stroke:#166534,color:#052e16;
     classDef persona fill:#fee2e2,stroke:#991b1b,color:#450a0a;
     classDef recon fill:#f3f4f6,stroke:#6b7280,color:#111827;
-    class A13,A14,A15,A18,A22,A24 money;
+    class A13,A14,A15,A18,A22,A24,A27 money;
     class A25 persona;
 ```
 
@@ -138,6 +138,7 @@ flowchart LR
 | 2026-08-25 06:33:48 | persona | Copycat pump.fun token (`2hRg6`) minted by deployer (`HhFa`) | on-chain, [`infrastructure/`](real/infrastructure/) on-chain table |
 | 2026-08-25 07:08 | persona | `@cyberleeksreal` Telegram persona's first captured post | [`posting-pattern/telegram-post-times.txt`](copycat/posting-pattern/telegram-post-times.txt) |
 | 2026-08-25 12:11:02 | persona | `cyberleeks.fun` domain registered through **Hostinger** (a different registrar from the operation) | WHOIS, [`copycat-recon-2026-08-29.txt`](real/infrastructure/recon/copycat-recon-2026-08-29.txt) |
+| 2026-08-27 07:27 to 07:32 | money | Creator (`Hok9`) claims locked-LP fees, swaps 15.49M `$CYBERLEEK` to SOL, then splits 2,705 SOL out roughly in half: ~51% back to KuCoin (including a leg laundered through a hub) and ~49% to the no-KYC CCE.Cash (Vice Cit Part 4, full split reproduced on our own pull) | on-chain, [`operation/crosscheck/`](real/crypto/evidence/operation/crosscheck/) |
 
 The shape of it: the money was funded from a KuCoin account and the token built and
 burn-signalled over roughly ten days (Aug 13 to 22, with the leak clips spreading
@@ -145,7 +146,8 @@ and the launch front-run by snipers on Aug 18). Then `cyber-leek.com`
 was registered through Cloudflare (Aug 22) and first seen serving by Aug 24 (it
 went live somewhere in that Aug 22 to 24 window; the exact moment is not
 independently recorded), and the copycat spun up Aug 25 on a different registrar
-(Hostinger). Every dated event here is a
+(Hostinger). On Aug 27 the operator took profit: the locked-LP fees were claimed,
+swapped to SOL, and split back to KuCoin and the no-KYC CCE.Cash. Every dated event here is a
 hard on-chain block time, an RDAP/WHOIS record, or a Certificate Transparency
 record, not an observation date.
 
