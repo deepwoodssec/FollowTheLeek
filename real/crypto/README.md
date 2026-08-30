@@ -116,8 +116,7 @@ is behind the keys. On-chain analysis can follow the money across dozens of
 wallets and still never reach a person. KYC is the one place the chain touches the
 real world. The moment money comes **out of a KYC exchange account**, that account
 has a verified human identity sitting behind it. So a trail that leads *backward into* an exchange beats one that leads *out to* a
-mixer or a bridge. The exchange is a door with a name on the other side, not a dead
-end.
+mixer or a bridge. The exchange has a verified identity behind it; a mixer or bridge does not.
 
 For this case specifically:
 

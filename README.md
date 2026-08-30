@@ -25,7 +25,7 @@ most or who posts the loudest. And when two things share a name, we treat them a
 different until a transaction says otherwise.
 
 
-## A tale of two thieves
+## The operation and the copycat
 
 There are two separate things carrying the CyberLeek name, and on-chain they do not
 connect:
@@ -41,8 +41,8 @@ connect:
   AI-generated profile picture, a writing style, a daily posting rhythm), but no
   transaction ties any of it to the money.
 
-Whether these are two people, or one operator keeping the loud half walled off from
-the paying half, the chain does not link them. So we keep them apart, and label
+Whether these are two people, or one operator keeping the persona walled off from
+the money, the chain does not link them. So we keep them apart, and label
 which track each finding belongs to.
 
 ## The two tracks
@@ -86,7 +86,7 @@ lucky memecoin that happened to catch a leak. Every stage shows planning:
   the effect is a trail built to resist being followed.
 - **Traffic was bought, not hoped for.** The whole site is advertised through a
   Google Ads account, paid acquisition, not organic virality.
-- **The loud half is walled off.** No social account touches the money on-chain.
+- **The persona is walled off.** No social account touches the money on-chain.
   The persona wearing the name and the wallets making the money never meet on the
   ledger.
 
