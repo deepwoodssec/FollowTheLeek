@@ -82,31 +82,28 @@ zone; the sleep-pattern signal lives in the social account, not in the money.
 With that account now deleted and never on-chain, the timezone and geography
 inference cannot be verified, and this repo does not adopt it.
 
-## How to extend this (method)
+## If this lead ever reopens (method, and its limits)
 
-The reachable, repeatable steps, for anyone continuing the work. Everything
-collected goes through the same chain of custody as the rest of this repo
-(SHA256 into [`../../EVIDENCE.md`](../../EVIDENCE.md)) before it is cited here.
+This is written as principle, not a targeting recipe. We deliberately do **not**
+publish handle-hunting commands here. A common handle collides across unrelated
+people, and a copy-paste way to enumerate a name is exactly how bystanders get
+harassed for someone else's crime. The bar on this repo is an on-chain link, and
+there is none.
 
-1. **Username footprint (Maigret).** Enumerate the handle across platforms to
-   see where else it exists and what it links to:
-   ```
-   maigret stayonthegrindd -a --html --pdf
-   maigret stayonthegrind -a            # single-d variant
-   ```
-   Record hits, dead ends, and account creation dates. Treat matches as leads,
-   not proof; common handles collide across unrelated people.
-2. **Dark-web origin (Dread).** The original `Cyberleeker` Dread post is already
-   gone. Only a preserved copy (an archive or a timestamped screenshot) is worth
-   anything now, and even then it carries no on-chain time, only the forum clock
-   and the clips it contains.
-3. **Discord.** The `stayonthegrindd` account is already gone. Same rule: only a
-   preserved capture with server, message IDs and timestamps has any value.
-4. **On-chain correlation.** Pull the Arweave upload block times for each clip
-   and compare against the captured Discord and Dread times.
-5. **Public sources.** Keep the citation trail; the press coverage is itself
-   dated evidence of when the lead became public, and of how each outlet hedged
-   it.
+- **Nothing counts without an on-chain tie.** A name becomes a lead only if a
+  wallet in the funding cluster ([`../crypto/`](../crypto/)) is publicly bound to
+  it: a payment or tip address posted under the name, a reused on-chain
+  identifier, an on-chain name. No such tie exists. A matching username, a
+  posting time, or a screenshot does not attribute a person, and we do not treat
+  it as if it does.
+- **Chain of custody or it does not exist.** Any artifact worth weighing (an
+  archived post, a timestamped capture) is hashed into
+  [`../../EVIDENCE.md`](../../EVIDENCE.md) with its source and time before it is
+  cited. An unverifiable screenshot is not evidence.
+- **The artifacts are already gone.** As noted above, the social and dark-web
+  accounts this lead rested on are deleted and were never on-chain, so there is
+  nothing left to check. If a preserved, timestamped copy ever surfaces, it can
+  be hashed in and weighed against the on-chain clock, and only then.
 
 ## Status
 
