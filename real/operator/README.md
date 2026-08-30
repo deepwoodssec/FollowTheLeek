@@ -57,6 +57,31 @@ cannot be edited after the fact. Two narrow, concrete tests follow from that:
 Neither test has been run to conclusion. Until one lands, `stayonthegrindd`
 stays a handle of interest, not the operator. This repo does not name a person.
 
+## The social trail is gone (and none of it was ever on-chain)
+
+As of 2026-08-30, the three artifacts this lead rests on have all been removed:
+
+- The **`@cyberleeeknet`** X account, the one third-party analyses used to infer
+  the operator's working hours, is **deleted**.
+- The **`Cyberleeker`** Dread post is **gone**.
+- The **`stayonthegrindd`** Discord account is **gone**.
+
+None of the three was ever anchored on-chain, and all are now unreachable, so
+none can be independently verified. We therefore treat every one of them as
+**persona or copycat, unconfirmed as the operator**, consistent with the rest of
+this repo: the money side has no social presence, and a social account is not the
+operator until the chain says so.
+
+This matters for one claim in particular. A published third-party analysis
+(Bitquery: [part 1](https://bitquery.io/investigations/cyberleek-gta6-leak-coin),
+[part 2](https://bitquery.io/investigations/cyberleek-deployer-funding-trace))
+inferred a "Central European" working-hours pattern for the operator by pairing
+the funding-wallet activity with the `@cyberleeeknet` posting times. On our own
+re-pull, the funding wallets show activity across all 24 hours with no clean dead
+zone; the sleep-pattern signal lives in the social account, not in the money.
+With that account now deleted and never on-chain, the timezone and geography
+inference cannot be verified, and this repo does not adopt it.
+
 ## How to extend this (method)
 
 The reachable, repeatable steps, for anyone continuing the work. Everything
@@ -71,11 +96,12 @@ collected goes through the same chain of custody as the rest of this repo
    ```
    Record hits, dead ends, and account creation dates. Treat matches as leads,
    not proof; common handles collide across unrelated people.
-2. **Dark-web origin (Dread).** Capture the original `Cyberleeker` Dread post and
-   its forum timestamp over Tor. The Dread post carries no on-chain time, so it
-   is anchored only by the forum clock and by the clips it contains.
-3. **Discord capture.** Preserve the `stayonthegrindd` messages (server, message
-   IDs, timestamps, edits and deletes) before they are removed.
+2. **Dark-web origin (Dread).** The original `Cyberleeker` Dread post is already
+   gone. Only a preserved copy (an archive or a timestamped screenshot) is worth
+   anything now, and even then it carries no on-chain time, only the forum clock
+   and the clips it contains.
+3. **Discord.** The `stayonthegrindd` account is already gone. Same rule: only a
+   preserved capture with server, message IDs and timestamps has any value.
 4. **On-chain correlation.** Pull the Arweave upload block times for each clip
    and compare against the captured Discord and Dread times.
 5. **Public sources.** Keep the citation trail; the press coverage is itself
@@ -84,7 +110,10 @@ collected goes through the same chain of custody as the rest of this repo
 
 ## Status
 
-Open. One publicly reported handle of interest (`stayonthegrindd`), one
-dark-web poster name (`Cyberleeker`), no confirmed link to a person, and no
-on-chain tie between the handle and the funding cluster. Reported here as a lead
-to be tested, not a conclusion.
+The handle lead is **unverifiable**. The three artifacts it rested on
+(`@cyberleeeknet` on X, the `Cyberleeker` Dread post, the `stayonthegrindd`
+Discord account) are all deleted and were never on-chain, so none can be
+confirmed. They are recorded here as persona or copycat, not the operator. No
+on-chain tie between any handle and the funding cluster has been found. If a
+preserved copy surfaces, it can be hashed in and re-examined; until then there
+is nothing here to attribute to a person.
