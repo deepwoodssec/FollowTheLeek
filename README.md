@@ -2,7 +2,7 @@
 
 **CyberLeek** is an active operation that uses stolen Grand Theft Auto VI material
 (Rockstar Games' unreleased IP) as bait for a cryptocurrency it profits from.
-This is an open, evidence-backed investigation. Every indicator here is public,
+We keep this investigation open and evidence-backed. Every indicator is public,
 verifiable, and cryptographically hashed, so researchers, defenders, exchanges,
 and platforms can identify the operation and act on it.
 
@@ -10,18 +10,18 @@ Maintained by [Deep Woods Security](https://deepwoodssec.com).
 
 ## A note on signal and noise
 
-A case like this is mostly noise, and that is the whole difficulty. A hyped token
-pulls in thousands of traders, bots, and arbitrage wallets. A loud social account
-insists it is "the only real one." A large number sitting on a block explorer looks
-like a smoking gun. None of that, on its own, is the operator. The work is not
-finding data, there is far too much of it. The work is separating the signal, what
-the operator actually did, from everything that only looks related.
+A case like this is mostly noise, and that is the hard part. A hyped token pulls in
+thousands of traders, bots, and arbitrage wallets. A loud account insists it is
+"the only real one." A big number on a block explorer looks like a smoking gun. None
+of that, by itself, is the operator. Our problem was never finding data, there is far
+too much of it. It was separating the signal, what the operator actually did, from
+everything that only looks related.
 
-The method here is deliberately conservative. Start from what cannot be faked: who
-paid to register the site, who signed the file uploads, who created the token.
-Follow the funding, because money has to come from somewhere, and that somewhere
-tends to be a door. Claim only what a specific transaction proves, not who traded
-the most or who posts the loudest. When two things share a name, treat them as
+We kept the method conservative. We started from what cannot be faked: who paid to
+register the site, who signed the file uploads, who created the token. We followed
+the funding, because the money has to come from somewhere, and that somewhere is
+usually a door. We claim only what a specific transaction proves, not who traded the
+most or who posts the loudest. And when two things share a name, we treat them as
 different until a transaction says otherwise.
 
 
@@ -34,7 +34,7 @@ connect:
   leak distribution, and a live token whose entire setup was funded, through one
   wallet, from a **KuCoin** account. It is quiet, has no confirmed social presence,
   and makes money from trading fees on locked liquidity. This is the real one, and
-  the KuCoin account behind it is the identity lead.
+  the KuCoin account behind it is our identity lead.
 - **The persona (the copycat).** A loud Telegram and X account (`@cyberleeksreal`,
   "The Only Real Cyberleek"), the `cyberleeks.fun` domain, and a **pump.fun** token
   that stalled and went nowhere. This is where the human fingerprints are (an
@@ -42,8 +42,8 @@ connect:
   transaction ties any of it to the money.
 
 Whether these are two people, or one operator keeping the loud half walled off from
-the paying half, the chain does not link them. So this investigation keeps them
-apart, and labels which track each finding belongs to.
+the paying half, the chain does not link them. So we keep them apart, and label
+which track each finding belongs to.
 
 ## The two tracks
 

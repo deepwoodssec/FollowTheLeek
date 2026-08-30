@@ -1,9 +1,9 @@
 # Crypto: tracing the money
 
-Passive on-chain analysis of the money behind the CyberLeek leak operation on
-Solana. Two different things carry the CyberLeek name. This section is about the
-one with the real money (the leak site and its live token), and it separates that
-from a copycat token that went nowhere.
+We ran passive on-chain analysis on the money behind the CyberLeek leak operation
+on Solana. Two different things carry the CyberLeek name. This section covers the
+one with the real money, the leak site and its live token, and keeps it apart from a
+copycat token that went nowhere.
 
 Credit: the funding-to-exchange trace was first published by GTAForums user
 [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077).
@@ -44,7 +44,7 @@ fees); total fees so far are on the order of $40,000 to $60,000, roughly $4,400 
 day at about $2.1M daily volume, for as long as interest holds. Those are estimates
 from public market data, not exact figures.
 
-That model explains the behaviour. The leaks drip out and the site runs "vote on
+That model explains what we saw. The leaks drip out and the site runs "vote on
 the next leak" polls because the point is to keep the coin **trading**, not to make
 one big splash. Sustained attention is the revenue.
 
@@ -69,8 +69,8 @@ credible. Our token-supply reading of 729,950,775 is exactly 1B minus that burn.
 
 ## The funding spine, traced back to KuCoin
 
-This is the identity lead. A single funding wallet paid for the whole setup, and
-that wallet's SOL traces back to a regulated exchange.
+This is our identity lead. One funding wallet paid for the whole setup, and we
+traced its SOL back to a regulated exchange.
 
 ```mermaid
 flowchart LR
@@ -109,15 +109,15 @@ exchange verify who its users actually are: your real name, a government photo I
 (passport or driver's license), often a selfie and proof of address, before you
 can trade, deposit, or withdraw. The exchange keeps that identity record on file.
 
-Here is why that is the whole game in a trace like this. A blockchain wallet is
+This is the part that decides a trace like this. A blockchain wallet is
 **pseudonymous**: it is a string of characters with no name attached. The public
 ledger shows *what* moved and *where* it went, in full, forever, but never *who*
 is behind the keys. On-chain analysis can follow the money across dozens of
 wallets and still never reach a person. KYC is the one place the chain touches the
 real world. The moment money comes **out of a KYC exchange account**, that account
-has a verified human identity sitting behind it. That is why a trail that leads
-*backward into* an exchange is stronger than one that leads *out to* a mixer or a
-bridge: the exchange is a door with a name on the other side, not a dead end.
+has a verified human identity sitting behind it. So a trail that leads *backward into* an exchange beats one that leads *out to* a
+mixer or a bridge. The exchange is a door with a name on the other side, not a dead
+end.
 
 For this case specifically:
 
@@ -252,7 +252,7 @@ flowchart LR
     class HUB hub;
 ```
 
-Where it lands, in two roughly equal halves:
+Here is where it lands, split almost evenly:
 
 - **~1,368 SOL (51%) to KuCoin.** Directly: `7M79` (391), `AZN1` (209), and `GokF`
   (378) forward to two KuCoin deposit addresses (`GPscfRmN...bkQt`,
@@ -272,13 +272,13 @@ Where it lands, in two roughly equal halves:
 The four splits reconcile exactly: 978 direct to KuCoin (36%) + 390 laundered to
 KuCoin via the hub (14%) + 1,337 to CCE.Cash (49%) = 2,705 SOL.
 
-Two things worth stating plainly:
+Two things stood out to us:
 
-- **KuCoin is on both ends, and it is the larger end.** The operation was funded
-  from a KuCoin account, and the majority of the profit (~51%, once the laundered
-  hub leg is unwound) went back into KuCoin. Same exchange, same KYC records, on
-  both the origin and the primary cash-out destination. That is the strongest single
-  identity lead in this case.
+- **KuCoin is on both ends, and it is the larger end.** The operation was funded from a
+  KuCoin account, and once we unwound the laundered hub leg the majority of the
+  profit (~51%) went straight back into KuCoin. Same exchange, same KYC records, on both
+  the origin and the main cash-out destination. It is the best lead we have on who is
+  behind this.
 - **"At least two people" is Vice Cit's read, not our conclusion.** Vice Cit (Part
   4) infers two people from the KuCoin-plus-CCE.Cash split. On-chain we confirm the
   split and where each leg lands; we cannot confirm the headcount, and one person can
