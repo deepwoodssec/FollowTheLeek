@@ -86,12 +86,12 @@ flowchart LR
       direction LR
       A24["Aug 24<br/>first seen live<br/>(TLS + first archive)<br/>+ polls open"] --> A25["Aug 25<br/>Copycat: pump.fun token +<br/>cyberleeks.fun (Hostinger)<br/>+ @cyberleeksreal"]
     end
-    A15 --> A22 --> A24
+    A15 --> A18["Aug 18<br/>Leak clips spread;<br/>launch front-run<br/>(snipers buy 17:48-17:54Z)"] --> A22 --> A24
 
     classDef money fill:#dcfce7,stroke:#166534,color:#052e16;
     classDef persona fill:#fee2e2,stroke:#991b1b,color:#450a0a;
     classDef recon fill:#f3f4f6,stroke:#6b7280,color:#111827;
-    class A13,A14,A15,A22,A24 money;
+    class A13,A14,A15,A18,A22,A24 money;
     class A25 persona;
 ```
 
@@ -102,6 +102,7 @@ flowchart LR
 | 2026-08-15 09:49 | money | Funding wallet pays the buffer (`Ec2q`) | on-chain, `operation/funding_spine/buffer_Ec2q_*` |
 | 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active; first Arweave leak upload follows. The leaks were **first posted on the dark-web forum Dread**, then mirrored to Arweave here, before any clearnet site (Dread origin per Vice Cit) | on-chain, `operation/funding_spine/arweave_667G_*` |
 | 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `operation/funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
+| 2026-08-18 17:48 to 17:54 | money | Leak clips spread and the `$CYBERLEEK` launch is front-run: four wallets buy in a ~6-minute window, none tracing to the deployer (Bitquery's finding, confirmed on our pull) | on-chain, [`operation/crosscheck/`](real/crypto/evidence/operation/crosscheck/) |
 | 2026-08-22 06:36:48 | money | `cyber-leek.com` domain registered through **Cloudflare** (registrar IANA 1910) | RDAP + WHOIS, [`operation-recon-2026-08-29.txt`](real/infrastructure/recon/operation-recon-2026-08-29.txt) |
 | 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `operation/funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
 | 2026-08-24 | money | `cyber-leek.com` first *seen* live: first Let's Encrypt cert and earliest archive snapshot (14:20Z). Domain registered Aug 22; exact go-live in the Aug 22 to 24 window is not independently recorded | Certificate Transparency + archive.today |
@@ -111,7 +112,8 @@ flowchart LR
 | 2026-08-25 12:11:02 | persona | `cyberleeks.fun` domain registered through **Hostinger** (a different registrar from the operation) | WHOIS, [`copycat-recon-2026-08-29.txt`](real/infrastructure/recon/copycat-recon-2026-08-29.txt) |
 
 The shape of it: the money was funded from a KuCoin account and the token built and
-burn-signalled over roughly ten quiet days (Aug 13 to 22). Then `cyber-leek.com`
+burn-signalled over roughly ten days (Aug 13 to 22, with the leak clips spreading
+and the launch front-run by snipers on Aug 18). Then `cyber-leek.com`
 was registered through Cloudflare (Aug 22) and first seen serving by Aug 24 (it
 went live somewhere in that Aug 22 to 24 window; the exact moment is not
 independently recorded), and the copycat spun up Aug 25 on a different registrar
