@@ -41,7 +41,7 @@ connect:
   AI-generated profile picture, a writing style, a daily posting rhythm), but no
   transaction ties any of it to the money.
 
-Whether these are two people, or one operator keeping the persona walled off from
+Whether these are two people, or one operator running the persona separately from
 the money, the chain does not link them. So we keep them apart, and label
 which track each finding belongs to.
 
@@ -68,33 +68,33 @@ which track each finding belongs to.
 - [`pfp-metadata/`](copycat/pfp-metadata/) - the AI-generated profile picture and its C2PA /
   Grok content-credential provenance
 
-## A coordinated operation with one open door
+## A coordinated operation, exposed at the source
 
-Read as a whole, the operation was careful, and that is the point. It was not a
-lucky memecoin that happened to catch a leak. Every stage shows planning:
+Taken together, the operation was careful and deliberate. This was not a lucky
+memecoin that happened to catch a leak. Every stage shows planning:
 
-- **It built trust before it sold.** Days before launch, the dev allocation was
-  burned (270M tokens) and the liquidity was locked on Raydium, the two standard
+- **It built trust before it sold.** Days before launch, the creator burned the dev
+  allocation (270M tokens) and locked the liquidity on Raydium, the two standard
   "this is not a rug" signals, done deliberately and early.
 - **The launch was timed, and someone was ready.** The leak clips did not drop at
-  random; when they did, four wallets bought the token inside a six-minute window,
-  none of them tracing to the deployer. That is insider timing: somebody knew the
-  exact moment.
-- **The money trail was made hard to follow.** The funding runs six hops before it
-  reaches the token, and along the way the chain is salted with look-alike decoy
-  wallets that bait anyone tracing it by eye onto dead ends. Whoever placed them,
-  the effect is a trail built to resist being followed.
-- **Traffic was bought, not hoped for.** The whole site is advertised through a
-  Google Ads account, paid acquisition, not organic virality.
-- **The persona is walled off.** No social account touches the money on-chain.
-  The persona wearing the name and the wallets making the money never meet on the
-  ledger.
+  random. When they did, four wallets bought the token inside a six-minute window,
+  none of them tracing to the deployer, which points to insider timing: somebody
+  knew the exact moment.
+- **The money trail was built to resist tracing.** The funding runs six hops before
+  it reaches the token, and the chain is salted with look-alike decoy wallets that
+  send anyone tracing it by eye onto dead ends. Whoever placed them, the effect is a
+  trail that is harder to follow.
+- **Traffic was paid for, not hoped for.** The site is advertised through a Google
+  Ads account, so the audience was bought rather than earned.
+- **The name and the money never touch on-chain.** No social account behind the
+  CyberLeek name appears in a single transaction with the wallets that hold the
+  money.
 
-For all of that, the entire setup was paid for from a **KuCoin** account, a
-KYC exchange. Every layer above was designed to slow a tracer down. None of it
-matters, because the money began at a door with an identity behind it. The
-sophistication is real, and it is everywhere except the one place that counts.
-That single upstream choice is the whole investigation.
+And yet the whole setup was paid for from a **KuCoin** account, a KYC exchange that
+has the account holder's real identity on file. Every layer above was built to slow
+a tracer down, but none of it changes the ending, because the money started at an
+exchange that knows who owns the account. The operation is sophisticated almost
+everywhere, except at the one point that matters for identifying who runs it.
 
 ## Timeline
 

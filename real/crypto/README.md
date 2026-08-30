@@ -257,10 +257,12 @@ Here is where it lands, split almost evenly:
   (378) forward to two KuCoin deposit addresses (`GPscfRmN...bkQt`,
   `eS4n56zr...99qW`) and on to the KuCoin processing wallet `BmFd`, the same wallet
   the operation was funded from. Indirectly: `CfHp` (212) and `G2Va` (178) do not
-  stop at a neutral hub. They wash through `btYki -> EceGdm -> 66ZQ -> 771y` and
-  then hit the same `GPscf` KuCoin deposit. That laundering leg (~390 SOL) is
-  KuCoin-bound too, so what first looked like a dead-end hub is really a KuCoin
-  feeder.
+  stop at a neutral hub. They are layered through four pass-through wallets
+  (`btYki -> EceGdm -> 66ZQ -> 771y`, one of them a high-volume hub that mixes them
+  with unrelated traffic) and then hit the same `GPscf` KuCoin deposit. That layered
+  leg (~390 SOL) is KuCoin-bound too, so what first looked like a dead-end hub is
+  really a KuCoin feeder. Routing money through extra hops like this is a textbook
+  obfuscation pattern.
 - **~1,337 SOL (49%) to CCE.Cash.** `CoSK` (533), `HLSU` (298), and `HHRZ` (506)
   forward to one CCE.Cash deposit wallet (`3AfnRwXv...J2rH`, Solscan public name
   "CCE.Cash: Exchange Deposit Wallet"), confirmed on our own pull (`CoSK` 08:31,
@@ -268,13 +270,13 @@ Here is where it lands, split almost evenly:
   service, so that leg leaves no identity record. `HHRZ` moved in the afternoon,
   hours after Vice Cit's morning snapshot, so our trace runs slightly past theirs.
 
-The four splits reconcile exactly: 978 direct to KuCoin (36%) + 390 laundered to
-KuCoin via the hub (14%) + 1,337 to CCE.Cash (49%) = 2,705 SOL.
+The four splits reconcile exactly: 978 direct to KuCoin (36%) + 390 layered to
+KuCoin through the hub (14%) + 1,337 to CCE.Cash (49%) = 2,705 SOL.
 
 Two things stood out to us:
 
 - **KuCoin is on both ends, and it is the larger end.** The operation was funded from a
-  KuCoin account, and once we unwound the laundered hub leg the majority of the
+  KuCoin account, and once we unwound the layered hub leg the majority of the
   profit (~51%) went straight back into KuCoin. Same exchange, same KYC records, on both
   the origin and the main cash-out destination. It is the best lead we have on who is
   behind this.
@@ -313,7 +315,7 @@ The public Solana data takes this to two doorways:
   sources). That is the identity target.
 - **The token side did cash out, on 2026-08-27.** The liquidity stays locked and the
   dev allocation was burned, but the accumulated trading fees were claimed, swapped
-  to SOL, and split roughly in half: ~51% back to KuCoin (including a leg laundered
+  to SOL, and split roughly in half: ~51% back to KuCoin (including a leg layered
   through a hub) and ~49% to the no-KYC CCE.Cash - see **The cash-out** above. The
   KuCoin half lands back at the same KYC exchange the operation was funded from; the
   CCE.Cash half goes private.
@@ -402,7 +404,7 @@ KuCoin chain):
   the ArNS name, the Arweave key, and the token creation; the six-hop chain from
   KuCoin to the funding wallet; the creator wallet; the 270,000,000 burn; and the
   2026-08-27 fee claim, CYBERLEEK-to-SOL swap, and the full split of ~2,705 SOL,
-  every hop reproduced on our own pull (~51% to KuCoin including a laundered hub leg,
+  every hop reproduced on our own pull (~51% to KuCoin including a layered hub leg,
   ~49% to the no-KYC CCE.Cash).
 - **From public market data ([Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077)'s fee analysis / DexScreener):** the ~$29k
   setup, the ~$40k to $60k in fees, the daily volume and fee rate. Estimates from
