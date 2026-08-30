@@ -226,12 +226,12 @@ held. Two claims did not, and both failures point the same way our split does.
 - The same funnel (`Ec2qmc…`) to deployer (`Hok9…`), the six-hop chain, and the
   same honest limit that KuCoin rests on Vice Cit's exchange-side evidence, not
   an on-chain label. Independent agreement with the trace above.
-- **The launch was front-run.** Four of the five top-earning wallets are
+- **The launch was front-run** (Bitquery's finding, confirmed on our own pull). Four of the five top-earning wallets are
   confirmed buying `$CYBERLEEK` in a roughly six-minute window on 2026-08-18, at
   block times that match Bitquery's to the second: `kai5bkD…` 17:48:44,
   `71CBfHX…` 17:50:43, `J6oZ2HN…` 17:50:53, `HmBPYty…` 17:54:02. None trace to
   the deployer. Someone knew the exact drop time.
-- **The funding trail was salted with address-poisoning.** Look-alike decoy
+- **The funding trail was salted with address-poisoning** (Bitquery's finding, confirmed on our own pull). Look-alike decoy
   wallets dusted the real hops at the real transfer times: `2ZdUMU9d…CJhD` and
   `2Z13…PJhD` hitting hop `EjsB…` on 2026-08-13 seconds before its real 18:50
   transfer, and `Ec2qL1n7…` (a look-alike of the funnel `Ec2qmc…`) hitting the
@@ -256,8 +256,9 @@ held. Two claims did not, and both failures point the same way our split does.
   deleted and was never on-chain (see [`../operator/`](../operator/)). Not
   adopted.
 
-Raw on-chain pulls for the confirmed items are being added under
-[`evidence/`](evidence/) with SHA256, same chain of custody as the rest.
+Raw on-chain pulls for the confirmed items are in
+[`evidence/operation/crosscheck/`](evidence/operation/crosscheck/) with SHA256,
+same chain of custody as the rest.
 
 ## Indicators
 
@@ -314,6 +315,10 @@ The package is split by track, the real operation and the copycat persona:
   - `live_token/` - the live SPL token (`ApZux`), raw supply/account plus parsed
     `history/`.
   - `polls/` - the three pay-to-vote option wallets (`Cpj7`, `78Bk`, `3wFK`).
+  - `crosscheck/` - our own pulls verifying the Bitquery analysis: the front-run
+    sniper wallets, the address-poisoning decoys, and the proof that the other
+    same-named tokens trace to the copycat's shared bridge (`F7p3`), not the
+    operator.
 - `copycat/` - the `@cyberleeksreal` pump.fun persona:
   - `deployer/` - the pump.fun deployer (`HhFa`), raw pulls plus parsed `history/`.
   - `funding/` - the Relay solver (`F7p3`) that bridged in to seed the deployer.
@@ -322,7 +327,7 @@ The package is split by track, the real operation and the copycat persona:
 - `collection_log.txt`, `README_EVIDENCE.txt` - what was collected and when.
 - `SHA256SUMS.txt` - SHA256 of every file (chain of custody).
 
-Manifest SHA256: `525a8b53f6b3d2a3508c39bcb9893568487e2f333dadcdc6c810185bcb8b0222`
+Manifest SHA256: `628bf5a6cb34993838b979bb24c0acdd24e3f48f1a2ca433942de5066dd9d626`
 
 Verify:
 

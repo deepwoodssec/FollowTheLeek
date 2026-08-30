@@ -36,3 +36,19 @@ This reproduces, from our own pull, the funding->KuCoin trace first published by
 GTAForums user Vice Cit. The 270M dev tokens were verified BURNED (Cbfb, type=BURN).
 The earlier bridge-consolidation transactions were moved to examined_not_attributed/
 and the ~4,186 SOL figure retired.
+
+=== CROSS-CHECK (2026-08-30): independent verification of Bitquery's analysis ===
+operation/crosscheck/ : our own Helius Enhanced API pulls used to check the two
+Bitquery writeups (bitquery.io/investigations/cyberleek-*). Acquired 2026-08-30T02:39:32Z.
+  sniper_*.json      four top wallets that bought $CYBERLEEK in a ~6-min window
+                     on 2026-08-18 (kai5, 71CB, J6oZ, HmBP); entry block times
+                     match Bitquery. CONFIRMS the launch was front-run.
+  poison_*.json      EjsB (hop D) and feeder 2Kxn: look-alike decoy wallets dusted
+                     the real hops at the real transfer times. CONFIRMS address
+                     poisoning on the trail (actor unproven, likely a bot).
+  hok9_outflows.json Hok9 deployer outflows: does NOT pay MDBLo or FYzoZ.
+  mdblo_funders.json MDBLo funded by an unrelated wallet (HSdveMYb), not our funnel.
+  fyzoz_funders.json FYzoZ ("Rockstar Gays") funded by F7p3, the COPYCAT's shared
+                     Relay solver (see copycat/funding/). REFUTES "serial launcher":
+                     the other same-named tokens are copycats on shared infra, not
+                     the operator's relaunches.

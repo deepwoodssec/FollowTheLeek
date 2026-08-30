@@ -14,6 +14,10 @@ operation/  (the real one, the money)
   live_token/           the live SPL token ApZux: raw getTokenSupply / account.
     history/            parsed Helius history of the ApZux mint.
   polls/                the three pay-to-vote option wallets (Cpj7, 78Bk, 3wFK).
+  crosscheck/           our own on-chain pulls verifying the Bitquery analysis:
+                        snipers (front-run), address-poisoning decoys, and the
+                        proof that the other same-named tokens trace to the
+                        copycat's shared bridge (F7p3), not the operator.
 
 copycat/  (the persona)
   deployer/             raw pulls for the pump.fun deployer HhFa (balance, sigs, txs).
