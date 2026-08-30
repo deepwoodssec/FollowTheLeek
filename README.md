@@ -157,6 +157,14 @@ artifact's SHA256. No PII, no leaked media, no accusations against named people.
 The funding-to-KuCoin trace in [`crypto/`](real/crypto/) was first published by GTAForums
 user [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077) and reproduced here independently.
 
+The launch front-run (sniper wallets) and the address-poisoning on the funding
+trail were first published by Bitquery
+([part 1](https://bitquery.io/investigations/cyberleek-gta6-leak-coin),
+[part 2](https://bitquery.io/investigations/cyberleek-deployer-funding-trace))
+and verified here independently on-chain. Their "serial launcher" and Central
+European timezone reads did not hold on our re-pull; see
+[`real/crypto/`](real/crypto/) and [`real/operator/`](real/operator/).
+
 Branding and the FollowTheLeek logo by [maegraphics](https://www.maegraphics.com/).
 
 ## Victims
