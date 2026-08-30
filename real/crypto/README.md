@@ -213,6 +213,52 @@ The public Solana data takes this to two doorways:
   locked and the profit is a stream of trading fees, not a lump withdrawal, so there
   is no off-Solana cash-out to chase. The 270M dev allocation was burned.
 
+## Cross-checked against an independent analysis (Bitquery)
+
+Bitquery published two on-chain writeups of this operation
+([part 1](https://bitquery.io/investigations/cyberleek-gta6-leak-coin),
+[part 2](https://bitquery.io/investigations/cyberleek-deployer-funding-trace)).
+We re-pulled every claim on our own node rather than take theirs. Most of it
+held. Two claims did not, and both failures point the same way our split does.
+
+**Confirmed on our own pull:**
+
+- The same funnel (`Ec2qmc…`) to deployer (`Hok9…`), the six-hop chain, and the
+  same honest limit that KuCoin rests on Vice Cit's exchange-side evidence, not
+  an on-chain label. Independent agreement with the trace above.
+- **The launch was front-run.** Four of the five top-earning wallets are
+  confirmed buying `$CYBERLEEK` in a roughly six-minute window on 2026-08-18, at
+  block times that match Bitquery's to the second: `kai5bkD…` 17:48:44,
+  `71CBfHX…` 17:50:43, `J6oZ2HN…` 17:50:53, `HmBPYty…` 17:54:02. None trace to
+  the deployer. Someone knew the exact drop time.
+- **The funding trail was salted with address-poisoning.** Look-alike decoy
+  wallets dusted the real hops at the real transfer times: `2ZdUMU9d…CJhD` and
+  `2Z13…PJhD` hitting hop `EjsB…` on 2026-08-13 seconds before its real 18:50
+  transfer, and `Ec2qL1n7…` (a look-alike of the funnel `Ec2qmc…`) hitting the
+  feeder `2Kxn…` on 2026-08-15 during the real consolidation. This is textbook
+  poisoning, most likely a scavenger bot preying on active wallets rather than
+  the operator; either way it is noise laid across the trail.
+
+**Did not hold (corrected here):**
+
+- **Not a serial launcher.** Bitquery read other same-named tokens (`MDBLo…`,
+  and `FYzoZ…` "Rockstar Gays") as the operator relaunching. On-chain they do
+  not connect to the operation's money: `Hok9…` never pays them, `MDBLo…` is
+  funded by an unrelated wallet, and `FYzoZ…` is funded by
+  `F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe`, which is the **copycat's**
+  shared Relay-bridge solver already documented in
+  [`evidence/copycat/funding/`](evidence/copycat/funding/). So these are more
+  copycats riding the same public bridge, not the operator's repeat launches.
+  The operation's funnel launched exactly one token.
+- **No timezone or geography.** Bitquery inferred a "Central European" working
+  day. On our re-pull the funding wallets are active across all 24 hours with no
+  clean dead zone; that inference leaned on a social account that has since been
+  deleted and was never on-chain (see [`../operator/`](../operator/)). Not
+  adopted.
+
+Raw on-chain pulls for the confirmed items are being added under
+[`evidence/`](evidence/) with SHA256, same chain of custody as the rest.
+
 ## Indicators
 
 | Type | Value |
