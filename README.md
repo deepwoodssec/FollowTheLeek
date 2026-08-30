@@ -68,6 +68,34 @@ apart, and labels which track each finding belongs to.
 - [`pfp-metadata/`](copycat/pfp-metadata/) - the AI-generated profile picture and its C2PA /
   Grok content-credential provenance
 
+## A coordinated operation with one open door
+
+Read as a whole, the operation was careful, and that is the point. It was not a
+lucky memecoin that happened to catch a leak. Every stage shows planning:
+
+- **It built trust before it sold.** Days before launch, the dev allocation was
+  burned (270M tokens) and the liquidity was locked on Raydium, the two standard
+  "this is not a rug" signals, done deliberately and early.
+- **The launch was timed, and someone was ready.** The leak clips did not drop at
+  random; when they did, four wallets bought the token inside a six-minute window,
+  none of them tracing to the deployer. That is insider timing: somebody knew the
+  exact moment.
+- **The money trail was made hard to follow.** The funding runs six hops before it
+  reaches the token, and along the way the chain is salted with look-alike decoy
+  wallets that bait anyone tracing it by eye onto dead ends. Whoever placed them,
+  the effect is a trail built to resist being followed.
+- **Traffic was bought, not hoped for.** The whole site is advertised through a
+  Google Ads account, paid acquisition, not organic virality.
+- **The loud half is walled off.** No social account touches the money on-chain.
+  The persona wearing the name and the wallets making the money never meet on the
+  ledger.
+
+For all of that, the entire setup was paid for from a **KuCoin** account, a
+KYC exchange. Every layer above was designed to slow a tracer down. None of it
+matters, because the money began at a door with an identity behind it. The
+sophistication is real, and it is everywhere except the one place that counts.
+That single upstream choice is the whole investigation.
+
 ## Timeline
 
 Every dated event below is anchored to a verifiable source: an on-chain block
