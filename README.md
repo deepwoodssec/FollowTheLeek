@@ -76,6 +76,10 @@ memecoin that happened to catch a leak. Every stage shows planning:
 - **It built trust before it sold.** Days before launch, the creator burned the dev
   allocation (270M tokens) and locked the liquidity on Raydium, the two standard
   "this is not a rug" signals, done deliberately and early.
+- **It took real capital to start.** Locking that liquidity meant committing about
+  330 SOL (~$29,000 at the time) upfront that could not be pulled back out. That is a
+  deliberate stake, not a zero-budget launch, and it came from the same KuCoin
+  account, so real money entered through an identity-verified exchange.
 - **The launch was timed, and someone was ready.** The leak clips did not drop at
   random. When they did, four wallets bought the token inside a six-minute window,
   none of them tracing to the deployer, which points to insider timing: somebody
