@@ -17,7 +17,7 @@ Reproduced independently here; raw transactions in
 | Token | live SPL `ApZuxdpz…` | pump.fun Token-2022 `2hRg6…pump` |
 | Front | `cyber-leek.com` + Arweave leak distribution | `@cyberleeksreal` (X / Telegram), `cyberleeks.fun` |
 | Funded by | one wallet (`3YLN…`) traced back to **KuCoin** | the shared Relay bridge |
-| Status | locked liquidity, earning trading fees | stalled on the bonding curve |
+| Status | locked liquidity earning fees; ~$270K cashed out (Aug 27) | stalled on the bonding curve |
 
 **On-chain link between the two: none found.**
 
