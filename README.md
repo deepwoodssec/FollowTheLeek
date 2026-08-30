@@ -155,7 +155,7 @@ artifact's SHA256. No PII, no leaked media, no accusations against named people.
 The funding-to-KuCoin trace in [`crypto/`](real/crypto/) was first published by GTAForums
 user [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077) and reproduced here independently.
 
-Branding and the FollowTheLeek logo by [Katrina Dodds](https://www.maegraphics.com/).
+Branding and the FollowTheLeek logo by [maegraphics](https://www.maegraphics.com/).
 
 ## Victims
 
