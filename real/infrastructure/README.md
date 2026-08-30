@@ -54,43 +54,47 @@ addresses he connected from. He hid from the public. Whether he also hid from
 law enforcement depends on two things the public data cannot yet answer: how he
 paid, and whether he ever logged in to his own server without a VPN.
 
-### InterServer, how he paid, and whether a VPN saves him
+### Two opsec lanes: how he paid, and how he connected
 
 The origin host is **InterServer**, a US company registered in Englewood Cliffs,
 New Jersey ([BBB](https://www.bbb.org/us/nj/englewood-cliffs/profile/web-hosting/interserver-inc-0221-90153894/customer-reviews)).
-Two things about it decide how far the exposed IP leads.
+It does no identity KYC (a hands-on review shows signup verified by an emailed
+code only, no government ID and no phone check, [HostAdvice](https://hostadvice.com/hosting-company/interserver-reviews/)),
+but it is a US company, so a US records request reaches whatever it holds.
 
-First, InterServer does no identity KYC. A hands-on review shows signup verified
-by an emailed code only, no government ID and no phone check ([HostAdvice](https://hostadvice.com/hosting-company/interserver-reviews/));
-a hosting company is not a bank and carries no know-your-customer duty. What it
-does carry is US jurisdiction: a US records request reaches whatever it holds,
-however weak the signup was.
+Because the Cloudflare shield was left off, the origin IP is exposed, and that
+IP tells law enforcement exactly **which InterServer box to subpoena**. From
+there, whether the box leads to a person comes down to two independent lanes.
+They fail separately, and he needs **both** airtight, forever.
 
-Second, InterServer takes crypto, Bitcoin, Ethereum and Tether through Coinbase,
-and will even refund to a wallet ([WebsitePlanet](https://www.websiteplanet.com/blog/web-hosting-companies-that-accept-bitcoin/); [HostAdvice](https://hostadvice.com/hosting-company/interserver-reviews/)).
-So the operator could have rented the box with no card and no bank name. That
-removes the easy billing identity, but not the trail:
+**Lane 1, how he paid (the payment lane).** InterServer takes crypto, Bitcoin,
+Ethereum and Tether through Coinbase, and will even refund to a wallet
+([WebsitePlanet](https://www.websiteplanet.com/blog/web-hosting-companies-that-accept-bitcoin/); [HostAdvice](https://hostadvice.com/hosting-company/interserver-reviews/)),
+so he could rent the box with no card and no bank name. That removes the easy
+billing identity, but not the trail. A Coinbase Commerce payment still settles
+on-chain: if the wallet that paid for the server (or the domain, or the Google
+Ads) sits in the same cluster this investigation already traced back to KuCoin,
+the infrastructure spend links straight into the identity trail. Concrete lead
+to run: look for outflows from the traced wallets to a Coinbase Commerce or
+InterServer payment address in the Aug 22 to 25 window. (Had he paid by card
+instead, the billing identity is direct.)
 
-- A Coinbase payment still settles on-chain. If the wallet that paid for the
-  server (or the domain, or Google Ads) sits in the same cluster this
-  investigation already traced back to KuCoin, the infrastructure spend links
-  straight into the identity trail. That is a concrete on-chain lead to run:
-  look for outflows from the traced wallets to a Coinbase Commerce or InterServer
-  payment address in the Aug 22 to 25 window.
-- The account email and, above all, the server and control-panel logs do not
-  care how he paid. Those logs record the IP addresses he connected from to run
-  the box.
+**Lane 2, how he connected (the connection lane).** The account email and, above
+all, the server and control-panel logs do not care how he paid. Those logs are
+the record of every IP that **logged in to run the machine**, SSH, the control
+panel, file uploads. SSH into that box straight from his own connection and the
+log holds his real residential IP: subpoena InterServer for the box, subpoena
+the ISP for the subscriber, and there is a name, with the crypto payment never
+having to break. Route that same SSH through **Tor or a no-logs VPN** in an
+uncooperative jurisdiction and that layer can dead-end the trail.
 
-This is where a VPN is the whole question. The exposed origin IP tells law
-enforcement which InterServer box to subpoena; the prize inside is the
-connection log, the record of every IP that logged in to run the machine (SSH,
-the control panel, file uploads). SSH into that box straight from his own
-connection and the log holds his real residential IP: subpoena InterServer for
-the box, subpoena the ISP for the subscriber, and there is a name, with the
-crypto payment never having to break. Route that same SSH through Tor or a
-no-logs VPN in an uncooperative jurisdiction and that layer can dead-end the
-trail. The public evidence cannot say which; it only guarantees investigators
-get to ask.
+**Why two lanes matter.** They are independent, so either one closing is enough.
+Pay once from a wallet tied to the KuCoin cluster, and Lane 1 names him even if
+every login was over Tor. Log in once without the VPN, and Lane 2 names him even
+if every payment was clean crypto. He has to win both lanes on every payment and
+every login, indefinitely; an investigator only has to win one. The public
+evidence cannot say whether either lane is already open, only that the exposed
+IP guarantees investigators get to try both.
 
 ## Infrastructure indicators
 
