@@ -213,9 +213,9 @@ The public Solana data takes this to two doorways:
   locked and the profit is a stream of trading fees, not a lump withdrawal, so there
   is no off-Solana cash-out to chase. The 270M dev allocation was burned.
 
-## Cross-checked against an independent analysis (Bitquery)
+## Cross-checked against Divyasshree N's Bitquery analysis
 
-Bitquery published two on-chain writeups of this operation
+Divyasshree N of Bitquery published two on-chain writeups of this operation
 ([part 1](https://bitquery.io/investigations/cyberleek-gta6-leak-coin),
 [part 2](https://bitquery.io/investigations/cyberleek-deployer-funding-trace)).
 We re-pulled every claim on our own node rather than take theirs. Most of it
@@ -226,12 +226,12 @@ held. Two claims did not, and both failures point the same way our split does.
 - The same funnel (`Ec2qmc…`) to deployer (`Hok9…`), the six-hop chain, and the
   same honest limit that KuCoin rests on Vice Cit's exchange-side evidence, not
   an on-chain label. Independent agreement with the trace above.
-- **The launch was front-run** (Bitquery's finding, confirmed on our own pull). Four of the five top-earning wallets are
+- **The launch was front-run** (Divyasshree N's finding, confirmed on our own pull). Four of the five top-earning wallets are
   confirmed buying `$CYBERLEEK` in a roughly six-minute window on 2026-08-18, at
   block times that match Bitquery's to the second: `kai5bkD…` 17:48:44,
   `71CBfHX…` 17:50:43, `J6oZ2HN…` 17:50:53, `HmBPYty…` 17:54:02. None trace to
   the deployer. Someone knew the exact drop time.
-- **The funding trail was salted with address-poisoning** (Bitquery's finding, confirmed on our own pull). Look-alike decoy
+- **The funding trail was salted with address-poisoning** (Divyasshree N's finding, confirmed on our own pull). Look-alike decoy
   wallets dusted the real hops at the real transfer times: `2ZdUMU9d…CJhD` and
   `2Z13…PJhD` hitting hop `EjsB…` on 2026-08-13 seconds before its real 18:50
   transfer, and `Ec2qL1n7…` (a look-alike of the funnel `Ec2qmc…`) hitting the

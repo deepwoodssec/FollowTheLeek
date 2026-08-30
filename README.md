@@ -130,7 +130,7 @@ flowchart LR
 | 2026-08-15 09:49 | money | Funding wallet pays the buffer (`Ec2q`) | on-chain, `operation/funding_spine/buffer_Ec2q_*` |
 | 2026-08-15 12:23 | money | Arweave upload key (`667G`) first active; first Arweave leak upload follows. The leaks were **first posted on the dark-web forum Dread**, then mirrored to Arweave here, before any clearnet site (Dread origin per Vice Cit) | on-chain, `operation/funding_spine/arweave_667G_*` |
 | 2026-08-15 14:20:54 | money | Token creator (`Hok9`) mints `$CYBERLEEK` (`ApZux`); liquidity locked on Raydium | on-chain, `operation/funding_spine/creator_Hok9_*` (instruction `TOKEN_MINT`) |
-| 2026-08-18 17:48 to 17:54 | money | Leak clips spread and the `$CYBERLEEK` launch is front-run: four wallets buy in a ~6-minute window, none tracing to the deployer (Bitquery's finding, confirmed on our pull) | on-chain, [`operation/crosscheck/`](real/crypto/evidence/operation/crosscheck/) |
+| 2026-08-18 17:48 to 17:54 | money | Leak clips spread and the `$CYBERLEEK` launch is front-run: four wallets buy in a ~6-minute window, none tracing to the deployer (Divyasshree N / Bitquery, confirmed on our pull) | on-chain, [`operation/crosscheck/`](real/crypto/evidence/operation/crosscheck/) |
 | 2026-08-22 06:36:48 | money | `cyber-leek.com` domain registered through **Cloudflare** (registrar IANA 1910) | RDAP + WHOIS, [`operation-recon-2026-08-29.txt`](real/infrastructure/recon/operation-recon-2026-08-29.txt) |
 | 2026-08-22 18:27:59 | money | 270,000,000 dev tokens burned via holding wallet (`Cbfb`) | on-chain, `operation/funding_spine/hold270_Cbfb_*` (instruction `BURN`) |
 | 2026-08-24 | money | `cyber-leek.com` first *seen* live: first Let's Encrypt cert and earliest archive snapshot (14:20Z). Domain registered Aug 22; exact go-live in the Aug 22 to 24 window is not independently recorded | Certificate Transparency + archive.today |
@@ -186,7 +186,7 @@ The funding-to-KuCoin trace in [`crypto/`](real/crypto/) was first published by 
 user [Vice Cit](https://gtaforums.com/topic/994376-spoilers-gta-vi-leaks-analysis-thread-part-ii/page/314/#comment-1072766077) and reproduced here independently.
 
 The launch front-run (sniper wallets) and the address-poisoning on the funding
-trail were first published by Bitquery
+trail were first published by **Divyasshree N** of Bitquery
 ([part 1](https://bitquery.io/investigations/cyberleek-gta6-leak-coin),
 [part 2](https://bitquery.io/investigations/cyberleek-deployer-funding-trace))
 and verified here independently on-chain. Their "serial launcher" and Central
