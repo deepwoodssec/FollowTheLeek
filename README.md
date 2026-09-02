@@ -8,6 +8,12 @@ and platforms can identify the operation and act on it.
 
 Maintained by [Deep Woods Security](https://deepwoodssec.com).
 
+## Watch the investigation
+
+[![Watch: FollowTheLeek investigation on YouTube](https://img.youtube.com/vi/8QDW9aM9DnM/maxresdefault.jpg)](https://www.youtube.com/watch?v=8QDW9aM9DnM)
+
+*Full walkthrough of the CyberLeek investigation, funding to cash-out. [Watch on YouTube](https://www.youtube.com/watch?v=8QDW9aM9DnM).*
+
 ## A note on signal and noise
 
 A case like this is mostly noise, and that is the hard part. A hyped token pulls in
