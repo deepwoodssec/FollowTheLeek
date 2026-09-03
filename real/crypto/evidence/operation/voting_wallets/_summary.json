@@ -2,16 +2,23 @@
   "3wFK": {
     "txs": 1,
     "distinct_tokens": 1,
-    "holds_cyberleek": false
+    "holds_cyberleek": false,
+    "raw_confirmed": true,
+    "cyberleek_token_accounts": 0
   },
   "78Bk": {
     "txs": 0,
     "distinct_tokens": 0,
-    "holds_cyberleek": false
+    "holds_cyberleek": false,
+    "raw_confirmed": true,
+    "cyberleek_token_accounts": 0
   },
   "Cpj7": {
-    "txs": 5,
+    "txs": 6,
     "distinct_tokens": 2,
-    "holds_cyberleek": false
-  }
+    "holds_cyberleek": false,
+    "raw_confirmed": true,
+    "cyberleek_token_accounts": 0
+  },
+  "_note": "Raw RPC confirm (getSignaturesForAddress + getTokenAccountsByOwner) in raw_vote_confirm.txt. None ever held CYBERLEEK; Cpj7's lone mint reference is an incidental routed-swap, not a receipt."
 }

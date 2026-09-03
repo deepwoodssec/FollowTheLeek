@@ -9,7 +9,7 @@ link prove existence and integrity without redistribution.
 
 | Artifact | SHA256 | Collected (UTC) |
 | --- | --- | --- |
-| `real/crypto/evidence/` package (SHA256SUMS.txt) | `2e28cf0e3d6e9214ae060d610d3622cd56b5b489097bd8eff9030ca76e968619` | 2026-08-30 |
+| `real/crypto/evidence/` package (SHA256SUMS.txt) | `cb7eba5e4ae66da64e61e030df4c46c55703ae18b1dce0001e458bf17c00cace` | 2026-08-30 |
 
 Solana data is public and re-pullable. The package holds the
 raw pulls plus a per-file SHA256 manifest; regenerate any time.
@@ -38,7 +38,7 @@ raw pulls plus a per-file SHA256 manifest; regenerate any time.
 | --- | --- | --- | --- |
 | Operation recon (real cyber-leek.com; registrar Cloudflare, reg 2026-08-22) | `real/infrastructure/recon/operation-recon-2026-08-29.txt` | `eabab98964abbf9ee64ebd034e96b37b0f3646f29086914e9a2bc0b84eb59d86` | 2026-08-29 |
 | Copycat recon (cyberleeks.fun; registrar Hostinger, reg 2026-08-25) | `real/infrastructure/recon/copycat-recon-2026-08-29.txt` | `b0510aaf22c6a90a2076eaedd1cc29f33e5d8a4b5d7f34de95efaaf87df0b031` | 2026-08-29 |
-| Cross-check + cash-out on-chain pulls (snipers, poisoning, deployer/funder proof, and the 2026-08-27 fee-claim / swap / split-to-exchanges trace) | `real/crypto/evidence/operation/crosscheck/` | see `SHA256SUMS.txt` (manifest `2e28cf0e`) | 2026-08-30 |
+| Cross-check + cash-out on-chain pulls (snipers, poisoning, deployer/funder proof, and the 2026-08-27 fee-claim / swap / split-to-exchanges trace) | `real/crypto/evidence/operation/crosscheck/` | see `SHA256SUMS.txt` (manifest `cb7eba5e`) | 2026-08-30 |
 | Wayback CDX capture index (last-serving bounds, both domains) | `real/infrastructure/recon/wayback-cdx-2026-08-29.txt` | `667e374bdd142877f2f0c77f82276e4c1657339829875aa07ae966c2ec303e34` | 2026-08-29 |
 
 ## Archived pages (archive.ph)

@@ -322,25 +322,38 @@ The public Solana data takes this to two doorways:
 
 ## The voting wallets, traced
 
-We pulled the full history of the three pay-to-vote option wallets on our own
-node (evidence: [`evidence/operation/voting_wallets/`](evidence/operation/voting_wallets/)).
-The result is thin, and that is the finding:
+The site instructed voters to **send `$CYBERLEEK` to a poll option's address**,
+and displayed thousands of `$CYBERLEEK` "votes" pooled in each. We pulled the
+full history of the three option wallets and confirmed it against raw Solana RPC,
+not Helius's parsed history: every signature via `getSignaturesForAddress`, and
+the token account directly via `getTokenAccountsByOwner`. Evidence:
+[`evidence/operation/voting_wallets/`](evidence/operation/voting_wallets/); the
+raw RPC confirm is hashed in
+[`voting_wallets/raw_vote_confirm.txt`](evidence/operation/voting_wallets/raw_vote_confirm.txt).
 
-- `Cpj7QARn…` - five transactions total, all on 2026-08-24: it received about
-  $48 in USDC and swapped it to ~0.5 wrapped SOL. Nothing else.
+Raw signature counts: `Cpj7` **6**, `3wFK` **1**, `78Bk` **0**. None of the three
+has a `$CYBERLEEK` token account, and `$CYBERLEEK` never appears in any of their
+own token balances:
+
+- `Cpj7QARn…` - six transactions, all on 2026-08-24: it received about $48 in
+  USDC and swapped it to ~0.5 wrapped SOL. One of those swaps routed through a
+  shared solver (`F7p3dFrj…`) that moved `$CYBERLEEK` between itself and the
+  Raydium pool in the same transaction, so the mint appears in that transaction,
+  but Cpj7's own `$CYBERLEEK` balance is zero throughout. It never received the
+  token.
 - `3wFKU8bz…` - a single transaction: it received ~60,011 of an unrelated token
-  (`D3fuxn…`), never moved again.
-- `78BkUe4b…` - zero transactions. Empty.
+  (`D3fuxn…`), never moved again. No `$CYBERLEEK`.
+- `78BkUe4b…` - zero transactions. Empty. No `$CYBERLEEK`.
 
-**None of the three vote wallets ever held a single `$CYBERLEEK` token.** Yet the
-site displayed thousands of `$CYBERLEEK` "votes" pooled in exactly these wallets.
-The displayed totals are therefore not backed by tokens actually sitting in the
-wallets. Combined with the wallets being recycled across different polls (above),
-the polls are a display-only device, not a real on-chain tally. There is no pool
-of voted tokens, and so nothing to "cash out."
+**Not one `$CYBERLEEK` ever reached any of the three wallets the poll told people
+to pay.** The displayed vote totals are therefore backed by nothing the wallets
+received. Combined with the wallets being recycled across different polls
+(above), the polls are a display, not a token-weighted on-chain tally. There is
+no pool of voted tokens, and so nothing to "cash out."
 
-*Caveat: this is a Helius enhanced-history pull; a raw `getSignaturesForAddress`
-pass is the final confirm on the "never held `$CYBERLEEK`" statement.*
+*Method note: the raw pass found six `Cpj7` signatures where the earlier
+enhanced-history pull showed five. The raw RPC counts above are authoritative;
+this section no longer rests on parsed history.*
 
 ## The sniper wallets, traced
 

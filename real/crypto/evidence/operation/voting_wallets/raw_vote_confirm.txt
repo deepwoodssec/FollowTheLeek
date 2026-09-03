@@ -1,0 +1,32 @@
+CYBERLEEK "pay-to-vote" wallets, raw RPC confirm
+================================================
+
+The site instructed voters to send CYBERLEEK to a poll option's address and
+displayed CYBERLEEK vote totals pooled in each. These three are the poll option
+wallets. This confirm does not rest on Helius parsed history: it uses raw Solana
+JSON-RPC, getSignaturesForAddress (every signature, full pagination) and
+getTokenAccountsByOwner (the CYBERLEEK token account directly). Full raw
+responses are archived off-repo on the analyst's node; the SHA-256 below lets
+anyone verify the exact data.
+
+Pull: 2026-09-03T03:20:16Z
+CYBERLEEK mint: ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg
+
+wallet | address | raw_signatures | cyberleek_token_accounts | sha256(raw) | result
+Cpj7 | Cpj7QARnmVR39NBGe4NWppUF7WUrWMamen4WsJNmbHQy | 6 | 0 | c4ef0199d649da205386ae573b30b6ecdd2049f020b76e974df389e1adba3e69 | never received CYBERLEEK
+3wFK | 3wFKU8bzomz8eSn179JFzR4oimC3esEXxhbaWtKgJ3K3 | 1 | 0 | c97f6b2d2785cdc84a95c13800e86ed2312dee2487f38c0eef3286780aba4a01 | never received CYBERLEEK
+78Bk | 78BkUe4bywGhK6SJDHj5uwfyFJZ9NDG3iQ5U7rxo7QWA | 0 | 0 | ab91ce974abdb9fe8964dfda4dc2df5fa8b0649504747e7d2f7a5d5f5782b6d5 | never received CYBERLEEK
+
+Notes:
+  - None of the three has a CYBERLEEK token account, and CYBERLEEK never appears
+    in any of their own token balances (checked pre/post token balances per tx).
+  - Cpj7's only CYBERLEEK-adjacent transaction (sig 4Wtyx..., 2026-08-24) is a
+    routed USDC->SOL swap in which a shared solver (F7p3dFrj...) moved CYBERLEEK
+    between itself and the Raydium pool (GpMZbSM2...). Cpj7's own CYBERLEEK
+    balance is zero in that transaction and every other. Incidental reference,
+    not a receipt.
+  - The raw pass found six Cpj7 signatures where the earlier enhanced-history
+    pull showed five; the raw counts here are authoritative.
+
+Verify an archived raw confirm file:
+  sha256sum <wallet>_confirm.json   must equal the sha256 above.
