@@ -1,0 +1,72 @@
+{
+  "wallet": "HmBP",
+  "txs_pulled": 1200,
+  "distinct_tokens": 172,
+  "holds_cyberleek": true,
+  "classification": "automated sniper / arbitrage bot (trades dozens to hundreds of unrelated tokens)",
+  "cyberleek_transfers": [
+    {
+      "sig": "3XAh6Gnd1eGjD91ZjgGEJjgkEsEvsjmffg1pUdZNNAFam5T6u2JhjmgWuWAaba7gfrwhCn1hoVX5dvUcvGT29wW8",
+      "ts": 1787079579,
+      "from": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 2389405.485675114
+    },
+    {
+      "sig": "4DamWxjmHfvuPQZ17YabgYd5Y9bnLe8FxyT7TNHbnSDPrhhx63kfyegNfAUWH4rp5ZtizDPmaNw26ZrWXbTRtARb",
+      "ts": 1787079529,
+      "from": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 2389405.485675114
+    },
+    {
+      "sig": "QgKFL3xhnvtmwiyeAWc6qxND7gg87tpoetpAAFdAArrcd2u5i8ktMcmmyy4BeyeaCG164jSsTC4noKsXU1jDCdM",
+      "ts": 1787079183,
+      "from": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 530978.996816691
+    },
+    {
+      "sig": "5BY9HFvDk8GugNoJ6eLDVicq6ykr3fpwTcRE11DeG9gtqC71Jim8XSYPU13TvzhbUKk4XacvGZiHa1nwRf17e1BY",
+      "ts": 1787079178,
+      "from": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 589976.663129657
+    },
+    {
+      "sig": "4skJhCvQLmz7Usxqq816c4YZTzAM8oEJtf5zMDiXcJWZgfiWc5QWf4oYZe4QoChP5eHj7YyrCuH58RqhiLigLxU",
+      "ts": 1787079167,
+      "from": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 1966588.877098858
+    },
+    {
+      "sig": "4iNb16uGH7eS72ZQXocWg9pwixwY41UuSRRqoMLeSYodNApPEmKQbpym44GrkLFcqXdBSMCmQWtu7GzcuoX8D6pc",
+      "ts": 1787079146,
+      "from": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 2622118.502798477
+    },
+    {
+      "sig": "2da9KZLiavrHyxJi2G2iK3q2ghyxskcpSP5ew8zC1G1C7detWUmF6h8eRgQ67QLx3oxpBSE6qpQbBiUt4ZCW5a3f",
+      "ts": 1787077948,
+      "from": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 1165386.001243767
+    },
+    {
+      "sig": "3LkotJ5hwZFgz3mN8CwETqe8tbuR3hxZ824GF5ZNfv9hTgNQgViV7VSuAM98FVQymp7kMBtCM6dUjVGV95G5wzE2",
+      "ts": 1787077941,
+      "from": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 1294873.334715297
+    },
+    {
+      "sig": "4YcMHVnpSeJrGXHyxBdjemLYp5q5jT84eSoEsxyPYCbAjz25vDLSxaCZMxVgKx1cvdjhCBpFXXhcdwfKWToDKbXj",
+      "ts": 1787075642,
+      "from": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "to": "HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois",
+      "amount": 12948733.347152976
+    }
+  ]
+}

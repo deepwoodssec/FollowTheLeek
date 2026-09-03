@@ -86,10 +86,12 @@ memecoin that happened to catch a leak. Every stage shows planning:
   330 SOL (~$29,000 at the time) upfront that could not be pulled back out. That is a
   deliberate stake, not a zero-budget launch, and it came from the same KuCoin
   account, so real money entered through an identity-verified exchange.
-- **The launch was timed, and someone was ready.** The leak clips did not drop at
-  random. When they did, four wallets bought the token inside a six-minute window,
-  none of them tracing to the deployer, which points to insider timing: somebody
-  knew the exact moment.
+- **The launch was staged, not spontaneous.** The token, the burn, and the locked
+  pool were all in place days before the leak clips dropped, so when attention
+  arrived the machine was already built and waiting. The four wallets that bought
+  in the first six-minute window do not trace to the deployer, and on a full pull
+  they are automated sniper bots that buy whatever moves (matching Bitquery), so
+  this is bots reacting to a fresh pool, not evidence of an insider tip.
 - **The money trail was built to resist tracing.** The funding runs six hops before
   it reaches the token, and the chain is salted with look-alike decoy wallets that
   send anyone tracing it by eye onto dead ends. Whoever placed them, the effect is a

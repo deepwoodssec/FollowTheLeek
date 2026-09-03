@@ -1,0 +1,184 @@
+{
+  "wallet": "71CB",
+  "txs_pulled": 146,
+  "distinct_tokens": 31,
+  "holds_cyberleek": true,
+  "classification": "automated sniper / arbitrage bot (trades dozens to hundreds of unrelated tokens)",
+  "cyberleek_transfers": [
+    {
+      "sig": "5vyzUxV9VzFw8TUH7DDSkz5XDVqqD4fgFFkiRoVzJBfSV4C1fRt44JsZAaRKPaNntMTBqjnKcHbQ4YQ9cdTjmZ2L",
+      "ts": 1787080997,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 2698969.01952854
+    },
+    {
+      "sig": "2kykSMHX58X4QQXgWs8hKihBKg79iavjTPPJLfqyQyF8xCzkRgep3F6t2dCwNuV6h257ybndzEeR8dqoLG9FcFwx",
+      "ts": 1787079266,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 299885.446614282
+    },
+    {
+      "sig": "5N9MyL71BhpyExkJi7ixKjCekUx6J2Hnnyc6MxALMvt7MwEA272xENQYgAn6BH4WyrrbawM8r7iudoiLMV3PzUWg",
+      "ts": 1787079252,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 333206.051793646
+    },
+    {
+      "sig": "3ytBHxEpE1TkQd6wWZarJhy5VeN36GKJTCJ8s34eAC69V7izYQZE9PDh3zU5XPS5H8ba6GXeazrxHcuzr7GB2FDu",
+      "ts": 1787079207,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 370228.946437385
+    },
+    {
+      "sig": "4YeCLyPvEyhV8TcMJFUyw5tf1enydihEWmTtWzERao3yHGqYAKtcFfMQ28e3tXcCtz17RZaezCtLvNbdQJS4P2kh",
+      "ts": 1787079097,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 411365.496041539
+    },
+    {
+      "sig": "49h8jAAAkXBK7dnye9cAhbam1Lx21PNpNPakznrpVmhEVKCbzevrTfcsCwnQUunvPmGQYtPDKrHTXRCkXToUcrSE",
+      "ts": 1787079089,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 457072.773379488
+    },
+    {
+      "sig": "4hqgC4b4mksqAm4N8YawQNN6YGmSGrPYFwy3xsJwvamA9CtmF7Ms5cktXN4ucU34kt5TnqYjS929hUnhSrXay6qf",
+      "ts": 1787079086,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 507858.63708832
+    },
+    {
+      "sig": "3vV5XMu1HoLsYBLaW2XPZyxDaFn8c7iWgzebcBeUUeNmpszdnH9H8MJxu84rtu9LTzCM9WkQuwTT9CqTRL59rqNd",
+      "ts": 1787077523,
+      "from": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "to": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "amount": 56065.729919191
+    },
+    {
+      "sig": "4nEtcWzDrPCnmgiLBbRsPm4enwzZT3k7V41zX9sg56WTXU6nDUQgbgQzQ6heDQ6QGn6F4xuznZLXnQSYAGarErvr",
+      "ts": 1787077484,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 558057.848996001
+    },
+    {
+      "sig": "3ZShUEKAuKW5bzakRRU4pmCwaTQrywuFgvfAN96FTpF3n2L5aVQ4roGApGs7xmdFPDZdPe1CDwWw5594FT2REit9",
+      "ts": 1787077481,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 620064.276662223
+    },
+    {
+      "sig": "4ZtZt9HVFQJwagLRQ7qSj37gQb1zSQsJ8ksgn3PKCYzn5g2Dcktvxd8eGVdE5hWkgRZgNCq9VE5xKSpQwPV4LPSQ",
+      "ts": 1787077476,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 688960.30740247
+    },
+    {
+      "sig": "4LK2GUZbpm6pTnFuFdv8bS6pzsB2m4ojkbHJHL3oDMoCF8q2V8feWL7aXvtyFrWQ1sU4ko593fAuzf8tDzx6bv2T",
+      "ts": 1787077437,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 765511.452669411
+    },
+    {
+      "sig": "2ToVeBcwcFAfwLwzzbjUZ8qR1PsUoCPN1SpczZgpd4o6WTi5j8BXjFiwKLmNn1PK6Q4B7YCPeHYxjp9VNdN1gguB",
+      "ts": 1787077434,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 850568.28074379
+    },
+    {
+      "sig": "3k8myow15Nv8NvaTsznWGZWiSMkCk4dNt82PFKiM6yutS4yXx2gCy9MbVzkW14KQQjKF9WhRQ9aBbTQUrGC8oVZM",
+      "ts": 1787076606,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 945075.8674931
+    },
+    {
+      "sig": "3KvPatgpvT413N133a1juyp76G6m9vSsktjg49L21DrT8r5j3vZXRPcCob7iQTRL7crswcD7SJzDS54LNpeqv9Kj",
+      "ts": 1787076602,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 1050084.297214555
+    },
+    {
+      "sig": "3VdBhwpBPDWw5m4H8WpjbJTqLnCDF9uHNkLZyu4orekwpwtvZQxPw5PDFqnKC8vn3CYMN2DTMqdYdg5afsdewfqD",
+      "ts": 1787076596,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 1166760.330238395
+    },
+    {
+      "sig": "3effDqpKeTMTf1mzFiUBJ46kCfxXUKtHR7jDUgAGuZq6KrX85yfw7NwvY25ERFqZ25efzn1gEGinx2D3CaFNLHzT",
+      "ts": 1787076587,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 1296400.36693155
+    },
+    {
+      "sig": "4hap2K349KhM2zd2HgXhMMNk3jASRvfAS74r8v37G9Xi3WPc6rSpxY7G5rNhXsC5BcM4RyCLLZq5WvFatkjNn1vf",
+      "ts": 1787076583,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 1440444.852146167
+    },
+    {
+      "sig": "26xiFFmRchPJ5x2Et3HSDqzi9MAorrCtyRb5xkYStJ89KfZa6iXre3TTsPPJUMJa1H9gPhGZ5wwBjiRRMd7fVHdX",
+      "ts": 1787076581,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 1600494.280162407
+    },
+    {
+      "sig": "4vQ1r5xeWpvgfdo9ZvtgD1iMY3zpnFxE1g4VKj5pAUpiDjd7mfcVHMbxxsj93BAfgjnW9TzHjTLw6WMGQHhAZpdu",
+      "ts": 1787075773,
+      "from": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "to": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "amount": 5107760.642416878
+    },
+    {
+      "sig": "56Yi26puAi8cFFHn4yBXTaBkyUUHoU2yGEpvWuEbcnJhawy7daq5cUgxxshe8Vj53SLcPM5LPMaPLkPatdSgUvN5",
+      "ts": 1787075759,
+      "from": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "to": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "amount": 5648063.072485292
+    },
+    {
+      "sig": "2Bam6MhYj6pgq88rZw69HxhnvCdfh2B4SQiSsMyDZJDQFhKTEAeg7pszV6wsC3XrdcWXSNS6yU1x6MJmyTrw77HW",
+      "ts": 1787075755,
+      "from": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "to": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "amount": 5249119.086721908
+    },
+    {
+      "sig": "4TKgoqWfbvJ7ecENN5W9rNWsJz8tYDhVuDT7wQ9AjivvNnBA84vqAZT5zd99TdavnJNFmfqK44NbLjevmKQNfLhr",
+      "ts": 1787075691,
+      "from": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "to": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "amount": 10150444.338436881
+    },
+    {
+      "sig": "7ANVsRs58gBUKnJrRN7x6YhMtyCeKno6DmonWj13Z6Dmo5b5dMbqzA3XDyq3tBWUtQrDVTyRNY9Z2J2zCkSTnNv",
+      "ts": 1787075447,
+      "from": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "to": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "amount": 4901216.134768809
+    },
+    {
+      "sig": "3upseq8Dwc8wgreTo5Sehf5vhX2EUN6Kqy1Bem8y2kK8h15vQNoJafV5NAcYZkdofxv5xPdxHy9tu78rZtDez2o8",
+      "ts": 1787075443,
+      "from": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "to": "71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t",
+      "amount": 5249228.203668073
+    }
+  ]
+}

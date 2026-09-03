@@ -320,29 +320,74 @@ The public Solana data takes this to two doorways:
   KuCoin half lands back at the same KYC exchange the operation was funded from; the
   CCE.Cash half goes private.
 
+## The voting wallets, traced
+
+We pulled the full history of the three pay-to-vote option wallets on our own
+node (evidence: [`evidence/operation/voting_wallets/`](evidence/operation/voting_wallets/)).
+The result is thin, and that is the finding:
+
+- `Cpj7QARn…` - five transactions total, all on 2026-08-24: it received about
+  $48 in USDC and swapped it to ~0.5 wrapped SOL. Nothing else.
+- `3wFKU8bz…` - a single transaction: it received ~60,011 of an unrelated token
+  (`D3fuxn…`), never moved again.
+- `78BkUe4b…` - zero transactions. Empty.
+
+**None of the three vote wallets ever held a single `$CYBERLEEK` token.** Yet the
+site displayed thousands of `$CYBERLEEK` "votes" pooled in exactly these wallets.
+The displayed totals are therefore not backed by tokens actually sitting in the
+wallets. Combined with the wallets being recycled across different polls (above),
+the polls are a display-only device, not a real on-chain tally. There is no pool
+of voted tokens, and so nothing to "cash out."
+
+*Caveat: this is a Helius enhanced-history pull; a raw `getSignaturesForAddress`
+pass is the final confirm on the "never held `$CYBERLEEK`" statement.*
+
+## The sniper wallets, traced
+
+We pulled the four early-buyer wallets in full (evidence:
+[`evidence/operation/sniper_wallets/`](evidence/operation/sniper_wallets/), with a
+`_summary.json` per wallet). Each one is an automated trading bot, not a person and
+not an operator wallet:
+
+| Wallet | Txs pulled | Distinct tokens | `$CYBERLEEK` trades |
+| --- | --- | --- | --- |
+| `71CBfHX…` | 146 | 31 | 25 |
+| `HmBPYty…` | 1,200+ | 172 | 9 |
+| `J6oZ2HN…` | 1,200+ | 78 | 278 |
+| `kai5bkD…` | 1,200+ | 159 | 0 in-window (its buy predates the pulled range) |
+
+Nobody hand-trades 30 to 172 different tokens across 1,000+ transactions. These
+are self-rotating sniper / arbitrage bots, and `$CYBERLEEK` is one token among
+dozens to hundreds each of them flipped. This matches Divyasshree N (Bitquery)'s
+own read that they were "automated traders that buy whatever moves ... arbitrage
+bots." A bot that snipes every new launch does not need to be told when a launch
+is coming, so the six-minute front-run is ordinary bot behaviour, not evidence of
+an insider tip. See **No insider timing** below.
+
 ## Cross-checked against Divyasshree N's Bitquery analysis
 
 Divyasshree N of Bitquery published two on-chain writeups of this operation
 ([part 1](https://bitquery.io/investigations/cyberleek-gta6-leak-coin),
 [part 2](https://bitquery.io/investigations/cyberleek-deployer-funding-trace)).
 We re-pulled every claim on our own node rather than take theirs. Most of it
-held. Two claims did not, and both failures point the same way our split does.
+held. Two of Bitquery's inferences did not hold on our pull, and separately we
+retract one framing of our own. All three point the same way our split does.
 
-**Confirmed on our own pull:**
+**Confirmed on our own pull (Bitquery's finding, verified):**
 
 - The same funnel (`Ec2qmc…`) to deployer (`Hok9…`), the six-hop chain, and the
   same honest limit that KuCoin rests on Vice Cit's exchange-side evidence, not
   an on-chain label. Independent agreement with the trace above.
-- **The launch was front-run** (Divyasshree N's finding, confirmed on our own pull). Four of the five top-earning wallets are
-  confirmed buying `$CYBERLEEK` in a roughly six-minute window on 2026-08-18, at
-  block times that match Bitquery's to the second: `kai5bkD…` 17:48:44,
-  `71CBfHX…` 17:50:43, `J6oZ2HN…` 17:50:53, `HmBPYty…` 17:54:02. None trace to
-  the deployer. On a full pull, all four are high-volume sniper and arbitrage
-  bots, each trading dozens to hundreds of unrelated tokens across 1,000+
-  transactions, which matches Bitquery's own read that they "buy whatever
-  moves." The launch was sniped by bots, not tipped; see **No insider timing**
-  below.
-- **The funding trail was salted with address-poisoning** (Divyasshree N's finding, confirmed on our own pull). Look-alike decoy
+- **The launch was front-run.** Four of the five top-earning wallets bought
+  `$CYBERLEEK` in a roughly six-minute window on 2026-08-18, at block times that
+  match Bitquery's to the second: `kai5bkD…` 17:48:44, `71CBfHX…` 17:50:43,
+  `J6oZ2HN…` 17:50:53, `HmBPYty…` 17:54:02. None trace to the deployer. On a
+  full pull, all four are automated sniper and arbitrage bots (30 to 172
+  distinct tokens, 1,000+ transactions each) that, in Bitquery's words, "buy
+  whatever moves." Sniper bots auto-buy fresh launches, so this is bots
+  reacting to a new pool, not an insider tip. Evidence:
+  [`evidence/operation/sniper_wallets/`](evidence/operation/sniper_wallets/).
+- **The funding trail was salted with address-poisoning.** Look-alike decoy
   wallets dusted the real hops at the real transfer times: `2ZdUMU9d…CJhD` and
   `2Z13…PJhD` hitting hop `EjsB…` on 2026-08-13 seconds before its real 18:50
   transfer, and `Ec2qL1n7…` (a look-alike of the funnel `Ec2qmc…`) hitting the
@@ -350,15 +395,8 @@ held. Two claims did not, and both failures point the same way our split does.
   poisoning, most likely a scavenger bot preying on active wallets rather than
   the operator; either way it is noise laid across the trail.
 
-**Did not hold (corrected here):**
+**Bitquery inferences that did not hold on our pull:**
 
-- **No insider timing.** We earlier read the six-minute front-run as someone
-  knowing the exact drop time. On a full pull of all four wallets they are
-  automated sniper and arbitrage bots (30 to 172 distinct tokens, 1,000+
-  transactions each), and Bitquery reached the same conclusion: "automated
-  traders that buy whatever moves ... arbitrage bots." Sniper bots auto-buy new
-  launches, so the timing is ordinary bot behaviour, not evidence of a tip.
-  Evidence: [`evidence/operation/sniper_wallets/`](evidence/operation/sniper_wallets/).
 - **Not a serial launcher.** Bitquery read other same-named tokens (`MDBLo…`,
   and `FYzoZ…` "Rockstar Gays") as the operator relaunching. On-chain they do
   not connect to the operation's money: `Hok9…` never pays them, `MDBLo…` is
@@ -373,6 +411,14 @@ held. Two claims did not, and both failures point the same way our split does.
   clean dead zone; that inference leaned on a social account that has since been
   deleted and was never on-chain (see [`../operator/`](../operator/)). Not
   adopted.
+
+**A correction to our own earlier framing, No insider timing.** This one is
+ours, not Bitquery's. Our first video and an earlier draft read the six-minute
+front-run as someone knowing the exact drop time. That was an overclaim. The
+confirmed finding above shows all four wallets are ordinary sniper bots, and
+Bitquery reached the same read; sniper bots auto-buy fresh launches, so the
+timing is routine bot behaviour, not evidence of a tip. We retract the
+insider-timing framing.
 
 Raw on-chain pulls for the confirmed items are in
 [`evidence/operation/crosscheck/`](evidence/operation/crosscheck/) with SHA256,

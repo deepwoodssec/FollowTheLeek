@@ -1,0 +1,8 @@
+{
+  "wallet": "kai5",
+  "txs_pulled": 1200,
+  "distinct_tokens": 159,
+  "holds_cyberleek": false,
+  "classification": "automated sniper / arbitrage bot (trades dozens to hundreds of unrelated tokens)",
+  "cyberleek_transfers": []
+}
