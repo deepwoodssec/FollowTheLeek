@@ -1,0 +1,31 @@
+CYBERLEEK sniper wallets, raw pull hash attestation
+===================================================
+
+The four wallets below front-ran the CYBERLEEK launch. Their full raw on-chain
+transaction histories are large (tens of MB each) and are archived off-repo on
+the analyst's node rather than committed. These SHA-256 hashes let anyone who
+obtains a raw dump verify it is the exact data that was analyzed.
+
+Source: Helius Enhanced Transactions API, full pagination (every transaction per
+address). Full re-pull performed 2026-09-03T02:57:49Z.
+CYBERLEEK mint: ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg
+
+wallet | address | sha256(raw) | txs | distinct_tokens | cyberleek
+kai5 | kai5bkDZS9jvapW5bWopzKDHJVagamTxZbAn4u4r5Ya | 8deccac548f29400eb25283890a1b9b08db7ca0f46089a7e8d992e77b7fdc5ee | 19003 | 2482 | present
+71CB | 71CBfHX36b2wNjeBui59UDwzFWW6SMemHWWzTBWSxy4t | 1f832b96e20f668d1cb749f9f5e33101caba4c2f025e6e09075af947db824dee | 146 | 31 | present
+J6oZ | J6oZ2HNye8cQAmJASzK7nDqbTg2vrS956UqKKC6MLb9h | cf0f6efd5ee84ea43e40af965a1b14e8c1c6cf13ddb680002708924745106ea5 | 1320 | 79 | present
+HmBP | HmBPYtybyKVuWALbJSJ9yRawL85Scc9Vo3ycmP8mXois | abca7947c5df22f3077afa0887b1f3afe84c52f7890fa6cff5e9f990fe4d222e | 1574 | 235 | present
+
+Reconciliation with the _summary.json files in this folder:
+  The per-wallet summaries were built from an initial working pull capped near
+  ~1,200 transactions each. This full re-pull reads every transaction and shows
+  higher distinct-token counts (31, 79, 235, and 2,482). That strengthens, and
+  does not change, the finding: all four are high-volume, multi-token automated
+  sniper / arbitrage bots, not tipped insiders. Each traded CYBERLEEK; several
+  round-tripped it to a net near zero, ordinary flip behavior. The 2026-08-18
+  front-run buy timestamps (17:48-17:54Z) are documented in the repo README and
+  in ../crosscheck/.
+
+Verify a raw dump against this record:
+  sha256sum <wallet>_history.json
+  must equal the sha256 listed above.
