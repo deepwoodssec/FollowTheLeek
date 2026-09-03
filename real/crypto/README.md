@@ -337,7 +337,11 @@ held. Two claims did not, and both failures point the same way our split does.
   confirmed buying `$CYBERLEEK` in a roughly six-minute window on 2026-08-18, at
   block times that match Bitquery's to the second: `kai5bkD…` 17:48:44,
   `71CBfHX…` 17:50:43, `J6oZ2HN…` 17:50:53, `HmBPYty…` 17:54:02. None trace to
-  the deployer. Someone knew the exact drop time.
+  the deployer. On a full pull, all four are high-volume sniper and arbitrage
+  bots, each trading dozens to hundreds of unrelated tokens across 1,000+
+  transactions, which matches Bitquery's own read that they "buy whatever
+  moves." The launch was sniped by bots, not tipped; see **No insider timing**
+  below.
 - **The funding trail was salted with address-poisoning** (Divyasshree N's finding, confirmed on our own pull). Look-alike decoy
   wallets dusted the real hops at the real transfer times: `2ZdUMU9d…CJhD` and
   `2Z13…PJhD` hitting hop `EjsB…` on 2026-08-13 seconds before its real 18:50
@@ -348,6 +352,13 @@ held. Two claims did not, and both failures point the same way our split does.
 
 **Did not hold (corrected here):**
 
+- **No insider timing.** We earlier read the six-minute front-run as someone
+  knowing the exact drop time. On a full pull of all four wallets they are
+  automated sniper and arbitrage bots (30 to 172 distinct tokens, 1,000+
+  transactions each), and Bitquery reached the same conclusion: "automated
+  traders that buy whatever moves ... arbitrage bots." Sniper bots auto-buy new
+  launches, so the timing is ordinary bot behaviour, not evidence of a tip.
+  Evidence: [`evidence/operation/sniper_wallets/`](evidence/operation/sniper_wallets/).
 - **Not a serial launcher.** Bitquery read other same-named tokens (`MDBLo…`,
   and `FYzoZ…` "Rockstar Gays") as the operator relaunching. On-chain they do
   not connect to the operation's money: `Hok9…` never pays them, `MDBLo…` is
